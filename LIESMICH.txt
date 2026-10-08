@@ -1,0 +1,81 @@
+﻿בית המקדש השלישי – BETRIEBSWIRTSCHAFTSPROGRAMM
+================================================
+
+START
+  Doppelklick auf  Start_BeitHaMikdash.bat
+  -> öffnet das Programm als eigenes Fenster (Edge oder Chrome im App-Modus,
+     sonst Standardbrowser). Keine Installation, kein Internet nötig.
+  Der Ordner "app" muss neben der .bat-Datei liegen.
+
+DATEN
+  Alles wird lokal im Browser dieses Rechners gespeichert.
+  Einstellungen -> "Sicherung exportieren (.json)" regelmäßig ausführen.
+  Beim ersten Start kann ein Demo-Datensatz geladen werden.
+
+MODULE
+  Übersicht ........ Heute: hebr. Datum, Mishmar/Beit Av, Shir shel Yom,
+                     Tagesplan, Dienstbereitschaft, Kasse, Warnungen, Termine
+  Kalender ......... Monatsansicht mit Yamim Tovim, Regalim, Rosh Chodesh,
+                     Omer, Shekalim-Termine; Tagesplan je Tag
+  Korbanot-Planer .. Korbanot Tzibur für beliebigen Zeitraum inkl. Nesachim,
+                     Bedarf vs. Lager, Beschaffungskosten, CSV
+  Kohanim & Levi'im  Personal, 24 Mishmerot, Batei Av, Tum'a-Status, Mumim,
+                     Qualifikationen, Psulei Avoda
+  Payisot .......... Die 4 Payisot (Yoma 2) mit Fingerzählung, Payis 3 nur
+                     Chadashim, Protokoll
+  Lager & Tiere .... Lishkot-Bestände, Mindestmengen, Journal,
+                     Tierregister mit Bikur Mumim (4-Tage-Regel)
+  Finanzen ......... Fonds / 13 Shofarot, Kassenbuch, Umbuchungen,
+                     Machatzit HaShekel mit Kalbon, Terumat HaLishka
+  Chotamot ......... Ausgabe (Yochanan b. Pinchas), Einlösung (Achiya),
+                     Tagesabschluss nach Shekalim 5:4
+  Korbanot Yachid .. Nedarim/Nedavot/Chovot mit Bal-Te'acher-Fristen,
+                     Korban-Pesach-Chaburot (3 Kitot, Pesach Sheni)
+  Ketoret .......... Rezepturrechner (Keritot 6a), Chargen Beit Avtinas
+  Levi'im & Wache .. Shir-Dienstplan mit Mindestbesetzung (Arachin 2), 24 Wach-
+                     posten (Middot 1:1), Rundgänge, Ausrüstung, Ma'aser Rishon,
+                     Ausbildung & Stimme
+  Öl – Shemen ...... 9 Ölsorten (Menachot 8:4–5), Pressungen, Jahresbedarf,
+                     Menorah, Shemen HaMishcha (nur Information)
+  Agrar ............ Wareneingang Solet/Weizen/Gerste/Öl/Wein mit Herkunft
+                     (Alfa/Sheniya) und Prüfungen (Tevel, Chadash, Orla …)
+  Bikkurim ......... Annahme, Saison, Kriya, Korban, Lina
+  Achila & Matanot . Verzehrfristen (Zevachim 5), Notar, 24 Matanot Kehuna
+  Holz – Etzim ..... Lieferungen, Wurmprüfung, Kurban Etzim (Ta'anit 4:5)
+  Textil & Färberei  Bigdei Kehuna, Parochet, Techelet/Argaman/Shani/Shesh
+  Entsorgung ....... Terumat HaDeshen, Tapuach, Sereifa, Blut, Häute
+  Wasser & Tahara .. Efer Para Aduma, Hazaya-Plan, Mikvaot, Kiyor
+  Kelim & Reinigung  Inventar der Kelei Sharet (Material, 1./2./3. Satz, Zustand),
+                     tägliche Ausgabe der 93 Kelim, Satzwechsel nach dem Regel,
+                     Reinigungsplan, Zuständigkeiten, Reinigungsmittel & Werkzeug
+  Baumaterial ...... Lager, Lagerorte, Herstellung mit Pflichtprüfungen (kein
+                     Eisen, keine Pegima, Me'ila 14a), Bauprojekte mit
+                     Arbeiter-Rangfolge, Bauregeln (Rambam Beit HaBechira 1)
+  Werkzeug ......... Katalog (Avoda, Bau, Instandsetzung, Malen, Messen,
+                     Schmiede), Inventar, Bedikat HaSakin, Schmiede-Fertigung
+  Metalle & Farben . Gold, Silber, Kupfer/Bronze, Eisen, Zinn; Metallbuch mit
+                     2 Gizbarim; Sid, Sikra, Vergoldung; Malerarbeiten mit
+                     Bildverbot-Prüfung
+  Bauwerk .......... Lishkot-Verzeichnis, Instandhaltung (Bedek HaBayit)
+  Hekdesh .......... Arachin, Pidyon, Me'ila, Pidyon HaBen
+  Körperpflege ..... Haarschnitt/Pru'a Rosh, Wein, Schuhe, Seife (Herstellung
+                     und Verwendung), Reinigung & Waschutensilien
+  Transport ........ Fahrtenbuch, Unterkunft, Dienstreisen
+  Büro & Schrift ... Ämter, Yuchsin, Archiv, Pergament- und Tintenherstellung
+  Beit Din ......... Aufbau 3 / 23 / 71, Gerichte an den Toren (Sanhedrin 11:2),
+                     Dayanim mit Eignungsprüfung, Fälle mit Zuständigkeits- und
+                     Verfahrensprüfung und Instanzenweg, Sitzplan der 71,
+                     Kiddush HaChodesh, Gesetze & Takanot, Semicha
+  Bibliothek ....... Katalog, Hagaha, Ausleihe, Genizah, Sofrim, Shtarot
+  Sedarim .......... Checklisten: Tamid, Yom Kippur, Pesach, Sukkot,
+                     Lechem HaPanim, Omer/Shtei HaLechem
+  Nachschlagewerk .. Alle Stammdaten mit Mekor
+
+GRUNDSATZ
+  Strikte Trennung בזמן הזה (Hachana/Simulation) und לעתיד לבוא (Betrieb).
+  Jede Stammangabe trägt ihren Mekor. Wo Shitot auseinandergehen
+  (Shiurim, Bal Te'acher, Ketoret-Teilmengen, Mishmar-Rotation), ist das
+  markiert. Das Programm rechnet – es ersetzt keinen Psak.
+
+ANPASSEN
+  Halachische Stammdaten: app\data.js (mit Texteditor bearbeitbar).
