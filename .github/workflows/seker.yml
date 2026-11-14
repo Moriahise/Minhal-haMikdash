@@ -1,0 +1,119 @@
+name: Seker – Prospektion
+
+# Läuft täglich selbständig, analysiert die nächsten Kacheln, schreibt
+# Katalog, Validierung und Bericht fort und veröffentlicht sie über
+# GitHub Pages (Verzeichnis seker/).
+on:
+  schedule:
+    - cron: "17 2 * * *"            # täglich 02:17 UTC
+  workflow_dispatch:
+    inputs:
+      kacheln:
+        description: "Anzahl Kacheln in diesem Lauf"
+        default: "10"
+      region:
+        description: "Nur diese Region (leer = Warteschlange über alle)"
+        default: ""
+  push:
+    branches: [main]
+    paths: ["prospektion/**", "tests/**", "requirements.txt", "seker/**", ".github/workflows/seker.yml"]
+  pull_request:
+    paths: ["prospektion/**", "tests/**", "requirements.txt"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seker-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt pytest
+      - run: python -m pytest -q tests
+
+  lauf:
+    needs: tests
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: OSM-Extrakt zwischenspeichern (wöchentlich neu)
+        id: woche
+        run: echo "kw=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: .cache/osm
+          key: osm-${{ steps.woche.outputs.kw }}
+      - name: Analyse
+        env:
+          KACHELN: ${{ inputs.kacheln || '10' }}
+          REGION: ${{ inputs.region }}
+        run: |
+          python -m prospektion lauf --kacheln "$KACHELN" ${REGION:+--region "$REGION"}
+      - name: Ergebnisse veröffentlichen
+        run: |
+          git config user.name "seker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seker
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          git commit -m "Seker: Lauf $(date -u +%F) – Katalog und Bericht fortgeschrieben"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
+
+  veroeffentlichen:
+    # GITHUB_TOKEN-Commits lösen keinen weiteren Pages-Build aus.
+    # Deshalb nach dem Tageslauf explizit die gesamte bestehende Website
+    # mit dem neuen, getrennten Verzeichnis seker/ veröffentlichen.
+    needs: [tests, lauf]
+    if: >-
+      always() && !cancelled() && github.ref == 'refs/heads/main' &&
+      needs.tests.result == 'success' &&
+      (github.event_name == 'push' || needs.lauf.result == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Bestehende App und Seker gemeinsam bereitstellen
+        run: |
+          mkdir _site
+          cp index.html .nojekyll _site/
+          cp -a app docs seker _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: GitHub Pages veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

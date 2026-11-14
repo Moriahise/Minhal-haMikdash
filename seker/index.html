@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seker – Archäologische Fernerkundung Israel</title>
+<meta name="description" content="Autonome Satelliten-Prospektion archäologischer Strukturen in Israel mit Blick auf die Zeit des Ersten und Zweiten Tempels – offene Daten, dokumentierte Methode, laufend fortgeschrieben.">
+<meta name="theme-color" content="#1d4e89">
+<link rel="icon" href="../app/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="seker.css">
+</head>
+<body>
+<header id="hdr">
+  <div class="brand">
+    <div class="seal">ס</div>
+    <div><b>Seker <span class="he">סֶקֶר</span></b><div class="sub">Archäologische Fernerkundung · Israel</div></div>
+  </div>
+  <nav id="tabs" role="tablist">
+    <button role="tab" data-tab="karte" class="active">Karte</button>
+    <button role="tab" data-tab="liste">Kandidaten</button>
+    <button role="tab" data-tab="stand">Stand &amp; Validierung</button>
+    <button role="tab" data-tab="bericht">Berichte</button>
+    <button role="tab" data-tab="methodik">Methodik</button>
+  </nav>
+  <a class="zurueck" href="../app/">Minhal HaMikdash →</a>
+</header>
+
+<div id="hinweis">Kandidaten sind <b>Anomalien mit Prüfbedarf</b>, keine Entdeckungen. Satellitendaten können nicht datieren; Perioden sind räumlicher Kontext. <a href="#" data-tab="methodik">Einschränkungen lesen</a></div>
+
+<main>
+  <section id="tab-karte" class="tab active">
+    <aside id="filter">
+      <div id="kennzahlen"></div>
+      <h3>Filter</h3>
+      <label>Mindest-Prioritätsindex <output id="f-score-out">50</output>
+        <input type="range" id="f-score" min="30" max="95" step="5" value="50"></label>
+      <label>Region <select id="f-region"><option value="">alle</option></select></label>
+      <label>Formklasse <select id="f-klasse"><option value="">alle</option>
+        <option>linear</option><option>rechteckig-kompakt</option><option>erhöht-kompakt</option><option>unregelmäßig</option></select></label>
+      <label>Perioden-Kontext (≤ 3 km) <select id="f-periode"><option value="">beliebig</option>
+        <option value="ET">Erster Tempel</option><option value="ZT">Zweiter Tempel</option></select></label>
+      <label class="chk"><input type="checkbox" id="f-neu"> nur nicht in offenen Katalogen</label>
+      <label class="chk"><input type="checkbox" id="f-mehrfach"> nur mehrfach beobachtet</label>
+      <p class="muted small" id="f-zahl"></p>
+      <h3>Legende</h3>
+      <ul class="legende">
+        <li><i class="pt" style="background:var(--k3)"></i> Index ≥ 70</li>
+        <li><i class="pt" style="background:var(--k2)"></i> Index 50–69</li>
+        <li><i class="pt" style="background:var(--k1)"></i> Index &lt; 50</li>
+        <li><i class="pt ring"></i> weißer Rand: nicht in Wikidata/OSM</li>
+        <li><i class="rt" style="background:var(--et)"></i> Fundstelle, Erster Tempel</li>
+        <li><i class="rt" style="background:var(--zt)"></i> Fundstelle, Zweiter Tempel</li>
+        <li><i class="rt" style="background:var(--ezt)"></i> Fundstelle, beide Perioden</li>
+        <li><i class="rt" style="background:var(--sonst)"></i> Fundstelle, Periode nicht erfasst</li>
+      </ul>
+      <h3>Daten</h3>
+      <p class="small"><a href="data/kandidaten.geojson" download>Kandidaten (GeoJSON)</a> ·
+        <a href="#" id="dl-csv">CSV</a><br>
+        <a href="data/fundorte.geojson" download>Fundstellen (GeoJSON)</a> ·
+        <a href="data/kacheln.json" download>Kacheln/Szenen (JSON)</a></p>
+    </aside>
+    <div id="map"></div>
+    <aside id="detail" hidden></aside>
+  </section>
+
+  <section id="tab-liste" class="tab"><div class="seite"><div class="card">
+    <h2>Kandidaten nach Prioritätsindex</h2>
+    <p class="muted small">Es gelten die Filter der Kartenansicht. Klick auf eine Zeile öffnet den Kandidaten in der Karte.</p>
+    <div class="scroll"><table class="tbl" id="liste"></table></div>
+  </div></div></section>
+
+  <section id="tab-stand" class="tab"><div class="seite" id="stand"></div></section>
+  <section id="tab-bericht" class="tab"><div class="seite"><div class="card">
+    <label>Bericht vom <select id="bericht-wahl"></select></label>
+    <article id="bericht" class="md"></article>
+  </div></div></section>
+  <section id="tab-methodik" class="tab"><div class="seite"><div class="card"><article id="methodik" class="md"></article></div></div></section>
+</main>
+
+<noscript>JavaScript ist erforderlich.</noscript>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="seker.js"></script>
+</body>
+</html>

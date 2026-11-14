@@ -49,6 +49,30 @@ Wo Shitot auseinandergehen (Shiurim, Bal Te'acher, Ketoret-Teilmengen, Mishmar-R
 
 ---
 
+## Seker · Archäologische Fernerkundung
+
+### ▶ [Seker im Browser öffnen](https://moriahise.github.io/Minhal-haMikdash/seker/)
+
+Ein eigenständiges, **selbständig laufendes** Programm, das frei verfügbare Satellitendaten Israels nach Spuren alter Strukturen durchsucht – mit Blick auf Landschaften der Zeit des Ersten und Zweiten Tempels.
+
+- **Autonom:** Eine GitHub-Action analysiert täglich die nächsten Kacheln (Sentinel-2, Copernicus-DEM, ESA WorldCover, OpenStreetMap, Wikidata), schreibt Katalog, Validierung und Bericht fort und veröffentlicht alles über GitHub Pages.
+- **Nachvollziehbar:** Jeder Kandidat mit Kennwerten, Bildausschnitt, offengelegtem Prioritätsindex und Direktlinks zur Sichtprüfung im hochauflösenden Luftbild (Google, GovMap).
+- **Selbstprüfend:** Bei jedem Lauf wird gemessen, ob bekannte Fundstellen häufiger in Anomalien liegen als Zufallspunkte (AUC mit Konfidenzintervall).
+- **Ehrlich:** Kandidaten sind *Anomalien mit Prüfbedarf*, keine Entdeckungen; Satellitendaten können nicht datieren. Siehe [`seker/METHODIK.md`](seker/METHODIK.md).
+
+```
+prospektion/          Python-Pipeline (Daten, Analyse, Katalog, Bericht)
+seker/                Web-Ansicht + Ergebnisse (data/, berichte/, chips/)
+tests/                Tests mit synthetischen Szenen
+.github/workflows/seker.yml   täglicher automatischer Lauf
+```
+
+Lokal: `pip install -r requirements.txt`, dann `python -m prospektion lauf --kacheln 8`. Der Tageslauf startet um **02:17 UTC** (03:17 Uhr im Winter, 04:17 Uhr im Sommer in Österreich), verarbeitet standardmäßig **10 Kacheln** und veröffentlicht die Ergebnisse zusammen mit der bestehenden App ausdrücklich über GitHub Pages. Die ursprünglichen App-Dateien werden dabei unverändert übernommen.
+
+Manuell anstoßen: *Actions → Seker – Prospektion → Run workflow*.
+
+---
+
 ## Daten
 
 - Alle Eingaben werden **nur im Browser des jeweiligen Geräts** gespeichert (localStorage). Es gibt keinen Server, nichts wird hochgeladen.

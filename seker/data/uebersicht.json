@@ -1,0 +1,255 @@
+{
+ "stand": "2026-11-14T11:05:40+00:00",
+ "methoden_version": "1.0.0",
+ "software_version": "1.0.0",
+ "kacheln_gesamt": 297,
+ "kacheln_ok": 36,
+ "kacheln_fehler": 0,
+ "flaeche_km2": 611.0,
+ "kandidaten": 424,
+ "kandidaten_unregistriert": 417,
+ "kandidaten_bestaetigt": 0,
+ "fundorte": 69,
+ "fundorte_et": 14,
+ "fundorte_zt": 11,
+ "validierung": {
+  "n": 20,
+  "n_kacheln": 14,
+  "auc": 0.555,
+  "ki95": [
+   0.408,
+   0.702
+  ],
+  "p_einseitig": 0.2645,
+  "verfahren": "Cluster-Bootstrap über Kacheln",
+  "anteil_top10": 0.15
+ },
+ "regionen": {
+  "schefela": {
+   "name": "Schefela (Ela-Tal, Lachisch)",
+   "bbox": [
+    34.8,
+    31.55,
+    35.05,
+    31.8
+   ],
+   "kacheln_gesamt": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "jerusalem": {
+   "name": "Jerusalem und Umland",
+   "bbox": [
+    35.1,
+    31.7,
+    35.3,
+    31.85
+   ],
+   "kacheln_gesamt": 12,
+   "kacheln_ok": 3,
+   "kandidaten": 28,
+   "validierung": null
+  },
+  "benjamin": {
+   "name": "Benjamin-Plateau",
+   "bbox": [
+    35.15,
+    31.85,
+    35.35,
+    32.0
+   ],
+   "kacheln_gesamt": 12,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": {
+    "n": 5,
+    "n_kacheln": 3,
+    "auc": 0.507,
+    "ki95": [
+     0.342,
+     0.688
+    ],
+    "p_einseitig": 0.46875,
+    "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
+    "anteil_top10": 0.0
+   }
+  },
+  "juda": {
+   "name": "Judäisches Bergland (Bethlehem–Hebron)",
+   "bbox": [
+    35.0,
+    31.4,
+    35.25,
+    31.7
+   ],
+   "kacheln_gesamt": 28,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "beerscheba": {
+   "name": "Beerscheba–Arad-Becken",
+   "bbox": [
+    34.75,
+    31.2,
+    35.2,
+    31.35
+   ],
+   "kacheln_gesamt": 27,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "wueste": {
+   "name": "Judäische Wüste",
+   "bbox": [
+    35.25,
+    31.3,
+    35.45,
+    31.75
+   ],
+   "kacheln_gesamt": 35,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "negev": {
+   "name": "Negev-Hochland",
+   "bbox": [
+    34.6,
+    30.75,
+    34.95,
+    31.05
+   ],
+   "kacheln_gesamt": 42,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "kueste": {
+   "name": "Südliche Küstenebene (Philistäa)",
+   "bbox": [
+    34.55,
+    31.6,
+    34.8,
+    31.8
+   ],
+   "kacheln_gesamt": 20,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "samaria": {
+   "name": "Samarisches Bergland",
+   "bbox": [
+    35.1,
+    32.1,
+    35.35,
+    32.35
+   ],
+   "kacheln_gesamt": 25,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "jesreel": {
+   "name": "Jesreel-Ebene",
+   "bbox": [
+    35.05,
+    32.5,
+    35.45,
+    32.65
+   ],
+   "kacheln_gesamt": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "galilaea": {
+   "name": "Untergaliläa",
+   "bbox": [
+    35.2,
+    32.7,
+    35.55,
+    32.9
+   ],
+   "kacheln_gesamt": 28,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  },
+  "hula": {
+   "name": "Hula-Tal (Hazor, Dan)",
+   "bbox": [
+    35.5,
+    33.0,
+    35.7,
+    33.25
+   ],
+   "kacheln_gesamt": 20,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
+   "validierung": null
+  }
+ },
+ "validierung_urteil": "**Befund:** Derzeit ist **nicht nachweisbar**, dass das Verfahren bekannte Fundstellen besser findet als der Zufall (das Konfidenzintervall schließt 0,5 ein). Die Kandidaten sind entsprechend zurückhaltend zu bewerten.",
+ "perioden": {
+  "ET": "Erster Tempel (Eisenzeit II, ca. 1000–586 v. Chr.)",
+  "ZT": "Zweiter Tempel (persisch–frührömisch, 516 v. Chr.–70 n. Chr.)"
+ },
+ "laeufe": [
+  {
+   "id": "2026-11-14T1105Z",
+   "datum": "2026-11-14",
+   "kacheln": [
+    "T3490_3165",
+    "T3520_3175",
+    "T3520_3190",
+    "T3510_3150",
+    "T3495_3125",
+    "T3535_3150",
+    "T3475_3085",
+    "T3465_3170",
+    "T3520_3220",
+    "T3520_3255",
+    "T3535_3275",
+    "T3560_3310",
+    "T3485_3165",
+    "T3515_3175",
+    "T3525_3190",
+    "T3510_3155",
+    "T3500_3125",
+    "T3530_3150",
+    "T3475_3090",
+    "T3465_3165",
+    "T3525_3220",
+    "T3525_3255",
+    "T3535_3280",
+    "T3555_3310",
+    "T3490_3170",
+    "T3520_3170",
+    "T3520_3195",
+    "T3515_3150",
+    "T3495_3120",
+    "T3535_3145",
+    "T3480_3085",
+    "T3460_3170",
+    "T3520_3225",
+    "T3520_3260",
+    "T3540_3275",
+    "T3560_3315"
+   ],
+   "ok": 36,
+   "fehler": 0,
+   "neu": 424,
+   "wiedererkannt": 0,
+   "entfallen": 0,
+   "dauer_s": 535,
+   "commit": "72aecee",
+   "methode": "1.0.0",
+   "osm_stand": null,
+   "umgebung": "Python 3.13.18, NumPy 2.5.3"
+  }
+ ]
+}
