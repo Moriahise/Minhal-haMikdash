@@ -95,3 +95,22 @@ output{float:right;font-weight:700;color:var(--techelet)}
   .zurueck{display:none} #tabs{margin-left:0}
   .kv{grid-template-columns:120px 1fr}
 }
+
+/* Lauf starten */
+.start{background:#b8892b;color:#fff;border:0;border-radius:8px;padding:.45em .9em;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+.start:hover{filter:brightness(1.1)}
+#lauf-dialog{width:min(560px,94vw);max-height:92vh;border:1px solid var(--line);border-radius:14px;padding:1.2em 1.4em;background:var(--panel);color:var(--ink)}
+#lauf-dialog::backdrop{background:rgba(10,15,25,.55)}
+#lauf-dialog h2{margin:0 0 .4em;color:var(--techelet);font-size:1.2em}
+#lauf-dialog h3{margin:1.2em 0 .3em;font-size:1em;color:var(--techelet)}
+#lauf-dialog .zu{float:right;border:0;background:none;font-size:1.3em;cursor:pointer;color:var(--muted)}
+#lauf-dialog label{display:block;margin:.55em 0;font-size:.92em}
+#lauf-dialog label.chk{display:flex;gap:.5em;align-items:center}
+#lauf-dialog select,#lauf-dialog input[type=number],#lauf-dialog input[type=password]{display:block;width:100%;margin-top:.2em;font:inherit;padding:.4em;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.knopf{display:inline-block;background:var(--techelet);color:#fff;border:0;border-radius:8px;padding:.5em 1em;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.knopf[disabled]{opacity:.5;cursor:default}
+#lauf-status{background:var(--sh);border-radius:8px;padding:.5em .7em}
+.punkt{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.4em;background:var(--muted)}
+.punkt.laeuft{background:var(--gold);animation:puls 1.2s infinite} .punkt.gut{background:var(--ok)} .punkt.schlecht{background:var(--bad)}
+@keyframes puls{50%{opacity:.3}}
+@media (prefers-reduced-motion:reduce){.punkt.laeuft{animation:none}}

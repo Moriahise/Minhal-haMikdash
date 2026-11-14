@@ -281,7 +281,7 @@ def uebersicht_schreiben(aus: Path, kacheln: dict, lauf: dict | None) -> dict:
         ks = [k for k in ok if k["region"] == r["id"]]
         gesamt = sum(1 for k in C.alle_kacheln() if k["region"] == r["id"])
         je_region[r["id"]] = {
-            "name": r["name"], "bbox": r["bbox"], "kacheln_gesamt": gesamt,
+            "id": r["id"], "name": r["name"], "bbox": r["bbox"], "kacheln_gesamt": gesamt,
             "kacheln_ok": len(ks),
             "kandidaten": sum(1 for f in kand if f["properties"]["region"] == r["name"]),
             "validierung": analyse.auc_statistik([[p["p"] for p in k["perzentile"]] for k in ks])}

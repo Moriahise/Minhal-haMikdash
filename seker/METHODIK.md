@@ -12,6 +12,8 @@ Seker (hebr. סֶקֶר, „Survey“) ist eine autonome Fernerkundungs-Prospekt
 4. **„Nicht in offenen Katalogen“ heißt nicht unbekannt.** Abgeglichen wird gegen Wikidata und OpenStreetMap. Der Archaeological Survey of Israel der Israel Antiquities Authority (IAA) führt ein Vielfaches an Fundstellen und ist vor jeder weiteren Aussage zu konsultieren.
 5. **Rechtlicher und ethischer Rahmen.** Begehungen, Oberflächenfunde und Grabungen bedürfen einer Genehmigung der zuständigen Antikenbehörde (in Israel: Antikengesetz 1978, IAA). Das Programm arbeitet ausschließlich mit Fernerkundungsdaten. Koordinaten von Kandidaten sind öffentlich; wer einen Kandidaten nach Sichtprüfung für eine tatsächlich unregistrierte Fundstelle hält, sollte ihn der Behörde melden und nicht selbst aufsuchen.
 
+6. **Wasserflächen sind nicht auswertbar.** Mittelmeer, Kinneret und Totes Meer werden als Wasser maskiert: Sentinel-2 durchdringt Wasser nur wenige Meter und nur bei ruhiger, klarer See, und die verwendeten Merkmale (Bewuchs, Bodenhelligkeit) gelten nur an Land. Ausgewertet werden die **Uferzonen** – einschließlich der Flächen, die der sinkende Spiegel des Toten Meeres freigibt, und der bei Niedrigwasser trockenfallenden Ufer des Kinneret. Versunkene Hafenanlagen und Wracks erfordern Sonar oder Bathymetrie-LiDAR und liegen außerhalb dieses Verfahrens.
+
 ## 2 Datengrundlage
 
 | Datensatz | Auflösung | Verwendung | Lizenz |
@@ -19,7 +21,7 @@ Seker (hebr. סֶקֶר, „Survey“) ist eine autonome Fernerkundungs-Prospekt
 | Sentinel-2 L2A (Copernicus/ESA), über STAC-Katalog Earth Search (AWS) | 10 m (B2, B3, B4, B8), 20 m (B11, B12, SCL) | Spektralmerkmale, Wolkenmaske | frei (Copernicus) |
 | Copernicus DEM GLO-30 | 30 m | Local Relief Model, Hangneigung | frei (ESA) |
 | ESA WorldCover 2021 v200 | 10 m | Ausschluss Bebauung/Wasser, Landnutzungskontext | CC BY 4.0 |
-| OpenStreetMap (Geofabrik-Extrakt Israel und Palästina) | Vektor | Ausschluss moderner Infrastruktur; kartierte Fundstellen | ODbL |
+| OpenStreetMap (Geofabrik-Extrakte Israel/Palästina und Jordanien) | Vektor | Ausschluss moderner Infrastruktur; kartierte Fundstellen | ODbL |
 | Wikidata (SPARQL) | Punkt | Fundstellenkatalog mit Perioden | CC0 |
 | Referenzliste publizierter Grabungsorte (`prospektion/referenz_perioden.json`) | – | Periodenzuordnung nach Standardliteratur (NEAEHL) | – |
 
@@ -27,7 +29,7 @@ Alle verwendeten Szenen-IDs werden je Kachel in `data/kacheln.json` protokollier
 
 ## 3 Verarbeitung je Kachel
 
-Das Untersuchungsgebiet besteht aus zwölf Regionen, unterteilt in 297 Kacheln von 0,05° × 0,05° (ca. 4,7 × 5,5 km). Jeder Lauf bearbeitet die nächsten Kacheln einer festen, über alle Regionen verschränkten Warteschlange; ist alles einmal abgedeckt, beginnt die Wiederholungsbeobachtung mit den dann neuesten Szenen.
+Das Untersuchungsgebiet besteht aus 23 Regionen, unterteilt in 777 Kacheln von 0,05° × 0,05° (ca. 4,7 × 5,5 km): das Land westlich des Jordan vom Negev bis zum Hula-Tal, die Küstenebenen von Philistäa bis Akko, die Uferzonen von Kinneret und Totem Meer, das Jordantal und das Ostjordanland der Eisenzeit (Gilead, Ammon, Moab, Edom). Jeder Lauf bearbeitet die nächsten Kacheln einer festen, über alle Regionen verschränkten Warteschlange; ist alles einmal abgedeckt, beginnt die Wiederholungsbeobachtung mit den dann neuesten Szenen.
 
 ### 3.1 Saisonale Komposite
 
@@ -90,7 +92,7 @@ Jeder Lauf protokolliert Commit, Methodenversion, Softwareumgebung, Stand des OS
 ```
 pip install -r requirements.txt
 python -m pytest tests
-python -m prospektion lauf --kacheln 8
+python -m prospektion lauf --kacheln 20
 ```
 
 ## 7 Empfohlene Prüfschritte je Kandidat

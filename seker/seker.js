@@ -228,6 +228,67 @@
     URL.revokeObjectURL(a.href);
   }
 
+  // ------------------------------------------------------- Lauf starten
+  // Eine statische Seite kann selbst nichts rechnen; ein Lauf ist ein
+  // GitHub-Actions-Workflow. Der Knopf löst ihn über die GitHub-API aus.
+  const REPO = (function () {
+    const m = /^([^.]+)\.github\.io$/.exec(location.hostname), seg = location.pathname.split("/")[1];
+    return m && seg ? m[1] + "/" + seg : "Moriahise/Minhal-haMikdash";
+  })();
+  const API = "https://api.github.com/repos/" + REPO + "/actions/workflows/seker.yml";
+  const speicher = { get: () => { try { return localStorage.getItem("seker-token") || ""; } catch (e) { return ""; } },
+    set: (v) => { try { v ? localStorage.setItem("seker-token", v) : localStorage.removeItem("seker-token"); } catch (e) { /* privat */ } } };
+
+  function laufStatus() {
+    const el = $("#lauf-status");
+    return fetch(API + "/runs?per_page=5", { headers: { Accept: "application/vnd.github+json" } })
+      .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then((j) => {
+        const rs = (j.workflow_runs || []).filter((r) => r.event !== "push" && r.event !== "pull_request");
+        if (!rs.length) { el.textContent = "Bisher wurde noch kein Lauf auf GitHub ausgeführt."; return false; }
+        const aktiv = rs.some((r) => r.status !== "completed");
+        el.innerHTML = rs.slice(0, 3).map((r) => {
+          const kl = r.status !== "completed" ? "laeuft" : r.conclusion === "success" ? "gut" : "schlecht";
+          const txt = r.status !== "completed" ? "läuft gerade" : r.conclusion === "success" ? "abgeschlossen" : "fehlgeschlagen";
+          return "<div><span class='punkt " + kl + "'></span>" + esc(new Date(r.created_at).toLocaleString("de-DE")) + " · "
+            + (r.event === "schedule" ? "automatisch" : "von Hand") + " · " + txt
+            + " · <a target=_blank rel=noopener href='" + esc(r.html_url) + "'>Protokoll</a></div>";
+        }).join("");
+        return aktiv;
+      }).catch((e) => { el.textContent = "Status nicht abrufbar (" + e.message + ")."; return false; });
+  }
+
+  function laufStarten() {
+    const token = $("#lauf-token").value.trim(), meld = $("#lauf-meldung"), knopf = $("#lauf-start");
+    const n = Math.min(60, Math.max(1, parseInt($("#lauf-kacheln").value, 10) || 20));
+    if (!token) { meld.innerHTML = "<span class=warn>Bitte ein GitHub-Token eintragen – oder Weg 1 benutzen.</span>"; return; }
+    speicher.set($("#lauf-merken").checked ? token : "");
+    knopf.disabled = true;
+    meld.textContent = "Lauf wird angefordert …";
+    fetch(API + "/dispatches", { method: "POST",
+      headers: { Accept: "application/vnd.github+json", Authorization: "Bearer " + token, "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: "main", inputs: { kacheln: String(n), region: $("#lauf-region").value } }) })
+      .then((r) => {
+        if (r.status === 204) {
+          meld.innerHTML = "<b class=ok>Lauf gestartet.</b> " + n + " Kacheln werden analysiert; die Ergebnisse erscheinen nach etwa 10–20 Minuten auf dieser Seite (neu laden).";
+          setTimeout(laufStatus, 6000);
+        } else if (r.status === 401) throw new Error("Token ungültig oder abgelaufen.");
+        else if (r.status === 403 || r.status === 404) throw new Error("Token hat für dieses Repository keine Berechtigung „Actions: Read and write“.");
+        else return r.json().then((j) => { throw new Error(j.message || "HTTP " + r.status); });
+      })
+      .catch((e) => { meld.innerHTML = "<span class=warn>Nicht gestartet: " + esc(e.message) + "</span>"; })
+      .finally(() => { knopf.disabled = false; });
+  }
+
+  function laufDialog() {
+    $("#lauf-github").href = "https://github.com/" + REPO + "/actions/workflows/seker.yml";
+    const t = speicher.get();
+    if (t && !$("#lauf-token").value) { $("#lauf-token").value = t; $("#lauf-merken").checked = true; }
+    $("#lauf-meldung").textContent = "";
+    $("#lauf-dialog").showModal();
+    laufStatus();
+  }
+
   // -------------------------------------------------------------- Start
   function tab(name) {
     document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("active", b.dataset.tab === name));
@@ -259,12 +320,15 @@
       tab("karte"); zeige(f);
     });
     $("#bericht-wahl").addEventListener("change", (e) => bericht(e.target.value));
+    $("#lauf-knopf").addEventListener("click", laufDialog);
+    $("#lauf-start").addEventListener("click", laufStarten);
 
     Promise.all(["data/uebersicht.json", "data/kandidaten.geojson", "data/fundorte.geojson", "data/kacheln.json"]
       .map((u) => lade(u).then((r) => r.json()))).then(([ueb, kand, orte, kacheln]) => {
       D = { ueb, kand: kand.features, orte: orte.features, kacheln };
       Object.values(ueb.regionen).forEach((r) => {
         const o = document.createElement("option"); o.textContent = r.name; $("#f-region").appendChild(o);
+        const o2 = document.createElement("option"); o2.textContent = r.name; o2.value = r.id || ""; if (r.id) $("#lauf-region").appendChild(o2);
         L.rectangle([[r.bbox[1], r.bbox[0]], [r.bbox[3], r.bbox[2]]], { color: "#f5d998", weight: 1, fill: false, dashArray: "4 4", interactive: false }).addTo(ebKacheln);
       });
       Object.values(kacheln).forEach((k) => {

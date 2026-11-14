@@ -23,6 +23,7 @@
     <button role="tab" data-tab="bericht">Berichte</button>
     <button role="tab" data-tab="methodik">Methodik</button>
   </nav>
+  <button id="lauf-knopf" class="start">▶ Neuen Lauf starten</button>
   <a class="zurueck" href="../app/">Minhal HaMikdash →</a>
 </header>
 
@@ -77,6 +78,26 @@
   </div></div></section>
   <section id="tab-methodik" class="tab"><div class="seite"><div class="card"><article id="methodik" class="md"></article></div></div></section>
 </main>
+
+<dialog id="lauf-dialog">
+  <form method="dialog"><button class="zu" aria-label="Schließen">✕</button></form>
+  <h2>Neuen Lauf starten</h2>
+  <p>Seker läuft <b>täglich automatisch um 02:17 UTC</b> und bearbeitet die nächsten Kacheln der Warteschlange. Zusätzlich lässt sich jederzeit ein Lauf von Hand anstoßen. Er dauert etwa 10–20 Minuten; danach erscheinen die Ergebnisse hier von selbst.</p>
+  <div id="lauf-status" class="small muted">Status wird geladen …</div>
+
+  <h3>Weg 1 – auf GitHub (ohne Einrichtung)</h3>
+  <p class="small">Als Besitzer des Repositorys angemeldet: Seite öffnen, rechts <b>„Run workflow“</b> wählen, Anzahl Kacheln und ggf. Region eintragen, bestätigen.</p>
+  <p><a id="lauf-github" class="knopf" target="_blank" rel="noopener" href="#">GitHub Actions öffnen ↗</a></p>
+
+  <h3>Weg 2 – direkt von hier</h3>
+  <p class="small">Benötigt einmalig ein persönliches GitHub-Zugriffstoken (<i>Fine-grained token</i>, nur dieses Repository, Berechtigung <b>Actions: Read and write</b>). Das Token bleibt ausschließlich in diesem Browser und wird nur an api.github.com gesendet.</p>
+  <label>Region <select id="lauf-region"><option value="">Warteschlange über alle Regionen</option></select></label>
+  <label>Anzahl Kacheln <input id="lauf-kacheln" type="number" min="1" max="60" value="20"></label>
+  <label>GitHub-Token <input id="lauf-token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+  <label class="chk"><input id="lauf-merken" type="checkbox"> Token in diesem Browser merken</label>
+  <p><button id="lauf-start" class="knopf" type="button">▶ Lauf jetzt starten</button> <a id="lauf-token-link" class="small" target="_blank" rel="noopener" href="https://github.com/settings/personal-access-tokens/new">Token erstellen ↗</a></p>
+  <div id="lauf-meldung" class="small" role="status"></div>
+</dialog>
 
 <noscript>JavaScript ist erforderlich.</noscript>
 <script src="vendor/leaflet/leaflet.js"></script>

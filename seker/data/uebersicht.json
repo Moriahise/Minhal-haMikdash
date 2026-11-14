@@ -1,8 +1,8 @@
 {
- "stand": "2026-11-14T11:05:40+00:00",
+ "stand": "2026-11-14T11:56:26+00:00",
  "methoden_version": "1.0.0",
  "software_version": "1.0.0",
- "kacheln_gesamt": 297,
+ "kacheln_gesamt": 777,
  "kacheln_ok": 36,
  "kacheln_fehler": 0,
  "flaeche_km2": 611.0,
@@ -26,6 +26,7 @@
  },
  "regionen": {
   "schefela": {
+   "id": "schefela",
    "name": "Schefela (Ela-Tal, Lachisch)",
    "bbox": [
     34.8,
@@ -39,6 +40,7 @@
    "validierung": null
   },
   "jerusalem": {
+   "id": "jerusalem",
    "name": "Jerusalem und Umland",
    "bbox": [
     35.1,
@@ -52,6 +54,7 @@
    "validierung": null
   },
   "benjamin": {
+   "id": "benjamin",
    "name": "Benjamin-Plateau",
    "bbox": [
     35.15,
@@ -76,6 +79,7 @@
    }
   },
   "juda": {
+   "id": "juda",
    "name": "Judäisches Bergland (Bethlehem–Hebron)",
    "bbox": [
     35.0,
@@ -89,6 +93,7 @@
    "validierung": null
   },
   "beerscheba": {
+   "id": "beerscheba",
    "name": "Beerscheba–Arad-Becken",
    "bbox": [
     34.75,
@@ -102,6 +107,7 @@
    "validierung": null
   },
   "wueste": {
+   "id": "wueste",
    "name": "Judäische Wüste",
    "bbox": [
     35.25,
@@ -115,6 +121,7 @@
    "validierung": null
   },
   "negev": {
+   "id": "negev",
    "name": "Negev-Hochland",
    "bbox": [
     34.6,
@@ -128,6 +135,7 @@
    "validierung": null
   },
   "kueste": {
+   "id": "kueste",
    "name": "Südliche Küstenebene (Philistäa)",
    "bbox": [
     34.55,
@@ -141,6 +149,7 @@
    "validierung": null
   },
   "samaria": {
+   "id": "samaria",
    "name": "Samarisches Bergland",
    "bbox": [
     35.1,
@@ -154,6 +163,7 @@
    "validierung": null
   },
   "jesreel": {
+   "id": "jesreel",
    "name": "Jesreel-Ebene",
    "bbox": [
     35.05,
@@ -167,6 +177,7 @@
    "validierung": null
   },
   "galilaea": {
+   "id": "galilaea",
    "name": "Untergaliläa",
    "bbox": [
     35.2,
@@ -174,12 +185,13 @@
     35.55,
     32.9
    ],
-   "kacheln_gesamt": 28,
+   "kacheln_gesamt": 24,
    "kacheln_ok": 3,
    "kandidaten": 36,
    "validierung": null
   },
   "hula": {
+   "id": "hula",
    "name": "Hula-Tal (Hazor, Dan)",
    "bbox": [
     35.5,
@@ -190,6 +202,160 @@
    "kacheln_gesamt": 20,
    "kacheln_ok": 3,
    "kandidaten": 36,
+   "validierung": null
+  },
+  "kueste_mitte": {
+   "id": "kueste_mitte",
+   "name": "Mittlere Küstenebene (Jaffa, Javne-Jam)",
+   "bbox": [
+    34.6,
+    31.8,
+    34.85,
+    32.15
+   ],
+   "kacheln_gesamt": 35,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "scharon": {
+   "id": "scharon",
+   "name": "Scharon-Ebene (Dor, Caesarea)",
+   "bbox": [
+    34.75,
+    32.15,
+    35.0,
+    32.65
+   ],
+   "kacheln_gesamt": 50,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "karmel": {
+   "id": "karmel",
+   "name": "Karmelküste (Atlit, Schiqmona)",
+   "bbox": [
+    34.9,
+    32.65,
+    35.05,
+    32.85
+   ],
+   "kacheln_gesamt": 12,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "akko": {
+   "id": "akko",
+   "name": "Ebene von Akko (Akko, Achsib)",
+   "bbox": [
+    35.05,
+    32.85,
+    35.2,
+    33.1
+   ],
+   "kacheln_gesamt": 15,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "kinneret": {
+   "id": "kinneret",
+   "name": "See Kinneret – Uferzone",
+   "bbox": [
+    35.5,
+    32.7,
+    35.7,
+    32.95
+   ],
+   "kacheln_gesamt": 20,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "jordantal": {
+   "id": "jordantal",
+   "name": "Jordantal (Jericho, Deir Alla, Pella)",
+   "bbox": [
+    35.45,
+    31.8,
+    35.65,
+    32.5
+   ],
+   "kacheln_gesamt": 56,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "totes_meer": {
+   "id": "totes_meer",
+   "name": "Totes Meer – Ostufer und Lisan",
+   "bbox": [
+    35.45,
+    31.05,
+    35.6,
+    31.75
+   ],
+   "kacheln_gesamt": 42,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "gilead": {
+   "id": "gilead",
+   "name": "Gilead (Gerasa, Adschlun)",
+   "bbox": [
+    35.65,
+    32.2,
+    36.0,
+    32.6
+   ],
+   "kacheln_gesamt": 56,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "ammon": {
+   "id": "ammon",
+   "name": "Ammon (Rabbat-Ammon, Heschbon)",
+   "bbox": [
+    35.7,
+    31.75,
+    36.0,
+    32.1
+   ],
+   "kacheln_gesamt": 42,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "moab": {
+   "id": "moab",
+   "name": "Moab (Madaba, Dibon, Kerak)",
+   "bbox": [
+    35.6,
+    31.1,
+    35.9,
+    31.75
+   ],
+   "kacheln_gesamt": 78,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
+   "validierung": null
+  },
+  "edom": {
+   "id": "edom",
+   "name": "Edom (Bozra, Feinan, Petra)",
+   "bbox": [
+    35.4,
+    30.3,
+    35.7,
+    30.95
+   ],
+   "kacheln_gesamt": 78,
+   "kacheln_ok": 0,
+   "kandidaten": 0,
    "validierung": null
   }
  },

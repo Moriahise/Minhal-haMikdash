@@ -1,4 +1,5 @@
-"""OpenStreetMap aus dem wöchentlichen Geofabrik-Extrakt (ODbL).
+"""OpenStreetMap aus den wöchentlichen Geofabrik-Extrakten für Israel/Palästina
+und Jordanien (ODbL).
 
 Liefert (a) die Maske moderner Infrastruktur und (b) in OSM kartierte
 Fundstellen. Der Extrakt wird je Lauf einmal geladen und indiziert; fällt
@@ -15,7 +16,8 @@ import requests
 
 from . import config as C
 
-URL = "https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf"
+URL = "https://download.geofabrik.de/asia/{name}-latest.osm.pbf"
+EXTRAKTE = ("israel-and-palestine", "jordan")
 _SCHLUESSEL = ("highway", "railway", "aeroway", "power", "man_made", "barrier", "landuse",
                "historic")
 _BREIT = {"motorway", "trunk", "primary", "secondary", "motorway_link", "trunk_link"}
@@ -85,29 +87,40 @@ def pbf_indizieren(pbf: Path) -> dict:
             "boxen": np.array(boxen, np.float64).reshape(-1, 4), "orte": orte}
 
 
+def _extrakt(name: str, cache: Path, max_alter_tage: float) -> dict:
+    pbf, pkl = cache / f"{name}-latest.osm.pbf", cache / f"{name}-index.pkl"
+    if not pbf.exists() or time.time() - pbf.stat().st_mtime > max_alter_tage * 86400:
+        with requests.get(URL.format(name=name), stream=True, timeout=120,
+                          headers={"User-Agent": C.USER_AGENT}) as r:
+            r.raise_for_status()
+            tmp = pbf.with_suffix(".teil")
+            with open(tmp, "wb") as f:
+                for block in r.iter_content(1 << 20):
+                    f.write(block)
+            tmp.replace(pbf)
+        pkl.unlink(missing_ok=True)
+    if pkl.exists() and pkl.stat().st_mtime >= pbf.stat().st_mtime:
+        return pickle.loads(pkl.read_bytes())
+    idx = pbf_indizieren(pbf)
+    idx["stand"] = time.strftime("%Y-%m-%d", time.gmtime(pbf.stat().st_mtime))
+    pkl.write_bytes(pickle.dumps(idx, protocol=4))
+    return idx
+
+
 def index_laden(cache: Path, log=print, max_alter_tage: float = 6) -> dict | None:
-    """Lädt den Extrakt (falls nötig) und gibt den Index zurück – oder None."""
-    pbf, pkl = cache / "israel-and-palestine-latest.osm.pbf", cache / "osm-index.pkl"
+    """Lädt alle Extrakte (falls nötig) und gibt den vereinigten Index zurück.
+    Fehlt auch nur einer, gibt es None: eine halbe Maske wäre irreführend."""
     try:
         cache.mkdir(parents=True, exist_ok=True)
-        if not pbf.exists() or time.time() - pbf.stat().st_mtime > max_alter_tage * 86400:
-            with requests.get(URL, stream=True, timeout=120,
-                              headers={"User-Agent": C.USER_AGENT}) as r:
-                r.raise_for_status()
-                tmp = pbf.with_suffix(".teil")
-                with open(tmp, "wb") as f:
-                    for block in r.iter_content(1 << 20):
-                        f.write(block)
-                tmp.replace(pbf)
-            pkl.unlink(missing_ok=True)
-        if pkl.exists() and pkl.stat().st_mtime >= pbf.stat().st_mtime:
-            return pickle.loads(pkl.read_bytes())
         t = time.time()
-        idx = pbf_indizieren(pbf)
-        idx["stand"] = time.strftime("%Y-%m-%d", time.gmtime(pbf.stat().st_mtime))
-        pkl.write_bytes(pickle.dumps(idx, protocol=4))
-        log(f"OSM-Extrakt indiziert: {len(idx['wege'])} Wege, {len(idx['orte'])} Fundstellen "
-            f"({time.time() - t:.0f} s)")
+        teile = [_extrakt(n, cache, max_alter_tage) for n in EXTRAKTE]
+        idx = {"wege": [w for i in teile for w in i["wege"]],
+               "arten": np.concatenate([i["arten"] for i in teile]),
+               "boxen": np.concatenate([i["boxen"] for i in teile]),
+               "orte": [o for i in teile for o in i["orte"]],
+               "stand": min(i["stand"] for i in teile)}
+        log(f"OSM bereit: {len(idx['wege'])} Wege, {len(idx['orte'])} Fundstellen aus "
+            f"{len(teile)} Extrakten ({time.time() - t:.0f} s)")
         return idx
     except Exception as e:  # noqa: BLE001 – OSM ist optional
         log(f"[WARNUNG] OSM-Extrakt nicht verfügbar ({e}); Analyse ohne OSM-Maske.")

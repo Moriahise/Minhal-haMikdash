@@ -10,9 +10,9 @@ on:
     inputs:
       kacheln:
         description: "Anzahl Kacheln in diesem Lauf"
-        default: "10"
+        default: "20"
       region:
-        description: "Nur diese Region (leer = Warteschlange über alle)"
+        description: "Nur diese Region, z. B. moab, ammon, gilead, edom, kinneret, totes_meer, scharon (leer = alle)"
         default: ""
   push:
     branches: [main]
@@ -64,7 +64,7 @@ jobs:
           key: osm-${{ steps.woche.outputs.kw }}
       - name: Analyse
         env:
-          KACHELN: ${{ inputs.kacheln || '10' }}
+          KACHELN: ${{ inputs.kacheln || '20' }}
           REGION: ${{ inputs.region }}
         run: |
           python -m prospektion lauf --kacheln "$KACHELN" ${REGION:+--region "$REGION"}

@@ -67,9 +67,11 @@ tests/                Tests mit synthetischen Szenen
 .github/workflows/seker.yml   täglicher automatischer Lauf
 ```
 
-Lokal: `pip install -r requirements.txt`, dann `python -m prospektion lauf --kacheln 8`. Der Tageslauf startet um **02:17 UTC** (03:17 Uhr im Winter, 04:17 Uhr im Sommer in Österreich), verarbeitet standardmäßig **10 Kacheln** und veröffentlicht die Ergebnisse zusammen mit der bestehenden App ausdrücklich über GitHub Pages. Die ursprünglichen App-Dateien werden dabei unverändert übernommen.
+Lokal: `pip install -r requirements.txt`, dann `python -m prospektion lauf --kacheln 8`. Der Tageslauf startet um **02:17 UTC** (03:17 Uhr im Winter, 04:17 Uhr im Sommer in Österreich), verarbeitet standardmäßig **20 Kacheln** und veröffentlicht die Ergebnisse zusammen mit der bestehenden App ausdrücklich über GitHub Pages. Die ursprünglichen App-Dateien werden dabei unverändert übernommen.
 
-Manuell anstoßen: *Actions → Seker – Prospektion → Run workflow*.
+Manuell anstoßen: in der Web-Ansicht **„▶ Neuen Lauf starten“** (oben rechts) oder auf GitHub *Actions → Seker – Prospektion → Run workflow*.
+
+Untersuchungsraum: 23 Regionen mit 777 Kacheln – Israel westlich des Jordan, die Küstenebenen von Philistäa bis Akko, die Ufer von Kinneret und Totem Meer, das Jordantal sowie das Ostjordanland der Eisenzeit (Gilead, Ammon, Moab, Edom).
 
 ---
 

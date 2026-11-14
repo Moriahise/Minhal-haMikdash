@@ -18,7 +18,8 @@ PERIODEN = {"ET": ET, "ZT": ZT}
 
 _KW = {
     "ET": ("iron age", "eisenzeit", "first temple", "erster tempel", "kingdom of judah",
-           "kingdom of israel", "israelite", "philisti", "judahite", "assyria", "babylonian"),
+           "kingdom of israel", "israelite", "philisti", "judahite", "assyria", "babylonian",
+           "ammon", "moab", "edom", "phoenicia", "aram"),
     "ZT": ("second temple", "zweiter tempel", "helleni", "hasmon", "herod", "persian",
            "achaemenid", "early roman", "roman", "römisch", "nabat", "seleucid", "ptolem",
            "judea (roman", "bar kokhba"),

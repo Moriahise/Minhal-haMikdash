@@ -18,6 +18,18 @@ REGIONEN = [
     {"id": "jesreel", "name": "Jesreel-Ebene", "bbox": (35.05, 32.50, 35.45, 32.65)},
     {"id": "galilaea", "name": "Untergaliläa", "bbox": (35.20, 32.70, 35.55, 32.90)},
     {"id": "hula", "name": "Hula-Tal (Hazor, Dan)", "bbox": (35.50, 33.00, 35.70, 33.25)},
+    # --- Erweiterung: Küstenebenen, Seeufer und Ostjordanland ------------------
+    {"id": "kueste_mitte", "name": "Mittlere Küstenebene (Jaffa, Javne-Jam)", "bbox": (34.60, 31.80, 34.85, 32.15)},
+    {"id": "scharon", "name": "Scharon-Ebene (Dor, Caesarea)", "bbox": (34.75, 32.15, 35.00, 32.65)},
+    {"id": "karmel", "name": "Karmelküste (Atlit, Schiqmona)", "bbox": (34.90, 32.65, 35.05, 32.85)},
+    {"id": "akko", "name": "Ebene von Akko (Akko, Achsib)", "bbox": (35.05, 32.85, 35.20, 33.10)},
+    {"id": "kinneret", "name": "See Kinneret – Uferzone", "bbox": (35.50, 32.70, 35.70, 32.95)},
+    {"id": "jordantal", "name": "Jordantal (Jericho, Deir Alla, Pella)", "bbox": (35.45, 31.80, 35.65, 32.50)},
+    {"id": "totes_meer", "name": "Totes Meer – Ostufer und Lisan", "bbox": (35.45, 31.05, 35.60, 31.75)},
+    {"id": "gilead", "name": "Gilead (Gerasa, Adschlun)", "bbox": (35.65, 32.20, 36.00, 32.60)},
+    {"id": "ammon", "name": "Ammon (Rabbat-Ammon, Heschbon)", "bbox": (35.70, 31.75, 36.00, 32.10)},
+    {"id": "moab", "name": "Moab (Madaba, Dibon, Kerak)", "bbox": (35.60, 31.10, 35.90, 31.75)},
+    {"id": "edom", "name": "Edom (Bozra, Feinan, Petra)", "bbox": (35.40, 30.30, 35.70, 30.95)},
 ]
 
 KACHEL_GRAD = 0.05          # Kachelgröße (~4,7 x 5,5 km)
