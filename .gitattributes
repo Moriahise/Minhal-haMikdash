@@ -2,3 +2,5 @@
 *.bat text eol=crlf
 *.txt text eol=crlf
 *.png binary
+requirements.txt text eol=lf
+seker/vendor/** -text
