@@ -995,7 +995,7 @@
    31.7
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1043,25 +1043,33 @@
     }
    ]
   },
-  "schwelle_rx": 5.46,
-  "anteil_auswertbar": 0.817,
-  "n_objekte_roh": 69,
+  "schwelle_rx": 4.9,
+  "anteil_auswertbar": 0.74,
+  "n_objekte_roh": 56,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 1,
+  "n_fundorte": 3,
   "n_kontrollen": 300,
   "perzentile": [
    {
     "name": "חרבת עטרבה",
-    "p": 0.547
+    "p": 0.397
+   },
+   {
+    "name": "חורבת זכרי",
+    "p": 0.203
+   },
+   {
+    "name": "חורבת גלחת",
+    "p": 0.557
    }
   ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3515_3175": {
   "id": "T3515_3175",
@@ -1074,7 +1082,7 @@
    31.8
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1122,20 +1130,25 @@
     }
    ]
   },
-  "schwelle_rx": 12.61,
-  "anteil_auswertbar": 0.174,
-  "n_objekte_roh": 14,
-  "n_kandidaten": 12,
-  "osm_maske": false,
+  "schwelle_rx": 11.27,
+  "anteil_auswertbar": 0.102,
+  "n_objekte_roh": 9,
+  "n_kandidaten": 7,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 3,
+  "n_fundorte": 15,
   "n_kontrollen": 300,
-  "perzentile": [],
-  "neu": 12,
+  "perzentile": [
+   {
+    "name": "Al-Jura",
+    "p": 0.32
+   }
+  ],
+  "neu": 7,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3525_3190": {
   "id": "T3525_3190",
@@ -1148,7 +1161,7 @@
    31.95
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1196,29 +1209,33 @@
     }
    ]
   },
-  "schwelle_rx": 19.45,
-  "anteil_auswertbar": 0.82,
-  "n_objekte_roh": 48,
+  "schwelle_rx": 15.22,
+  "anteil_auswertbar": 0.724,
+  "n_objekte_roh": 60,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 2,
+  "n_fundorte": 5,
   "n_kontrollen": 300,
   "perzentile": [
    {
     "name": "Et-Tell",
-    "p": 0.367
+    "p": 0.45
    },
    {
     "name": "Et-Tell",
-    "p": 0.81
+    "p": 0.86
+   },
+   {
+    "name": "Khirbat Tantura",
+    "p": 0.68
    }
   ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3510_3155": {
   "id": "T3510_3155",
@@ -1231,7 +1248,7 @@
    31.6
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1279,20 +1296,29 @@
     }
    ]
   },
-  "schwelle_rx": 8.39,
-  "anteil_auswertbar": 0.416,
-  "n_objekte_roh": 60,
+  "schwelle_rx": 8.72,
+  "anteil_auswertbar": 0.349,
+  "n_objekte_roh": 51,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 3,
+  "n_fundorte": 6,
   "n_kontrollen": 300,
-  "perzentile": [],
+  "perzentile": [
+   {
+    "name": "חורבת בית ח׳יירן",
+    "p": 0.117
+   },
+   {
+    "name": "Khirbet Ras at-Tawil",
+    "p": 0.877
+   }
+  ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3500_3125": {
   "id": "T3500_3125",
@@ -1305,7 +1331,7 @@
    31.3
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1353,11 +1379,11 @@
     }
    ]
   },
-  "schwelle_rx": 17.06,
-  "anteil_auswertbar": 0.971,
-  "n_objekte_roh": 137,
+  "schwelle_rx": 17.34,
+  "anteil_auswertbar": 0.34,
+  "n_objekte_roh": 52,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
   "n_fundorte": 0,
   "n_kontrollen": 300,
@@ -1365,8 +1391,8 @@
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3530_3150": {
   "id": "T3530_3150",
@@ -1379,7 +1405,7 @@
    31.55
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1427,20 +1453,20 @@
     }
    ]
   },
-  "schwelle_rx": 7.24,
-  "anteil_auswertbar": 0.999,
-  "n_objekte_roh": 101,
+  "schwelle_rx": 9.19,
+  "anteil_auswertbar": 0.138,
+  "n_objekte_roh": 20,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 0,
+  "n_fundorte": 1,
   "n_kontrollen": 300,
   "perzentile": [],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3475_3090": {
   "id": "T3475_3090",
@@ -1453,7 +1479,7 @@
    30.95
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1501,25 +1527,25 @@
     }
    ]
   },
-  "schwelle_rx": 21.23,
-  "anteil_auswertbar": 0.983,
-  "n_objekte_roh": 121,
+  "schwelle_rx": 47.71,
+  "anteil_auswertbar": 0.119,
+  "n_objekte_roh": 15,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 1,
+  "n_fundorte": 2,
   "n_kontrollen": 300,
   "perzentile": [
    {
-    "name": "חורבת רתמה",
-    "p": 0.207
+    "name": "Horbat Ritma",
+    "p": 0.063
    }
   ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3465_3165": {
   "id": "T3465_3165",
@@ -1532,7 +1558,7 @@
    31.7
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1580,11 +1606,11 @@
     }
    ]
   },
-  "schwelle_rx": 7.07,
-  "anteil_auswertbar": 0.587,
-  "n_objekte_roh": 51,
+  "schwelle_rx": 7.55,
+  "anteil_auswertbar": 0.508,
+  "n_objekte_roh": 49,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
   "n_fundorte": 0,
   "n_kontrollen": 300,
@@ -1592,8 +1618,8 @@
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3525_3220": {
   "id": "T3525_3220",
@@ -1606,7 +1632,7 @@
    32.25
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1654,29 +1680,37 @@
     }
    ]
   },
-  "schwelle_rx": 10.32,
-  "anteil_auswertbar": 0.555,
-  "n_objekte_roh": 59,
+  "schwelle_rx": 10.24,
+  "anteil_auswertbar": 0.459,
+  "n_objekte_roh": 40,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 6,
+  "n_fundorte": 13,
   "n_kontrollen": 300,
   "perzentile": [
    {
     "name": "Altar on Mount Ebal",
-    "p": 0.123
+    "p": 0.183
    },
    {
     "name": "Bir el-Hamam",
-    "p": 0.587
+    "p": 0.65
+   },
+   {
+    "name": "Kirche der Jungfrau Maria",
+    "p": 0.47
+   },
+   {
+    "name": "קבר השייח' ר'אנם",
+    "p": 0.47
    }
   ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3525_3255": {
   "id": "T3525_3255",
@@ -1689,7 +1723,7 @@
    32.6
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1737,11 +1771,11 @@
     }
    ]
   },
-  "schwelle_rx": 30.96,
-  "anteil_auswertbar": 0.823,
-  "n_objekte_roh": 74,
+  "schwelle_rx": 26.71,
+  "anteil_auswertbar": 0.716,
+  "n_objekte_roh": 50,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
   "n_fundorte": 0,
   "n_kontrollen": 300,
@@ -1749,8 +1783,8 @@
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3535_3280": {
   "id": "T3535_3280",
@@ -1763,7 +1797,7 @@
    32.85
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1811,20 +1845,29 @@
     }
    ]
   },
-  "schwelle_rx": 9.82,
-  "anteil_auswertbar": 0.6,
-  "n_objekte_roh": 65,
+  "schwelle_rx": 10.58,
+  "anteil_auswertbar": 0.538,
+  "n_objekte_roh": 59,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 0,
+  "n_fundorte": 2,
   "n_kontrollen": 300,
-  "perzentile": [],
+  "perzentile": [
+   {
+    "name": "מקווה \\ בור מים",
+    "p": 0.183
+   },
+   {
+    "name": "חורבת בית נטופה",
+    "p": 0.333
+   }
+  ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3555_3310": {
   "id": "T3555_3310",
@@ -1837,7 +1880,7 @@
    33.15
   ],
   "status": "ok",
-  "datum": "2026-11-14",
+  "datum": "2026-11-15",
   "epsg": 32636,
   "szenen": {
    "feucht": [
@@ -1885,25 +1928,29 @@
     }
    ]
   },
-  "schwelle_rx": 10.25,
-  "anteil_auswertbar": 0.556,
-  "n_objekte_roh": 47,
+  "schwelle_rx": 8.37,
+  "anteil_auswertbar": 0.515,
+  "n_objekte_roh": 35,
   "n_kandidaten": 12,
-  "osm_maske": false,
+  "osm_maske": true,
   "wikidata": true,
-  "n_fundorte": 1,
+  "n_fundorte": 3,
   "n_kontrollen": 300,
   "perzentile": [
    {
     "name": "Tel Teo",
-    "p": 0.777
+    "p": 0.513
+   },
+   {
+    "name": "Jahula",
+    "p": 0.16
    }
   ],
   "neu": 12,
   "wiedererkannt": 0,
   "entfallen": 0,
-  "laeufe": 1,
-  "ohne_osm": 1
+  "laeufe": 2,
+  "ohne_osm": 0
  },
  "T3490_3170": {
   "id": "T3490_3170",
@@ -3449,6 +3496,617 @@
    }
   ],
   "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3585_3190": {
+  "id": "T3585_3190",
+  "region": "ammon",
+  "region_name": "Ammon (Rabbat-Ammon, Heschbon)",
+  "bbox": [
+   35.85,
+   31.9,
+   35.9,
+   31.95
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32637,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_37SBR_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_37SBR_20250404_0_L2A",
+     "datum": "2025-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_37SBR_20240330_0_L2A",
+     "datum": "2024-03-30",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_37SBR_20230311_0_L2A",
+     "datum": "2023-03-11",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_37SBR_20260822_0_L2A",
+     "datum": "2026-08-22",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_37SBR_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0
+    },
+    {
+     "id": "S2A_37SBR_20240822_0_L2A",
+     "datum": "2024-08-22",
+     "wolken": 0
+    },
+    {
+     "id": "S2B_37SBR_20230912_1_L2A",
+     "datum": "2023-09-12",
+     "wolken": 0
+    }
+   ]
+  },
+  "schwelle_rx": 11.0,
+  "anteil_auswertbar": 0.153,
+  "n_objekte_roh": 18,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3570_3140": {
+  "id": "T3570_3140",
+  "region": "moab",
+  "region_name": "Moab (Madaba, Dibon, Kerak)",
+  "bbox": [
+   35.7,
+   31.4,
+   35.75,
+   31.45
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36RYV_20260218_0_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYV_20250315_1_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20240310_0_L2A",
+     "datum": "2024-03-10",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36RYV_20230311_0_L2A",
+     "datum": "2023-03-11",
+     "wolken": 0.3
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36RYV_20260901_0_L2A",
+     "datum": "2026-09-01",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36RYV_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20240718_0_L2A",
+     "datum": "2024-07-18",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.1
+    }
+   ]
+  },
+  "schwelle_rx": 21.78,
+  "anteil_auswertbar": 0.921,
+  "n_objekte_roh": 121,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 1,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Frewan",
+    "p": 0.933
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3550_3060": {
+  "id": "T3550_3060",
+  "region": "edom",
+  "region_name": "Edom (Bozra, Feinan, Petra)",
+  "bbox": [
+   35.5,
+   30.6,
+   35.55,
+   30.65
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2C_36RYU_20260223_0_L2A",
+     "datum": "2026-02-23",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20250404_0_L2A",
+     "datum": "2025-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20240310_0_L2A",
+     "datum": "2024-03-10",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20230405_0_L2A",
+     "datum": "2023-04-05",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36RYU_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0
+    },
+    {
+     "id": "S2B_36RYU_20250822_0_L2A",
+     "datum": "2025-08-22",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20240718_0_L2A",
+     "datum": "2024-07-18",
+     "wolken": 0
+    },
+    {
+     "id": "S2B_36RYU_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0
+    }
+   ]
+  },
+  "schwelle_rx": 11.32,
+  "anteil_auswertbar": 0.968,
+  "n_objekte_roh": 139,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Wadi Faynan 16",
+    "p": 0.773
+   },
+   {
+    "name": "(ohne Namen)",
+    "p": 0.98
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3475_3195": {
+  "id": "T3475_3195",
+  "region": "kueste_mitte",
+  "region_name": "Mittlere Küstenebene (Jaffa, Javne-Jam)",
+  "bbox": [
+   34.75,
+   31.95,
+   34.8,
+   32.0
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXA_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36SXA_20260802_0_L2A",
+     "datum": "2026-08-02",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250718_0_L2A",
+     "datum": "2025-07-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2A_36SXA_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 7.04,
+  "anteil_auswertbar": 0.149,
+  "n_objekte_roh": 9,
+  "n_kandidaten": 4,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 4,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3485_3240": {
+  "id": "T3485_3240",
+  "region": "scharon",
+  "region_name": "Scharon-Ebene (Dor, Caesarea)",
+  "bbox": [
+   34.85,
+   32.4,
+   34.9,
+   32.45
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SXA_20260317_0_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36SXA_20260802_0_L2A",
+     "datum": "2026-08-02",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250718_0_L2A",
+     "datum": "2025-07-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2A_36SXA_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 9.63,
+  "anteil_auswertbar": 0.132,
+  "n_objekte_roh": 7,
+  "n_kandidaten": 7,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 1,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 7,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3495_3275": {
+  "id": "T3495_3275",
+  "region": "karmel",
+  "region_name": "Karmelküste (Atlit, Schiqmona)",
+  "bbox": [
+   34.95,
+   32.75,
+   35.0,
+   32.8
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXB_20260310_0_L2A",
+     "datum": "2026-03-10",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2B_36SXB_20240330_0_L2A",
+     "datum": "2024-03-30",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXB_20230219_0_L2A",
+     "datum": "2023-02-19",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SXB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20250921_1_L2A",
+     "datum": "2025-09-21",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2A_36SXB_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 18.42,
+  "anteil_auswertbar": 0.06,
+  "n_objekte_roh": 3,
+  "n_kandidaten": 2,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 256,
+  "perzentile": [],
+  "neu": 2,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3515_3295": {
+  "id": "T3515_3295",
+  "region": "akko",
+  "region_name": "Ebene von Akko (Akko, Achsib)",
+  "bbox": [
+   35.15,
+   32.95,
+   35.2,
+   33.0
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXB_20260310_0_L2A",
+     "datum": "2026-03-10",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SYB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20250928_1_L2A",
+     "datum": "2025-09-28",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 9.61,
+  "anteil_auswertbar": 0.29,
+  "n_objekte_roh": 30,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 3,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Kuweikat",
+    "p": 0.17
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3555_3280": {
+  "id": "T3555_3280",
+  "region": "kinneret",
+  "region_name": "See Kinneret – Uferzone",
+  "bbox": [
+   35.55,
+   32.8,
+   35.6,
+   32.85
+  ],
+  "status": "ok",
+  "datum": "2026-11-15",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYB_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36SYB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SYB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20250928_1_L2A",
+     "datum": "2025-09-28",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": null,
+  "anteil_auswertbar": 0.0,
+  "n_objekte_roh": 0,
+  "n_kandidaten": 0,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 0,
+  "n_kontrollen": 0,
+  "perzentile": [],
+  "neu": 0,
   "wiedererkannt": 0,
   "entfallen": 0,
   "laeufe": 1,
