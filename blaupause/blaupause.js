@@ -245,9 +245,9 @@
       return rahmen(p, 0, inh, { sicht: si, legende: [["flaeche", "#e9a093", "Geplantes Stadtgebiet (Endausbau)"], ["linie", "#1f2430", "Zufahrt (Trassenkorridor)"],
         ["linie", "#7a5c3a", "Höhenlinien 10 m, Zähllinien 50 m"], ["strich", "#2b7fc2", "Wadi (Einzugsgebiet ≥ 0,3 km²)"], ["flaeche", "#b89bd6", "Bodendenkmal: Kernzone"],
         ["strich", "#6b3fa0", "Bodendenkmal: Pufferzone"], ["punkt", "#1d6fb8", "W  Trinkwasser-Hochbehälter"], ["punkt", "#6d4c2f", "K  Kläranlage"]],
-      notiz: [p.bezug, "Zentrum " + zahl(p.kennzahlen.hoehe_zentrum) + " m ü. M.; Relief im Stadtgebiet " + zahl(p.kennzahlen.relief_stadt_m) + " m; mittlere Hangneigung " + zahl(p.kennzahlen.hang_mittel_pct, 1) + " %.",
+      notiz: [p.bezug].concat(p.hinweis ? [p.hinweis] : []).concat(["Zentrum " + zahl(p.kennzahlen.hoehe_zentrum) + " m ü. M.; Relief im Stadtgebiet " + zahl(p.kennzahlen.relief_stadt_m) + " m; mittlere Hangneigung " + zahl(p.kennzahlen.hang_mittel_pct, 1) + " %.",
         "Mittlerer Jahresniederschlag (Richtwert): " + p.regen_mm + " mm.",
-        p.standortsuche ? "Standort berechnet: " + zahl(p.standortsuche.abstand_bebauung_km, 1) + " km zur nächsten Bebauung; Schutzgebiete " + (p.standortsuche.schutzgebiete_geprueft ? "über OSM geprüft." : "NICHT geprüft (OSM fehlte).") : "Die antike Stätte bleibt unbebaut und wird als archäologischer Park Teil des Freiraumsystems."] });
+        p.standortsuche ? "Standort berechnet: " + zahl(p.standortsuche.abstand_bebauung_km, 1) + " km zur nächsten Bebauung; Schutzgebiete " + (p.standortsuche.schutzgebiete_geprueft ? "über OSM geprüft." : "NICHT geprüft (OSM fehlte).") : "Die antike Stätte bleibt unbebaut und wird als archäologischer Park Teil des Freiraumsystems."]) });
     },
     function analyse(p) {
       const si = vollSicht(p), A = abbildung(si), g = p.georef.groesse_m;
@@ -467,6 +467,7 @@
       + z("Wasser-Eigenanteil", zahl(k.wasser_eigenanteil * 100) + " %") + z("Strom-Eigenanteil (PV)", zahl(k.strom_eigenanteil * 100) + " %") + z("Arbeitsplätze je Erwerbsperson", zahl(k.jobs_je_erwerbsperson, 2))
       + z("Ackerland-Verbrauch", zahl(k.ackerland_verbrauch_ha, 1) + " ha")
       + (k.zielerreichung < 0.9 ? "<p class='small warn'>Das Gelände trägt nur " + zahl(k.zielerreichung * 100) + " % des Bevölkerungsziels.</p>" : "")
+      + (p.hinweis ? "<p class='small warn'>" + esc(p.hinweis) + "</p>" : "")
       + (p.osm ? "" : "<p class='small warn'>Ohne OpenStreetMap gerechnet: Schutzgebiete und Sperrflächen fehlen in diesem Stand.</p>");
   }
   function stadtWaehlen(id) {
@@ -493,7 +494,7 @@
         + "<span class='marke " + (u.art === "davidisch" ? "dav'>davidischer Ort" : "neu'>Neugründung") + "</span> <span class=marke>" + (an ? "gegründet Jahr " + st.gruendung : "geplant") + "</span>"
         + "<div class=balken><b style='width:" + Math.round((b.ausbau || 0) * 100) + "%'></b></div>"
         + "<div class=werte><div><b>" + zahl(st.ew || 0) + "</b>Einwohner</div><div><b>" + zahl(u.plan_ew) + "</b>Plan</div><div><b>" + Math.round((b.ausbau || 0) * 100) + " %</b>Ausbau</div><div><b>" + (b.lebensqualitaet || "–") + "</b>Lebensqual.</div></div>"
-        + (u.antik ? "<div class='small muted'>neben " + esc(u.antik) + "</div>" : "") + "</div>";
+        + (u.antik ? "<div class='small muted'>neben " + esc(u.antik) + (u.hinweis ? " · Judäa und Samaria" : "") + "</div>" : "") + "</div>";
     });
     $("#staedte").innerHTML = h;
     karte = L.map("map").setView([31.45, 35.0], 9);
@@ -526,7 +527,8 @@
       + "<h3>Was sie nicht sind</h3><ul><li><b>Kein Rechtsplan.</b> Eigentum, Flächennutzungs- und Landesplanung (TAMA), Schutzgebiete, Militärzonen, Leitungsrechte und Umweltprüfung sind nicht geprüft. OpenStreetMap ersetzt keine amtlichen Kataster.</li>"
       + "<li><b>Keine Ausführungsplanung.</b> Das Höhenmodell hat 30 m Raster; für Entwurf und Bau sind Vermessung, Baugrund- und hydrologische Gutachten nötig.</li>"
       + "<li><b>Bodendenkmale.</b> Antike Stätten bleiben mit Kern- und Pufferzone unbebaut. Bauen in ihrer Nähe erfordert in Israel eine Freigabe der Antikenbehörde (IAA) und in der Regel Vorerkundungen.</li>"
-      + "<li><b>Standortwahl.</b> Geplant wird nur innerhalb des israelischen Kernlands. Die Gleichsetzung einzelner Ruinen mit biblischen Orten (z. B. Scha'arajim, Ziklag) ist teils umstritten und im Plan vermerkt.</li>"
+      + "<li><b>Judäa und Samaria.</b> Fünf davidische Orte (Keila, Sif, Maon, Tekoa, Baal-Hazor) liegen im Westjordanland. Hebron fehlt bewusst: Der Tell liegt mitten in der bestehenden Stadt, freies Land für eine Neugründung gibt es dort nicht. Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentum und bestehende Nutzungen sind dort nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet. Die Pläne sind als solche gekennzeichnet.</li>"
+      + "<li><b>Zuordnungen.</b> Die Gleichsetzung einzelner Ruinen mit biblischen Orten (z. B. Scha'arajim, Ziklag) ist teils umstritten und im Plan vermerkt.</li>"
       + "<li><b>Simulation.</b> Die Runden sind ein einfaches Wachstumsmodell (ein Jahr je Runde) ohne Kosten, Politik und Markt. Sie zeigen die Bauabfolge, keine Prognose.</li></ul>"
       + "<h3>Entwurfsregeln</h3><ul><li>Stadtzentrum: viel gut bebaubares Land im 600-m-Umkreis, bevorzugt auf Kuppe oder Sporn; bei davidischen Orten in Sichtweite der Ruine, außerhalb ihrer Schutzzone.</li>"
       + "<li>Ringe: Isolinien aus Weg plus fünffach gewichteter Höhendifferenz – im Flachen Kreise, am Hang höhenlinienparallele Terrassen.</li>"

@@ -1,17 +1,22 @@
 {
  "jahr": 8,
- "stand": "2026-11-15T21:47:55+00:00",
+ "stand": "2026-11-15T22:39:50+00:00",
  "version": "1.0.0",
  "plan_version": "1.0.0",
  "folge": [
   "schaarajim",
   "neu_negev_nord",
   "adullam",
+  "keila",
   "gat",
   "neu_lachisch",
+  "sif",
   "ziklag",
+  "maon",
   "beerscheba",
+  "tekoa",
   "neu_arava",
+  "baal_hazor",
   "engedi"
  ],
  "annahmen": {
@@ -58,7 +63,8 @@
    "ziel_ew": 24000,
    "plan_ew": 24994,
    "osm": false,
-   "bezug": "1 Sam 17,52 – befestigte Stadt über dem Ela-Tal, um 1000 v. Chr. datiert; die Gleichsetzung mit Scha'arajim und die Zuweisung an Davids Königtum (Garfinkel) sind in der Forschung umstritten."
+   "bezug": "1 Sam 17,52 – befestigte Stadt über dem Ela-Tal, um 1000 v. Chr. datiert; die Gleichsetzung mit Scha'arajim und die Zuweisung an Davids Königtum (Garfinkel) sind in der Forschung umstritten.",
+   "hinweis": null
   },
   "neu_negev_nord": {
    "name": "Ir David ha-Negev (Arbeitstitel)",
@@ -72,7 +78,8 @@
    "ziel_ew": 30000,
    "plan_ew": 31766,
    "osm": false,
-   "bezug": "Neugründung im nördlichen Negev zwischen Beerscheba und Arad."
+   "bezug": "Neugründung im nördlichen Negev zwischen Beerscheba und Arad.",
+   "hinweis": null
   },
   "adullam": {
    "name": "Adullam",
@@ -86,7 +93,23 @@
    "ziel_ew": 16000,
    "plan_ew": 16754,
    "osm": false,
-   "bezug": "1 Sam 22,1 – Höhle Adullam, Zuflucht Davids; 2 Sam 23,13."
+   "bezug": "1 Sam 22,1 – Höhle Adullam, Zuflucht Davids; 2 Sam 23,13.",
+   "hinweis": null
+  },
+  "keila": {
+   "name": "Keila",
+   "he": "קְעִילָה",
+   "art": "davidisch",
+   "antik": "Khirbet Qila",
+   "lonlat": [
+    34.994434,
+    31.624975
+   ],
+   "ziel_ew": 15000,
+   "plan_ew": 15392,
+   "osm": false,
+   "bezug": "1 Sam 23,1–13 – David befreit Keila von den Philistern.",
+   "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
   "gat": {
    "name": "Gat",
@@ -100,7 +123,8 @@
    "ziel_ew": 20000,
    "plan_ew": 21082,
    "osm": false,
-   "bezug": "1 Sam 21,11; 27,2–4 – David bei Achisch, König von Gat."
+   "bezug": "1 Sam 21,11; 27,2–4 – David bei Achisch, König von Gat.",
+   "hinweis": null
   },
   "neu_lachisch": {
    "name": "Kirjat Lachisch (Arbeitstitel)",
@@ -114,7 +138,23 @@
    "ziel_ew": 28000,
    "plan_ew": 30836,
    "osm": false,
-   "bezug": "Neugründung im Lachisch-Hügelland der südlichen Schefela."
+   "bezug": "Neugründung im Lachisch-Hügelland der südlichen Schefela.",
+   "hinweis": null
+  },
+  "sif": {
+   "name": "Sif",
+   "he": "זִיף",
+   "art": "davidisch",
+   "antik": "Tel Zif",
+   "lonlat": [
+    35.132189,
+    31.485289
+   ],
+   "ziel_ew": 14000,
+   "plan_ew": 16701,
+   "osm": false,
+   "bezug": "1 Sam 23,14–24; 26,1–2 – David in der Wüste Sif.",
+   "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
   "ziklag": {
    "name": "Ziklag",
@@ -128,7 +168,23 @@
    "ziel_ew": 18000,
    "plan_ew": 18843,
    "osm": false,
-   "bezug": "1 Sam 27,6; 30 – von Achisch an David gegeben. Die Lage ist ungeklärt (Vorschläge u. a. Khirbet a-Ra'i, Tel Sera', Tel Halif); hier als Arbeitsannahme."
+   "bezug": "1 Sam 27,6; 30 – von Achisch an David gegeben. Die Lage ist ungeklärt (Vorschläge u. a. Khirbet a-Ra'i, Tel Sera', Tel Halif); hier als Arbeitsannahme.",
+   "hinweis": null
+  },
+  "maon": {
+   "name": "Maon",
+   "he": "מָעוֹן",
+   "art": "davidisch",
+   "antik": "Khirbet Ma'in",
+   "lonlat": [
+    35.147414,
+    31.405301
+   ],
+   "ziel_ew": 12000,
+   "plan_ew": 16151,
+   "osm": false,
+   "bezug": "1 Sam 23,24–25; 25,2 – Wüste Maon; Nabal und Abigajil im benachbarten Karmel (Khirbet al-Karmil, 1,5 km nördlich).",
+   "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
   "beerscheba": {
    "name": "Be'er Scheva ha-Atika",
@@ -142,7 +198,23 @@
    "ziel_ew": 20000,
    "plan_ew": 23236,
    "osm": false,
-   "bezug": "2 Sam 24,2.7 – Südgrenze der Volkszählung Davids („von Dan bis Beerscheba“)."
+   "bezug": "2 Sam 24,2.7 – Südgrenze der Volkszählung Davids („von Dan bis Beerscheba“).",
+   "hinweis": null
+  },
+  "tekoa": {
+   "name": "Tekoa",
+   "he": "תְּקוֹעַ",
+   "art": "davidisch",
+   "antik": "Khirbet Tuqu'",
+   "lonlat": [
+    35.222995,
+    31.62625
+   ],
+   "ziel_ew": 12000,
+   "plan_ew": 15040,
+   "osm": false,
+   "bezug": "2 Sam 14,2 – die kluge Frau aus Tekoa; 2 Sam 23,26 – Ira aus Tekoa, einer der Helden Davids.",
+   "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
   "neu_arava": {
    "name": "Neve Arava (Arbeitstitel)",
@@ -156,7 +228,23 @@
    "ziel_ew": 12000,
    "plan_ew": 12820,
    "osm": false,
-   "bezug": "Oasenstadt in der nördlichen Arava mit vollständigem Wasserkreislauf."
+   "bezug": "Oasenstadt in der nördlichen Arava mit vollständigem Wasserkreislauf.",
+   "hinweis": null
+  },
+  "baal_hazor": {
+   "name": "Baal-Hazor",
+   "he": "בַּעַל חָצוֹר",
+   "art": "davidisch",
+   "antik": "Tell Asur (Berg Hazor)",
+   "lonlat": [
+    35.276068,
+    31.972903
+   ],
+   "ziel_ew": 10000,
+   "plan_ew": 12105,
+   "osm": false,
+   "bezug": "2 Sam 13,23 – Schafschur Absaloms bei Baal-Hazor in Samaria; höchster Berg des samarischen Berglands (1.016 m).",
+   "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
   "engedi": {
    "name": "En Gedi",
@@ -170,7 +258,8 @@
    "ziel_ew": 6000,
    "plan_ew": 6569,
    "osm": false,
-   "bezug": "1 Sam 24,1 – Bergfesten von En Gedi. Naturschutzgebiet und Steilstufe begrenzen die Bebaubarkeit stark."
+   "bezug": "1 Sam 24,1 – Bergfesten von En Gedi. Naturschutzgebiet und Steilstufe begrenzen die Bebaubarkeit stark.",
+   "hinweis": null
   }
  },
  "staedte": {

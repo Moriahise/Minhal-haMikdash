@@ -35,6 +35,35 @@ DAVIDISCH = [
               "begrenzen die Bebaubarkeit stark."},
 ]
 
+# --- Davidische Orte in Judäa und Samaria (Westjordanland) -------------------
+# Auf Wunsch des Auftraggebers aufgenommen. Status, Eigentum und bestehende
+# Nutzung sind dort nicht geprüft; jeder Plan trägt diesen Hinweis.
+# Hebron (Tel Rumeida) ist bewusst nicht enthalten: Der Tell liegt mitten in der
+# bestehenden Großstadt; im Umkreis gibt es kein freies Land für eine Neugründung.
+HINWEIS_JS = ("Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und "
+              "planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende "
+              "Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet.")
+DAVIDISCH += [
+    {"id": "keila", "name": "Keila", "he": "קְעִילָה", "antik": "Khirbet Qila",
+     "lon": 35.003044, "lat": 31.616294, "kern_m": 220, "ziel_ew": 15000, "regen_mm": 480,
+     "bezug": "1 Sam 23,1–13 – David befreit Keila von den Philistern.", "hinweis": HINWEIS_JS},
+    {"id": "sif", "name": "Sif", "he": "זִיף", "antik": "Tel Zif",
+     "lon": 35.13514, "lat": 31.47475, "kern_m": 220, "ziel_ew": 14000, "regen_mm": 350,
+     "bezug": "1 Sam 23,14–24; 26,1–2 – David in der Wüste Sif.", "hinweis": HINWEIS_JS},
+    {"id": "maon", "name": "Maon", "he": "מָעוֹן", "antik": "Khirbet Ma'in",
+     "lon": 35.133839, "lat": 31.409448, "kern_m": 220, "ziel_ew": 12000, "regen_mm": 300,
+     "bezug": "1 Sam 23,24–25; 25,2 – Wüste Maon; Nabal und Abigajil im benachbarten Karmel "
+              "(Khirbet al-Karmil, 1,5 km nördlich).", "hinweis": HINWEIS_JS},
+    {"id": "tekoa", "name": "Tekoa", "he": "תְּקוֹעַ", "antik": "Khirbet Tuqu'",
+     "lon": 35.21129, "lat": 31.63285, "kern_m": 220, "ziel_ew": 12000, "regen_mm": 350,
+     "bezug": "2 Sam 14,2 – die kluge Frau aus Tekoa; 2 Sam 23,26 – Ira aus Tekoa, einer der Helden Davids.",
+     "hinweis": HINWEIS_JS},
+    {"id": "baal_hazor", "name": "Baal-Hazor", "he": "בַּעַל חָצוֹר", "antik": "Tell Asur (Berg Hazor)",
+     "lon": 35.28361, "lat": 31.98, "kern_m": 250, "ziel_ew": 10000, "regen_mm": 650,
+     "bezug": "2 Sam 13,23 – Schafschur Absaloms bei Baal-Hazor in Samaria; höchster Berg des "
+              "samarischen Berglands (1.016 m).", "hinweis": HINWEIS_JS},
+]
+
 # --- Suchräume für völlig neue Städte (Standort wird berechnet) ------------
 SUCHRAEUME = [
     {"id": "neu_negev_nord", "name": "Ir David ha-Negev (Arbeitstitel)", "he": "עִיר דָּוִד הַנֶּגֶב",
@@ -48,8 +77,9 @@ SUCHRAEUME = [
      "bezug": "Oasenstadt in der nördlichen Arava mit vollständigem Wasserkreislauf."},
 ]
 
-GRUENDUNGSFOLGE = ["schaarajim", "neu_negev_nord", "adullam", "gat", "neu_lachisch",
-                   "ziklag", "beerscheba", "neu_arava", "engedi"]
+GRUENDUNGSFOLGE = ["schaarajim", "neu_negev_nord", "adullam", "keila", "gat",
+                   "neu_lachisch", "sif", "ziklag", "maon", "beerscheba", "tekoa",
+                   "neu_arava", "baal_hazor", "engedi"]
 
 # --- Geländeregeln ----------------------------------------------------------
 HANG_TABU = 30.0            # % – darüber keine Bebauung

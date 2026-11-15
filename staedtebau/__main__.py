@@ -46,7 +46,8 @@ def welt_schreiben(w: Path, welt: dict, plaene: dict) -> None:
                 annahmen=C.ANNAHMEN, zonen_name=C.ZONEN_NAME)
     welt["uebersicht"] = {o: {"name": p["name"], "he": p["he"], "art": p["art"], "antik": p.get("antik"),
                               "lonlat": p["georef"]["zentrum_lonlat"], "ziel_ew": p["ziel_ew"],
-                              "plan_ew": p["kennzahlen"]["einwohner"], "osm": p["osm"], "bezug": p["bezug"]}
+                              "plan_ew": p["kennzahlen"]["einwohner"], "osm": p["osm"], "bezug": p["bezug"],
+                              "hinweis": p.get("hinweis")}
                           for o, p in plaene.items()}
     _welt_pfad(w).parent.mkdir(parents=True, exist_ok=True)
     _welt_pfad(w).write_text(json.dumps(welt, ensure_ascii=False, indent=1) + "\n", "utf-8")

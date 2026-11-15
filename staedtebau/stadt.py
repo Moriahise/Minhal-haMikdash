@@ -130,7 +130,7 @@ def planen(ort: dict, wurzel: Path, osm_index=None, log=print) -> dict:
     plan.update({"id": ort["id"], "name": ort["name"], "he": ort.get("he", ""),
                  "art": "davidisch" if davidisch else "neu", "antik": ort.get("antik"),
                  "bezug": ort["bezug"], "ziel_ew": ort["ziel_ew"], "regen_mm": ort["regen_mm"],
-                 "osm": osm_index is not None, "standortsuche": suche,
+                 "osm": osm_index is not None, "standortsuche": suche, "hinweis": ort.get("hinweis"),
                  "osm_stand": (osm_index or {}).get("stand")})
     if davidisch:
         plan["antik_lonlat"] = [ort["lon"], ort["lat"]]

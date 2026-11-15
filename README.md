@@ -79,7 +79,7 @@ Untersuchungsraum: 23 Regionen mit 777 Kacheln – Israel westlich des Jordan, d
 
 ### ▶ [Blaupause im Browser öffnen](https://moriahise.github.io/Minhal-haMikdash/blaupause/)
 
-Generative Stadtplanung auf realem Gelände: Neugründungen **neben** davidischen Orten (Scha'arajim, Adullam, Gat, Ziklag, Be'er Scheva, En Gedi) und völlig neue Städte, deren Standort berechnet wird.
+Generative Stadtplanung auf realem Gelände: Neugründungen **neben** davidischen Orten (Scha'arajim, Adullam, Gat, Ziklag, Be'er Scheva, En Gedi sowie in Judäa und Samaria Keila, Sif, Maon, Tekoa, Baal-Hazor) und völlig neue Städte, deren Standort berechnet wird.
 
 - **Reale Gegebenheiten:** Höhenmodell, Hangneigung, Wadis, Landbedeckung, OpenStreetMap, dazu Fundstellen und Verdachtsflächen aus Seker. Antike Stätten bleiben mit Kern- und Pufferzone unbebaut.
 - **Neun Planblätter je Stadt:** Lage, Standortanalyse, Masterplan, Blaupause (Baustruktur), Verkehr, Wasser/Grün/Energie, Geländeschnitte, Bautypologien, Bauabschnitte – maßhaltig, mit Plankopf, Maßstab und Legende, als SVG speicherbar.
