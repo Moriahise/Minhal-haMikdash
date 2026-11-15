@@ -1,0 +1,91 @@
+/* Blaupause – Farbwelt wie Minhal HaMikdash und Seker */
+:root{
+  --bg:#f3eee4; --panel:#fffdf8; --ink:#1f2430; --muted:#6b6658; --line:#e2d9c6;
+  --techelet:#1d4e89; --techelet-2:#2f6db5; --gold:#b8892b; --gold-soft:#f4e7c8; --sh:#f2efe6;
+  --ok:#2e7d4f; --bad:#b03a2e;
+  --he:"SBL Hebrew","Ezra SIL","Frank Ruehl CLM","David","Times New Roman",serif;
+  --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14171d; --panel:#1c2029; --ink:#e9e4d8; --muted:#a39d8d; --line:#2e3340;
+  --techelet:#6ea8ef; --techelet-2:#8fbcf3; --gold:#d9ad55; --gold-soft:#3a3120; --sh:#232733;
+  --ok:#5fc08a; --bad:#ec7a6e;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans)}
+body{display:flex;flex-direction:column}
+a{color:var(--techelet-2)}
+.he{font-family:var(--he)} .muted{color:var(--muted)} .small{font-size:.88em} .warn{color:var(--bad);font-weight:600} .ok{color:var(--ok)}
+#hdr{display:flex;align-items:center;gap:.9em;flex-wrap:wrap;padding:.5em 1em;color:#fff;
+  background:linear-gradient(90deg,#122a4d,#16335c 55%,#1d4e89);border-bottom:3px solid #b8892b}
+.brand{display:flex;align-items:center;gap:.7em}
+.brand .sub{font-size:.76em;opacity:.8;letter-spacing:.06em;text-transform:uppercase}
+.seal{width:38px;height:38px;border-radius:50%;border:2px solid #b8892b;display:grid;place-items:center;font:700 22px var(--he);color:#f5d998;background:rgba(255,255,255,.06)}
+#tabs{display:flex;gap:.2em;flex-wrap:wrap;margin-left:auto}
+#tabs button{background:none;border:0;color:#dbe6f5;font:inherit;padding:.45em .8em;border-radius:8px;cursor:pointer}
+#tabs button:hover{background:rgba(255,255,255,.1)}
+#tabs button.active{background:#fff;color:#163a66;font-weight:600}
+.jahr{font-weight:700;color:#f5d998;white-space:nowrap}
+.start{background:#b8892b;color:#fff;border:0;border-radius:8px;padding:.45em .9em;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+.zurueck{color:#f5d998;font-size:.88em;text-decoration:none;white-space:nowrap}
+#hinweis{background:var(--gold-soft);border-bottom:1px solid var(--line);padding:.35em 1em;font-size:.88em}
+main{flex:1;min-height:0;position:relative}
+.tab{display:none;height:100%} .tab.active{display:block}
+#tab-welt.active,#tab-stadt.active{display:flex}
+#staedte{width:360px;flex:none;overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:.7em}
+#map{flex:1;min-width:0;background:#222}
+.stadt{border:1px solid var(--line);border-radius:10px;padding:.6em .75em;margin-bottom:.6em;cursor:pointer;background:var(--panel)}
+.stadt:hover{border-color:var(--gold)} .stadt.geplant{opacity:.72}
+.stadt h4{margin:0;font-size:1.02em;color:var(--techelet);display:flex;justify-content:space-between;gap:.5em;align-items:baseline}
+.stadt .he{font-size:1.05em;color:var(--muted)}
+.marke{display:inline-block;border-radius:6px;padding:0 .45em;font-size:.78em;font-weight:600;background:var(--gold-soft);border:1px solid var(--line)}
+.marke.dav{background:#e9defa;color:#3d2a66;border-color:#cdbdf0} .marke.neu{background:#d9f0e6;color:#17503a;border-color:#b5dfcc}
+.balken{height:7px;border-radius:4px;background:var(--sh);overflow:hidden;margin:.35em 0 .2em}
+.balken b{display:block;height:100%;background:var(--techelet-2)}
+.werte{display:grid;grid-template-columns:repeat(4,1fr);gap:.3em;font-size:.8em;color:var(--muted)}
+.werte b{display:block;color:var(--ink);font-size:1.15em}
+.summe{display:grid;grid-template-columns:1fr 1fr;gap:.5em;margin-bottom:.7em}
+.kz{background:var(--sh);border-radius:8px;padding:.45em .6em}
+.kz b{display:block;font-size:1.3em;color:var(--techelet);line-height:1.2} .kz span{font-size:.78em;color:var(--muted)}
+#steuer{width:320px;flex:none;overflow:auto;background:var(--panel);border-right:1px solid var(--line);padding:.8em}
+#steuer h3{margin:1em 0 .35em;font-size:.8em;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+#steuer label{display:block;font-size:.92em;margin:.3em 0}
+select,input[type=number],input[type=password]{font:inherit;padding:.35em;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%;display:block;margin-top:.2em}
+input[type=range]{width:100%}
+.blaetter{display:grid;gap:3px}
+.blaetter button{text-align:left;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:7px;padding:.32em .55em;font:inherit;font-size:.9em;cursor:pointer}
+.blaetter button b{color:var(--gold);font-weight:700;margin-right:.4em;font-variant-numeric:tabular-nums}
+.blaetter button.active{background:var(--techelet);color:#fff;border-color:var(--techelet)} .blaetter button.active b{color:#f5d998}
+#blatt{flex:1;min-width:0;background:#5d6470;overflow:hidden;position:relative;touch-action:none;cursor:grab}
+#blatt svg{width:100%;height:100%;display:block}
+.kv{display:grid;grid-template-columns:1fr auto;gap:.5em;padding:.2em 0;border-bottom:1px dashed var(--line);font-size:.88em}
+.kv>span:first-child{color:var(--muted)} .kv>span:last-child{font-variant-numeric:tabular-nums;text-align:right}
+.knopf{display:inline-block;background:var(--techelet);color:#fff;border:0;border-radius:8px;padding:.5em 1em;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.knopf.klein{padding:.3em .6em;font-size:.86em;font-weight:500;margin:.15em .1em} .knopf.hell{background:var(--sh);color:var(--ink);border:1px solid var(--line)}
+.knopf[disabled]{opacity:.5}
+.seite{height:100%;overflow:auto;padding:1em}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1em 1.2em;margin:0 auto 1em;max-width:1000px}
+.card h2{margin:.1em 0 .5em;font-size:1.15em;color:var(--techelet)}
+.md h3{color:var(--techelet);margin-top:1.4em} .md table{border-collapse:collapse;margin:.5em 0;display:block;overflow:auto}
+.md th,.md td{border:1px solid var(--line);padding:.3em .6em;font-size:.9em;text-align:left;vertical-align:top} .md th{background:var(--sh)}
+.jahrgang{margin:0 0 1em} .jahrgang h3{margin:.2em 0;font-size:.95em;color:var(--gold)}
+.ereignis{display:grid;grid-template-columns:150px 1fr;gap:.6em;padding:.25em 0;border-bottom:1px dashed var(--line);font-size:.92em}
+.ereignis.gruendung{font-weight:600} .ereignis span:first-child{color:var(--techelet)}
+dialog{width:min(540px,94vw);max-height:92vh;border:1px solid var(--line);border-radius:14px;padding:1.2em 1.4em;background:var(--panel);color:var(--ink)}
+dialog::backdrop{background:rgba(10,15,25,.55)}
+dialog h2{margin:0 0 .4em;color:var(--techelet);font-size:1.2em} dialog h3{margin:1.1em 0 .3em;font-size:1em;color:var(--techelet)}
+dialog .zu{float:right;border:0;background:none;font-size:1.3em;cursor:pointer;color:var(--muted)}
+dialog label{display:block;margin:.5em 0;font-size:.92em} label.chk{display:flex!important;gap:.5em;align-items:center} label.chk input{width:auto;display:inline;margin:0}
+#runde-status{background:var(--sh);border-radius:8px;padding:.5em .7em}
+.punkt{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.4em;background:var(--muted)}
+.punkt.laeuft{background:var(--gold)} .punkt.gut{background:var(--ok)} .punkt.schlecht{background:var(--bad)}
+.leaflet-container{font:inherit}
+@media (max-width:900px){
+  #tab-welt.active,#tab-stadt.active{flex-direction:column}
+  #staedte,#steuer{width:auto;max-height:42vh;border-right:0;border-bottom:1px solid var(--line)}
+  #map,#blatt{min-height:52vh} .zurueck{display:none} #tabs{margin-left:0}
+}
+@media print{
+  #hdr,#hinweis,#steuer{display:none!important} main,.tab{height:auto} #blatt{background:#fff;overflow:visible}
+  #blatt svg{width:100%;height:auto} @page{size:A3 landscape;margin:8mm}
+}

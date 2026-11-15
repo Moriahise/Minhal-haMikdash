@@ -111,6 +111,7 @@ jobs:
           mkdir _site
           cp index.html .nojekyll _site/
           cp -a app docs seker _site/
+          if [ -d blaupause ]; then cp -a blaupause _site/; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

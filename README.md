@@ -75,6 +75,27 @@ Untersuchungsraum: 23 Regionen mit 777 Kacheln – Israel westlich des Jordan, d
 
 ---
 
+## Blaupause · Städtebau
+
+### ▶ [Blaupause im Browser öffnen](https://moriahise.github.io/Minhal-haMikdash/blaupause/)
+
+Generative Stadtplanung auf realem Gelände: Neugründungen **neben** davidischen Orten (Scha'arajim, Adullam, Gat, Ziklag, Be'er Scheva, En Gedi) und völlig neue Städte, deren Standort berechnet wird.
+
+- **Reale Gegebenheiten:** Höhenmodell, Hangneigung, Wadis, Landbedeckung, OpenStreetMap, dazu Fundstellen und Verdachtsflächen aus Seker. Antike Stätten bleiben mit Kern- und Pufferzone unbebaut.
+- **Neun Planblätter je Stadt:** Lage, Standortanalyse, Masterplan, Blaupause (Baustruktur), Verkehr, Wasser/Grün/Energie, Geländeschnitte, Bautypologien, Bauabschnitte – maßhaltig, mit Plankopf, Maßstab und Legende, als SVG speicherbar.
+- **Läuft selbständig:** Eine GitHub-Action rechnet täglich eine Runde (ein Jahr). Städte wachsen entlang ihrer Bauabschnitte, neue werden gegründet, Wasser-, Energie- und Versorgungsbilanzen werden fortgeschrieben.
+- **Einordnung:** städtebaulicher Vorentwurf aus offenen Daten – kein Rechtsplan, keine Ausführungsplanung.
+
+```
+staedtebau/           Geländeanalyse, Entwurfsgenerator, Simulation
+blaupause/            Web-Ansicht + Pläne (data/staedte/) + Weltzustand (data/welt.json)
+.github/workflows/blaupause.yml   tägliche Runde
+```
+
+Lokal: `python -m staedtebau plaene --neu`, dann `python -m staedtebau runde -n 1`.
+
+---
+
 ## Daten
 
 - Alle Eingaben werden **nur im Browser des jeweiligen Geräts** gespeichert (localStorage). Es gibt keinen Server, nichts wird hochgeladen.

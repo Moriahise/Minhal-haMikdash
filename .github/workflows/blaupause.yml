@@ -1,0 +1,117 @@
+name: Blaupause – Städtebau
+
+# Rechnet täglich selbständig eine Runde (ein Jahr): Städte wachsen entlang
+# ihrer Bauabschnitte, neue werden gegründet. Pläne ohne OSM-Abgleich oder
+# mit alter Planversion werden dabei neu berechnet. Ergebnis: blaupause/data.
+on:
+  schedule:
+    - cron: "41 3 * * *"            # täglich 03:41 UTC (nach dem Seker-Lauf)
+  workflow_dispatch:
+    inputs:
+      runden:
+        description: "Anzahl Runden (Jahre)"
+        default: "1"
+      neu:
+        description: "Alle Pläne neu berechnen (ja/nein)"
+        default: "nein"
+  push:
+    branches: [main]
+    paths: ["staedtebau/**", "blaupause/**", "tests/test_staedtebau.py", ".github/workflows/blaupause.yml"]
+
+permissions:
+  contents: read
+
+concurrency:                         # nie gleichzeitig mit dem Seker-Lauf
+  group: seker-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt pytest
+      - run: python -m pytest -q tests/test_staedtebau.py
+
+  runde:
+    needs: tests
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: OSM-Extrakt zwischenspeichern (wöchentlich neu)
+        id: woche
+        run: echo "kw=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: .cache/osm
+          key: osm-v2-${{ steps.woche.outputs.kw }}
+      - name: Pläne und Runde rechnen
+        env:
+          RUNDEN: ${{ inputs.runden || '1' }}
+          NEU: ${{ inputs.neu || 'nein' }}
+        run: |
+          case "$RUNDEN" in ''|*[!0-9]*) RUNDEN=1 ;; esac
+          if [ "$NEU" = "ja" ]; then python -m staedtebau plaene --neu; fi
+          python -m staedtebau runde -n "$RUNDEN"
+      - name: Ergebnisse veröffentlichen
+        run: |
+          git config user.name "blaupause-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blaupause
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+            exit 0
+          fi
+          git commit -m "Blaupause: Runde $(date -u +%F) – Städte und Pläne fortgeschrieben"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i * 10))
+          done
+          exit 1
+
+  veroeffentlichen:
+    # Commits des Bots lösen keinen Pages-Build aus, daher hier ausdrücklich.
+    needs: [tests, runde]
+    if: >-
+      always() && !cancelled() && github.ref == 'refs/heads/main' &&
+      needs.tests.result == 'success' &&
+      (github.event_name == 'push' || needs.runde.result == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: App, Seker und Blaupause gemeinsam bereitstellen
+        run: |
+          mkdir _site
+          cp index.html .nojekyll _site/
+          cp -a app docs seker blaupause _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: GitHub Pages veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

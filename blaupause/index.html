@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blaupause – Städtebau Israel</title>
+<meta name="description" content="Generative Stadtplanung auf realem Gelände: Neugründungen neben davidischen Orten und völlig neue Städte, mit Planblättern, Kennzahlen und Rundensimulation.">
+<meta name="theme-color" content="#16335c">
+<link rel="icon" href="../app/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="blaupause.css">
+</head>
+<body>
+<header id="hdr">
+  <div class="brand">
+    <div class="seal">ב</div>
+    <div><b>Blaupause <span class="he">תָּכְנִית</span></b><div class="sub">Städtebau · Israel · Konzeptstudie</div></div>
+  </div>
+  <nav id="tabs" role="tablist">
+    <button role="tab" data-tab="welt" class="active">Land</button>
+    <button role="tab" data-tab="stadt">Planblätter</button>
+    <button role="tab" data-tab="chronik">Chronik</button>
+    <button role="tab" data-tab="grundlagen">Grundlagen</button>
+  </nav>
+  <div id="jahr-anzeige" class="jahr"></div>
+  <button id="runde-knopf" class="start">▶ Nächste Runde</button>
+  <a class="zurueck" href="../seker/">Seker →</a>
+</header>
+<div id="hinweis">Konzeptstudie auf Vorentwurfsniveau: berechnet aus offenen Geodaten, <b>kein Rechtsplan</b>, keine Aussage über Eigentum, Schutzstatus oder Genehmigungsfähigkeit. <a href="#" data-tab="grundlagen">Grundlagen und Grenzen</a></div>
+
+<main>
+  <section id="tab-welt" class="tab active">
+    <aside id="staedte"></aside>
+    <div id="map"></div>
+  </section>
+
+  <section id="tab-stadt" class="tab">
+    <aside id="steuer">
+      <label>Stadt <select id="s-stadt"></select></label>
+      <h3>Planblatt</h3>
+      <div id="s-blaetter" class="blaetter"></div>
+      <h3>Ausbaustand</h3>
+      <label><span id="s-jahr-text"></span><input type="range" id="s-jahr" min="0" max="0" value="0"></label>
+      <p class="small"><button id="s-svg" class="knopf klein" type="button">SVG speichern</button>
+        <button id="s-druck" class="knopf klein" type="button">Drucken / PDF</button>
+        <button id="s-reset" class="knopf klein hell" type="button">Ansicht zurücksetzen</button></p>
+      <div id="s-kenn"></div>
+    </aside>
+    <div id="blatt"></div>
+  </section>
+
+  <section id="tab-chronik" class="tab"><div class="seite"><div class="card"><h2>Chronik</h2><div id="chronik"></div></div></div></section>
+  <section id="tab-grundlagen" class="tab"><div class="seite"><div class="card md" id="grundlagen"></div></div></section>
+</main>
+
+<dialog id="runde-dialog">
+  <form method="dialog"><button class="zu" aria-label="Schließen">✕</button></form>
+  <h2>Nächste Runde</h2>
+  <p>Eine Runde ist ein Jahr. Blaupause rechnet <b>täglich um 03:41 UTC</b> automatisch eine Runde: Städte wachsen entlang ihrer Bauabschnitte, neue werden gegründet, Wasser-, Energie- und Versorgungsbilanzen werden fortgeschrieben.</p>
+  <div id="runde-status" class="small muted">Status wird geladen …</div>
+  <h3>Weg 1 – auf GitHub</h3>
+  <p class="small">Als Besitzer des Repositorys: Seite öffnen, <b>„Run workflow“</b> wählen, Anzahl Runden eintragen.</p>
+  <p><a id="runde-github" class="knopf" target="_blank" rel="noopener" href="#">GitHub Actions öffnen ↗</a></p>
+  <h3>Weg 2 – direkt von hier</h3>
+  <p class="small">Benötigt ein GitHub-Token (<i>Fine-grained</i>, nur dieses Repository, <b>Actions: Read and write</b>). Es bleibt in diesem Browser.</p>
+  <label>Anzahl Runden (Jahre) <input id="runde-n" type="number" min="1" max="25" value="1"></label>
+  <label class="chk"><input id="runde-neu" type="checkbox"> Alle Pläne neu berechnen</label>
+  <label>GitHub-Token <input id="runde-token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+  <label class="chk"><input id="runde-merken" type="checkbox"> Token in diesem Browser merken</label>
+  <p><button id="runde-start" class="knopf" type="button">▶ Runde starten</button></p>
+  <div id="runde-meldung" class="small" role="status"></div>
+</dialog>
+
+<noscript>JavaScript ist erforderlich.</noscript>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="blaupause.js"></script>
+</body>
+</html>

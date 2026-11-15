@@ -19,12 +19,13 @@ from . import config as C
 URL = "https://download.geofabrik.de/asia/{name}-latest.osm.pbf"
 EXTRAKTE = ("israel-and-palestine", "jordan")
 _SCHLUESSEL = ("highway", "railway", "aeroway", "power", "man_made", "barrier", "landuse",
-               "historic")
+               "historic", "leisure", "boundary")
 _BREIT = {"motorway", "trunk", "primary", "secondary", "motorway_link", "trunk_link"}
 _FLAECHEN = {"quarry", "industrial", "military", "construction", "landfill",
              "greenhouse_horticulture", "residential", "commercial", "cemetery", "railway"}
 _HISTORISCH = {"archaeological_site", "ruins", "fort", "city_gate", "tomb"}
 SCHMAL, BREIT, FLAECHE = 0, 1, 2
+SCHUTZ = 3      # Natur-/Landschaftsschutz: nur für den Städtebau (Blaupause), nicht für die Seker-Maske
 
 
 def _art(tags) -> int | None:
@@ -46,7 +47,7 @@ def pbf_indizieren(pbf: Path) -> dict:
     s = min(r["bbox"][1] for r in C.REGIONEN) - 0.1
     e = max(r["bbox"][2] for r in C.REGIONEN) + 0.1
     n = max(r["bbox"][3] for r in C.REGIONEN) + 0.1
-    wege, arten, boxen, orte = [], [], [], []
+    wege, arten, boxen, orte, haupt = [], [], [], [], []
 
     def ort(o, lon, lat, typ):
         t = o.tags
@@ -76,19 +77,25 @@ def pbf_indizieren(pbf: Path) -> dict:
         if hist:
             ort(o, float(k[:, 0].mean()), float(k[:, 1].mean()), "way")
         art = _art(o.tags)
+        geschlossen = len(k) >= 4 and np.array_equal(k[0], k[-1])
+        if art is None and geschlossen and (
+                o.tags.get("leisure") == "nature_reserve"
+                or o.tags.get("boundary") in ("protected_area", "national_park")):
+            art = SCHUTZ
         if art is None:
             continue
-        if art == FLAECHE and (len(k) < 4 or not np.array_equal(k[0], k[-1])):
+        if art == FLAECHE and not geschlossen:
             art = SCHMAL
         wege.append(k.astype(np.float32))
         arten.append(art)
         boxen.append(box)
-    return {"wege": wege, "arten": np.array(arten, np.uint8),
+        haupt.append(o.tags.get("highway") in _BREIT)
+    return {"wege": wege, "arten": np.array(arten, np.uint8), "haupt": np.array(haupt, bool),
             "boxen": np.array(boxen, np.float64).reshape(-1, 4), "orte": orte}
 
 
 def _extrakt(name: str, cache: Path, max_alter_tage: float) -> dict:
-    pbf, pkl = cache / f"{name}-latest.osm.pbf", cache / f"{name}-index.pkl"
+    pbf, pkl = cache / f"{name}-latest.osm.pbf", cache / f"{name}-index-v2.pkl"
     if not pbf.exists() or time.time() - pbf.stat().st_mtime > max_alter_tage * 86400:
         with requests.get(URL.format(name=name), stream=True, timeout=120,
                           headers={"User-Agent": C.USER_AGENT}) as r:
@@ -116,6 +123,7 @@ def index_laden(cache: Path, log=print, max_alter_tage: float = 6) -> dict | Non
         teile = [_extrakt(n, cache, max_alter_tage) for n in EXTRAKTE]
         idx = {"wege": [w for i in teile for w in i["wege"]],
                "arten": np.concatenate([i["arten"] for i in teile]),
+               "haupt": np.concatenate([i["haupt"] for i in teile]),
                "boxen": np.concatenate([i["boxen"] for i in teile]),
                "orte": [o for i in teile for o in i["orte"]],
                "stand": min(i["stand"] for i in teile)}
