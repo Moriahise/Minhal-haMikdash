@@ -1,6 +1,6 @@
 {
- "jahr": 8,
- "stand": "2026-11-15T22:39:50+00:00",
+ "jahr": 9,
+ "stand": "2026-11-16T12:04:13+00:00",
  "version": "1.0.0",
  "plan_version": "1.0.0",
  "folge": [
@@ -266,16 +266,17 @@
   "schaarajim": {
    "status": "gegruendet",
    "gruendung": 1,
-   "ew": 3632,
-   "we": 1188,
-   "bloecke_gebaut": 18,
+   "ew": 4240,
+   "we": 1379,
+   "bloecke_gebaut": 19,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
     "platz",
     "synagoge",
     "schule1",
-    "klaer"
+    "klaer",
+    "bus"
    ],
    "verlauf": [
     [
@@ -333,32 +334,39 @@
      1188,
      18,
      52
+    ],
+    [
+     9,
+     4240,
+     1379,
+     19,
+     48
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.89,
-    "wasserbedarf_m3": 326880,
-    "regenernte_m3": 25100,
-    "brauchwasser_m3": 212472,
-    "wasser_eigenanteil": 0.73,
-    "pv_gwh": 5.4,
-    "strombedarf_gwh": 16.3,
+    "regenfaktor": 1.23,
+    "wasserbedarf_m3": 381600,
+    "regenernte_m3": 40141,
+    "brauchwasser_m3": 248040,
+    "wasser_eigenanteil": 0.76,
+    "pv_gwh": 6.2,
+    "strombedarf_gwh": 19.1,
     "arbeitsplaetze": 690,
-    "jobs_je_erwerbsperson": 0.45,
-    "freiraum_m2_je_ew": 3.1,
+    "jobs_je_erwerbsperson": 0.39,
+    "freiraum_m2_je_ew": 2.7,
     "schulen": 0,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.161,
-    "lebensqualitaet": 52
+    "ausbau": 0.187,
+    "lebensqualitaet": 48
    }
   },
   "neu_negev_nord": {
    "status": "gegruendet",
    "gruendung": 8,
-   "ew": 274,
-   "we": 120,
-   "bloecke_gebaut": 0,
+   "ew": 647,
+   "we": 247,
+   "bloecke_gebaut": 2,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
@@ -371,24 +379,31 @@
      120,
      0,
      2
+    ],
+    [
+     9,
+     647,
+     247,
+     2,
+     27
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.89,
-    "wasserbedarf_m3": 24660,
-    "regenernte_m3": 1084,
+    "regenfaktor": 1.23,
+    "wasserbedarf_m3": 58230,
+    "regenernte_m3": 3074,
     "brauchwasser_m3": 0,
-    "wasser_eigenanteil": 0.04,
-    "pv_gwh": 0.5,
-    "strombedarf_gwh": 1.2,
-    "arbeitsplaetze": 0,
-    "jobs_je_erwerbsperson": 0.0,
+    "wasser_eigenanteil": 0.05,
+    "pv_gwh": 1.1,
+    "strombedarf_gwh": 2.9,
+    "arbeitsplaetze": 395,
+    "jobs_je_erwerbsperson": 1.45,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.013,
-    "lebensqualitaet": 2
+    "ausbau": 0.026,
+    "lebensqualitaet": 27
    }
   },
   "adullam": {
@@ -467,6 +482,61 @@
    "meilensteine": [],
    "verlauf": [],
    "bilanz": {}
+  },
+  "keila": {
+   "status": "geplant",
+   "gruendung": null,
+   "ew": 0,
+   "we": 0,
+   "bloecke_gebaut": 0,
+   "schulen": 0,
+   "meilensteine": [],
+   "verlauf": [],
+   "bilanz": {}
+  },
+  "sif": {
+   "status": "geplant",
+   "gruendung": null,
+   "ew": 0,
+   "we": 0,
+   "bloecke_gebaut": 0,
+   "schulen": 0,
+   "meilensteine": [],
+   "verlauf": [],
+   "bilanz": {}
+  },
+  "maon": {
+   "status": "geplant",
+   "gruendung": null,
+   "ew": 0,
+   "we": 0,
+   "bloecke_gebaut": 0,
+   "schulen": 0,
+   "meilensteine": [],
+   "verlauf": [],
+   "bilanz": {}
+  },
+  "tekoa": {
+   "status": "geplant",
+   "gruendung": null,
+   "ew": 0,
+   "we": 0,
+   "bloecke_gebaut": 0,
+   "schulen": 0,
+   "meilensteine": [],
+   "verlauf": [],
+   "bilanz": {}
+  },
+  "baal_hazor": {
+   "status": "geplant",
+   "gruendung": null,
+   "ew": 0,
+   "we": 0,
+   "bloecke_gebaut": 0,
+   "schulen": 0,
+   "meilensteine": [],
+   "verlauf": [],
+   "bilanz": {}
   }
  },
  "chronik": [
@@ -523,12 +593,18 @@
    "stadt": "neu_negev_nord",
    "art": "ereignis",
    "text": "Der Stadtplatz mit dem Brunnen wird eingeweiht; die ersten Familien ziehen ein."
+  },
+  {
+   "jahr": 9,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Der Ringbus verbindet die Quartiere mit dem Zentrum."
   }
  ],
  "summe": {
   "staedte": 2,
-  "einwohner": 3906,
-  "wohneinheiten": 1308,
-  "lebensqualitaet": 27
+  "einwohner": 4887,
+  "wohneinheiten": 1626,
+  "lebensqualitaet": 38
  }
 }
