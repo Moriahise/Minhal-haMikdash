@@ -1,6 +1,6 @@
 {
- "jahr": 10,
- "stand": "2026-11-16T14:10:19+00:00",
+ "jahr": 20,
+ "stand": "2026-11-16T14:16:23+00:00",
  "version": "1.0.0",
  "plan_version": "1.0.0",
  "folge": [
@@ -266,17 +266,19 @@
   "schaarajim": {
    "status": "gegruendet",
    "gruendung": 1,
-   "ew": 4887,
-   "we": 1582,
-   "bloecke_gebaut": 24,
-   "schulen": 0,
+   "ew": 13918,
+   "we": 4416,
+   "bloecke_gebaut": 122,
+   "schulen": 3,
    "meilensteine": [
     "zufahrt",
     "platz",
     "synagoge",
     "schule1",
     "klaer",
-    "bus"
+    "bus",
+    "markt",
+    "spirale"
    ],
    "verlauf": [
     [
@@ -348,37 +350,111 @@
      1582,
      24,
      41
+    ],
+    [
+     11,
+     5572,
+     1797,
+     30,
+     39
+    ],
+    [
+     12,
+     6298,
+     2025,
+     34,
+     51
+    ],
+    [
+     13,
+     7069,
+     2267,
+     44,
+     48
+    ],
+    [
+     14,
+     7885,
+     2523,
+     46,
+     46
+    ],
+    [
+     15,
+     8749,
+     2794,
+     60,
+     47
+    ],
+    [
+     16,
+     9666,
+     3082,
+     70,
+     52
+    ],
+    [
+     17,
+     10638,
+     3387,
+     77,
+     49
+    ],
+    [
+     18,
+     11668,
+     3710,
+     88,
+     53
+    ],
+    [
+     19,
+     12761,
+     4053,
+     99,
+     70
+    ],
+    [
+     20,
+     13918,
+     4416,
+     122,
+     78
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.62,
-    "wasserbedarf_m3": 439830,
-    "regenernte_m3": 22202,
-    "brauchwasser_m3": 285890,
-    "wasser_eigenanteil": 0.7,
-    "pv_gwh": 6.6,
-    "strombedarf_gwh": 22.0,
-    "arbeitsplaetze": 356,
-    "jobs_je_erwerbsperson": 0.17,
-    "freiraum_m2_je_ew": 3.7,
-    "schulen": 0,
-    "schulen_soll": 1,
+    "regenfaktor": 1.47,
+    "wasserbedarf_m3": 1252620,
+    "regenernte_m3": 146388,
+    "brauchwasser_m3": 814203,
+    "wasser_eigenanteil": 0.77,
+    "pv_gwh": 18.5,
+    "strombedarf_gwh": 62.6,
+    "arbeitsplaetze": 477,
+    "jobs_je_erwerbsperson": 0.08,
+    "freiraum_m2_je_ew": 12.6,
+    "schulen": 3,
+    "schulen_soll": 3,
     "quartierszentren_plan": 5,
-    "ausbau": 0.199,
-    "lebensqualitaet": 41
+    "ausbau": 0.556,
+    "lebensqualitaet": 78
    }
   },
   "neu_negev_nord": {
    "status": "gegruendet",
    "gruendung": 8,
-   "ew": 1067,
-   "we": 382,
-   "bloecke_gebaut": 6,
+   "ew": 7069,
+   "we": 2267,
+   "bloecke_gebaut": 31,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
     "platz",
-    "synagoge"
+    "synagoge",
+    "schule1",
+    "klaer",
+    "bus",
+    "markt"
    ],
    "verlauf": [
     [
@@ -401,36 +477,163 @@
      382,
      6,
      26
+    ],
+    [
+     11,
+     1520,
+     525,
+     8,
+     26
+    ],
+    [
+     12,
+     2003,
+     677,
+     10,
+     26
+    ],
+    [
+     13,
+     2516,
+     838,
+     12,
+     48
+    ],
+    [
+     14,
+     3058,
+     1008,
+     16,
+     44
+    ],
+    [
+     15,
+     3632,
+     1188,
+     18,
+     40
+    ],
+    [
+     16,
+     4240,
+     1379,
+     22,
+     38
+    ],
+    [
+     17,
+     4887,
+     1582,
+     24,
+     37
+    ],
+    [
+     18,
+     5572,
+     1797,
+     25,
+     35
+    ],
+    [
+     19,
+     6298,
+     2025,
+     28,
+     34
+    ],
+    [
+     20,
+     7069,
+     2267,
+     31,
+     33
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.62,
-    "wasserbedarf_m3": 96030,
-    "regenernte_m3": 2525,
-    "brauchwasser_m3": 0,
-    "wasser_eigenanteil": 0.03,
-    "pv_gwh": 1.6,
-    "strombedarf_gwh": 4.8,
+    "regenfaktor": 1.47,
+    "wasserbedarf_m3": 636210,
+    "regenernte_m3": 35395,
+    "brauchwasser_m3": 413536,
+    "wasser_eigenanteil": 0.71,
+    "pv_gwh": 9.7,
+    "strombedarf_gwh": 31.8,
     "arbeitsplaetze": 592,
-    "jobs_je_erwerbsperson": 1.32,
+    "jobs_je_erwerbsperson": 0.2,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
-    "schulen_soll": 1,
+    "schulen_soll": 2,
     "quartierszentren_plan": 6,
-    "ausbau": 0.043,
-    "lebensqualitaet": 26
+    "ausbau": 0.253,
+    "lebensqualitaet": 33
    }
   },
   "adullam": {
-   "status": "geplant",
-   "gruendung": null,
-   "ew": 0,
-   "we": 0,
-   "bloecke_gebaut": 0,
+   "status": "gegruendet",
+   "gruendung": 16,
+   "ew": 2003,
+   "we": 677,
+   "bloecke_gebaut": 13,
    "schulen": 0,
-   "meilensteine": [],
-   "verlauf": [],
-   "bilanz": {}
+   "meilensteine": [
+    "zufahrt",
+    "platz",
+    "synagoge",
+    "schule1"
+   ],
+   "verlauf": [
+    [
+     16,
+     274,
+     120,
+     2,
+     28
+    ],
+    [
+     17,
+     647,
+     247,
+     5,
+     35
+    ],
+    [
+     18,
+     1067,
+     382,
+     8,
+     33
+    ],
+    [
+     19,
+     1520,
+     525,
+     12,
+     33
+    ],
+    [
+     20,
+     2003,
+     677,
+     13,
+     32
+    ]
+   ],
+   "bilanz": {
+    "regenfaktor": 1.47,
+    "wasserbedarf_m3": 180270,
+    "regenernte_m3": 25326,
+    "brauchwasser_m3": 0,
+    "wasser_eigenanteil": 0.14,
+    "pv_gwh": 3.3,
+    "strombedarf_gwh": 9.0,
+    "arbeitsplaetze": 472,
+    "jobs_je_erwerbsperson": 0.56,
+    "freiraum_m2_je_ew": 1.5,
+    "schulen": 0,
+    "schulen_soll": 1,
+    "quartierszentren_plan": 6,
+    "ausbau": 0.129,
+    "lebensqualitaet": 32
+   }
   },
   "gat": {
    "status": "geplant",
@@ -632,12 +835,90 @@
    "stadt": "neu_negev_nord",
    "art": "ereignis",
    "text": "Dürrejahr: nur 62% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
+  },
+  {
+   "jahr": 11,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Markthalle und Arkadenring sind vollständig belegt."
+  },
+  {
+   "jahr": 11,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Die erste Grundschule nimmt den Unterricht auf."
+  },
+  {
+   "jahr": 13,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Die Kläranlage geht in Betrieb; Brauchwasser bewässert Gärten und Terrassen."
+  },
+  {
+   "jahr": 16,
+   "stadt": "adullam",
+   "art": "gruendung",
+   "text": "Adullam wird gegründet – neben Khirbet esh-Sheikh Madhkur, dessen Ruine als archäologischer Park geschützt bleibt."
+  },
+  {
+   "jahr": 16,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Der Ringbus verbindet die Quartiere mit dem Zentrum."
+  },
+  {
+   "jahr": 16,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Zufahrtsstraße, Trinkwasser-Hochbehälter und Baulogistik stehen."
+  },
+  {
+   "jahr": 16,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Der Stadtplatz mit dem Brunnen wird eingeweiht; die ersten Familien ziehen ein."
+  },
+  {
+   "jahr": 18,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Markthalle und Arkadenring sind vollständig belegt."
+  },
+  {
+   "jahr": 18,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Die Hauptsynagoge am Platz wird eröffnet."
+  },
+  {
+   "jahr": 19,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Die Spiralpromenade ist vom Stadtrand bis zum Platz stufenlos begehbar."
+  },
+  {
+   "jahr": 19,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Quartierszentrum 2 mit Grundschule, Synagoge und Mikwe eröffnet."
+  },
+  {
+   "jahr": 19,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Die erste Grundschule nimmt den Unterricht auf."
+  },
+  {
+   "jahr": 20,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Quartierszentrum 3 mit Grundschule, Synagoge und Mikwe eröffnet."
   }
  ],
  "summe": {
-  "staedte": 2,
-  "einwohner": 5954,
-  "wohneinheiten": 1964,
-  "lebensqualitaet": 34
+  "staedte": 3,
+  "einwohner": 22990,
+  "wohneinheiten": 7360,
+  "lebensqualitaet": 48
  }
 }
