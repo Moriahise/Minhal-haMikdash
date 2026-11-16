@@ -42,6 +42,30 @@ def test_plan_ist_vollstaendig_und_json_faehig(plan):
     assert {b["phase"] for b in p["bloecke"]} <= {1, 2, 3, 4, 5}
 
 
+def test_synagoge_und_beit_midrasch_sind_immer_im_plan(plan):
+    p, _, _ = plan
+    haupt = {q["name"]: q for q in p["sonder"] if q.get("haupt")}
+    assert {"Hauptsynagoge", "Beit Midrasch", "Mikwe"} <= set(haupt)
+    assert haupt["Hauptsynagoge"]["rang"] == -1 and haupt["Beit Midrasch"]["rang"] == -1   # erster Bauabschnitt
+    k = p["kennzahlen"]
+    assert k["synagogen_plan"] >= k["synagogen_bedarf"] - 1 >= 3 and k["batei_midrasch_plan"] >= 2
+    arten = [g[7] for g in p["gebaeude"] if len(g) > 7]
+    assert arten.count("s") >= k["synagogen_plan"] - 1 and "m" in arten
+    syn = [(q["x"], q["y"]) for q in p["sonder"] if q["typ"] == "synagoge"]
+    weit = max(min(np.hypot(g[0] - x, g[1] - y) for x, y in syn) for g in p["gebaeude"])
+    assert weit < 700, f"Gebäude {weit:.0f} m von der nächsten Synagoge"
+
+
+def test_synagoge_auch_wenn_der_platzrand_blockiert_ist():
+    a, dem, wc = _huegel()
+    y, x = np.mgrid[0:480, 0:480]
+    d = np.hypot(y - 240, x - 240) * 10
+    sperre = (d > 40) & (d < 230)                 # z. B. eine OSM-Sperrfläche rund um den Platz
+    p, _, _ = entwurf.entwerfen(a, dem, wc, ORT, (240, 240), [], sperre)
+    namen = [q["name"] for q in p["sonder"] if q.get("haupt")]
+    assert namen[:2] == ["Hauptsynagoge", "Beit Midrasch"]
+
+
 def test_kennzahlen_sind_aus_dem_plan_berechnet(plan):
     p, _, _ = plan
     k, bl = p["kennzahlen"], p["bloecke"]
@@ -106,5 +130,14 @@ def test_simulation_waechst_monoton_und_gruendet_der_reihe_nach(plan):
     erste = welt["staedte"][gegr[0]]
     assert erste["we"] <= p["kennzahlen"]["wohneinheiten"] and erste["ew"] <= p["kennzahlen"]["einwohner"]
     assert 0 <= erste["bilanz"]["lebensqualitaet"] <= 100 and "platz" in erste["meilensteine"]
+    for st in (welt["staedte"][o] for o in gegr):                    # Synagoge und Beit Midrasch im Gründungsjahr
+        assert {"synagoge", "beitmidrasch"} <= set(st["meilensteine"])
+        assert st["synagogen"] >= 1 and st["batei_midrasch"] >= 1
+    gruendung = [e for e in welt["chronik"] if e["stadt"] == gegr[-1] and e["jahr"] == welt["staedte"][gegr[-1]]["gruendung"]]
+    assert any("Hauptsynagoge" in e["text"] for e in gruendung) and any("Beit Midrasch" in e["text"] for e in gruendung)
+    assert erste["synagogen"] > 3
+    # die Versorgung läuft dem Zuzug voraus: nie mehr als eine Synagoge im Rückstand
+    for st in (welt["staedte"][o] for o in gegr):
+        assert st["synagogen"] >= st["bilanz"]["synagogen_soll"] - 1
     json.dumps(welt, allow_nan=False)
     assert simulation.regenfaktor(7) == simulation.regenfaktor(7)

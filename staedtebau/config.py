@@ -2,7 +2,7 @@
 gelegt; jede Änderung ändert die Pläne und wird über PLAN_VERSION sichtbar)."""
 from __future__ import annotations
 
-PLAN_VERSION = "1.0.0"
+PLAN_VERSION = "1.1.0"
 PIXEL_M = 10
 FENSTER_PX = 480            # 4,8 x 4,8 km Planausschnitt
 EPSG = 32636                # UTM 36N für alle Standorte

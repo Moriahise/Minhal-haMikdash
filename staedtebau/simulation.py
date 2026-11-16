@@ -13,8 +13,11 @@ GRUENDUNG_REIFE = 0.12       # jüngste Stadt muss so weit ausgebaut sein
 
 MEILENSTEINE = [   # (Schlüssel, Bedingung(ew, we, anteil), Text)
     ("zufahrt", lambda ew, we, a: True, "Zufahrtsstraße, Trinkwasser-Hochbehälter und Baulogistik stehen."),
+    # Synagoge, Beit Midrasch und Mikwe entstehen zusammen mit den ersten Häusern
+    ("synagoge", lambda ew, we, a: we >= 1, "Mit den ersten Häusern wird die Hauptsynagoge am Stadtplatz eröffnet."),
+    ("beitmidrasch", lambda ew, we, a: we >= 1, "Der Beit Midrasch am Stadtplatz nimmt den Lernbetrieb auf."),
+    ("mikwe", lambda ew, we, a: we >= 1, "Die Mikwe am Platz wird in Betrieb genommen (Regenwasserzisterne)."),
     ("platz", lambda ew, we, a: we >= 120, "Der Stadtplatz mit dem Brunnen wird eingeweiht; die ersten Familien ziehen ein."),
-    ("synagoge", lambda ew, we, a: ew >= 800, "Die Hauptsynagoge am Platz wird eröffnet."),
     ("schule1", lambda ew, we, a: ew >= 1500, "Die erste Grundschule nimmt den Unterricht auf."),
     ("klaer", lambda ew, we, a: ew >= 2500, "Die Kläranlage geht in Betrieb; Brauchwasser bewässert Gärten und Terrassen."),
     ("bus", lambda ew, we, a: ew >= 4000, "Der Ringbus verbindet die Quartiere mit dem Zentrum."),
@@ -57,6 +60,19 @@ def stadt_runde(st: dict, plan: dict, jahr: int) -> list[str]:
         st["schulen"] += 1
         if st["schulen"] > 1:
             ereignisse.append(f"Quartierszentrum {st['schulen']} mit Grundschule, Synagoge und Mikwe eröffnet.")
+    # Synagogen und Batei Midrasch öffnen zusammen mit ihrem Block
+    def offen(typ):
+        return sum(1 for q in plan.get("sonder", []) if q["typ"] == typ and q.get("rang", 0) < gebaut
+                   and (q.get("rang", 0) >= 0 or "synagoge" in st["meilensteine"]))
+    syn, bm = offen("synagoge"), offen("beitmidrasch")
+    if syn > st.get("synagogen", 0):
+        if st.get("synagogen", 0) >= 1:
+            ereignisse.append(f"Weitere Synagoge eröffnet – {syn} von {plan['kennzahlen'].get('synagogen_plan', syn)} in Betrieb.")
+        st["synagogen"] = syn
+    if bm > st.get("batei_midrasch", 0):
+        if st.get("batei_midrasch", 0) >= 1:
+            ereignisse.append(f"Weiterer Beit Midrasch im Quartier eröffnet – {bm} in Betrieb.")
+        st["batei_midrasch"] = bm
     if "gewerbe" not in st["meilensteine"] and any(k["zone"] == "gewerbe" for k in bl[:gebaut]):
         st["meilensteine"].append("gewerbe")
         ereignisse.append("Das Gewerbe- und Technologiequartier nimmt die ersten Betriebe auf.")
@@ -71,14 +87,18 @@ def stadt_runde(st: dict, plan: dict, jahr: int) -> list[str]:
     wasser_eigen = (regen + brauch) / bedarf if bedarf else 0.0
     jobs = ap / max(st["ew"] * A["erwerbsquote"], 1)
     freiraum = gruen / max(st["ew"], 1)
-    lq = (25 * min(1, st["schulen"] / schulen_soll) + 25 * min(1, freiraum / A["freiraum_ziel_m2_je_ew"])
-          + 25 * min(1, wasser_eigen / 0.7) + 25 * min(1, jobs / 0.6)) if st["ew"] else 0
+    syn_soll = max(1, round(st["ew"] / A["ew_je_synagoge"]))
+    lq = (20 * min(1, st["schulen"] / schulen_soll) + 20 * min(1, st.get("synagogen", 0) / syn_soll)
+          + 20 * min(1, freiraum / A["freiraum_ziel_m2_je_ew"])
+          + 20 * min(1, wasser_eigen / 0.7) + 20 * min(1, jobs / 0.6)) if st["ew"] else 0
     st["bilanz"] = {"regenfaktor": round(rf, 2), "wasserbedarf_m3": round(bedarf), "regenernte_m3": round(regen),
                     "brauchwasser_m3": round(brauch), "wasser_eigenanteil": round(wasser_eigen, 2),
                     "pv_gwh": round(k["pv_gwh"] * anteil, 1),
                     "strombedarf_gwh": round(st["ew"] * A["strom_kwh_je_ew_jahr"] / 1e6, 1),
                     "arbeitsplaetze": ap, "jobs_je_erwerbsperson": round(jobs, 2),
                     "freiraum_m2_je_ew": round(freiraum, 1), "schulen": st["schulen"],
+                    "synagogen": st.get("synagogen", 0), "synagogen_soll": syn_soll,
+                    "batei_midrasch": st.get("batei_midrasch", 0),
                     "schulen_soll": schulen_soll, "quartierszentren_plan": zentren,
                     "ausbau": round(anteil, 3), "lebensqualitaet": round(lq)}
     if rf < 0.65 and st["ew"] > 0:
@@ -90,7 +110,7 @@ def stadt_runde(st: dict, plan: dict, jahr: int) -> list[str]:
 
 def neue_stadt() -> dict:
     return {"status": "geplant", "gruendung": None, "ew": 0, "we": 0, "bloecke_gebaut": 0,
-            "schulen": 0, "meilensteine": [], "verlauf": [], "bilanz": {}}
+            "schulen": 0, "synagogen": 0, "batei_midrasch": 0, "meilensteine": [], "verlauf": [], "bilanz": {}}
 
 
 def runde(welt: dict, plaene: dict) -> dict:

@@ -116,28 +116,39 @@
   }
   function eGebaeude(A, p, modus, n) {
     let voll = "", leer = "";
+    const syn = [], bm = [];
     p.gebaeude.forEach((g) => {
       const [x, y, l, t, w] = g, c = Math.cos(w * Math.PI / 180), s = Math.sin(w * Math.PI / 180);
       const e = [[-l / 2, -t / 2], [l / 2, -t / 2], [l / 2, t / 2], [-l / 2, t / 2]].map(([u, v]) => A.X(x + u * c - v * s).toFixed(1) + " " + A.Y(y + u * s + v * c).toFixed(1));
       const d = "M" + e.join("L") + "Z";
+      if (g[7] === "s" || g[7] === "m") { (g[7] === "s" ? syn : bm).push([d, g[6] < 0 || p.bloecke[g[6]].rang < n]); return; }
       if (g[6] < 0 || p.bloecke[g[6]].rang < n) voll += d; else leer += d;
     });
+    const sakral = (liste, f) => liste.map(([d, fertig]) => "<path d='" + d + "' fill='" + f + "' fill-opacity='" + (fertig ? 1 : 0.3) + "' stroke='" + (modus === "blau" ? "#fff" : "#10233f") + "' stroke-width='.9'" + (fertig ? "" : " stroke-dasharray='2 1.6'") + "/>").join("");
     const st = { nutzung: ["#4a3b30", "#fffaf0"], blau: ["#fff", "#eaf2ff"], gruen: ["#b88a1e", "#f5c542"], verkehr: ["#7d766a", "#f4efe4"], phase: ["#333", "#fff"] }[modus];
     return "<path d='" + voll + "' fill='" + st[1] + "' fill-opacity='" + (modus === "blau" ? 0.92 : 0.96) + "' stroke='" + st[0] + "' stroke-width='.5'/>"
-      + "<path d='" + leer + "' fill='none' stroke='" + st[0] + "' stroke-width='.45' stroke-dasharray='2 1.6' opacity='.75'/>";
+      + "<path d='" + leer + "' fill='none' stroke='" + st[0] + "' stroke-width='.45' stroke-dasharray='2 1.6' opacity='.75'/>"
+      + (modus === "gruen" || modus === "phase" ? "" : sakral(syn, modus === "blau" ? "#ffd27a" : "#1d4e89") + sakral(bm, modus === "blau" ? "#f3a35c" : "#8a5a17"));
   }
   function eZufahrt(A, p, farbe, breit) {
     return "<path d='" + pfad(A, p.zufahrt) + "' fill='none' stroke='" + farbe + "' stroke-width='" + breit + "' stroke-linecap='round' stroke-linejoin='round'/>";
   }
   const eSpirale = (A, p, farbe) => "<path d='" + pfad(A, p.spirale) + "' fill='none' stroke='" + farbe + "' stroke-width='1.8' stroke-dasharray='7 3' stroke-linejoin='round'/>";
-  const SYM = { hochbehaelter: ["#1d6fb8", "W"], klaeranlage: ["#6d4c2f", "K"], rueckhalt: ["#3aa0d8", "R"], zentral: ["#b8892b", "★"], quartier: ["#a04a92", "Q"] };
-  function eSonder(A, p, typen, blau) {
+  const SYM = { synagoge: ["#1d4e89", "✡"], beitmidrasch: ["#8a5a17", "ת"], hochbehaelter: ["#1d6fb8", "W"], klaeranlage: ["#6d4c2f", "K"], rueckhalt: ["#3aa0d8", "R"], zentral: ["#b8892b", "★"], quartier: ["#a04a92", "Q"] };
+  function eSonder(A, p, typen, blau, n) {
     return p.sonder.filter((s) => typen.includes(s.typ)).map((s) => {
-      const [f, z] = SYM[s.typ], X = A.X(s.x), Y = A.Y(s.y), kurz = s.typ === "rueckhalt";
+      const [f, z] = SYM[s.typ], X = A.X(s.x), Y = A.Y(s.y), kurz = s.typ === "rueckhalt" || s.typ === "zentral" || ((s.typ === "synagoge" || s.typ === "beitmidrasch") && !s.haupt);
+      const deck = n != null && s.rang != null && s.rang >= n ? 0.4 : 1;
+      return "<g opacity='" + deck + "'>" + sonderZeichen(X, Y, f, z, kurz, s, blau) + "</g>";
+    }).join("");
+  }
+  function sonderZeichen(X, Y, f, z, kurz, s, blau) {
+    {
       return "<circle cx='" + X + "' cy='" + Y + "' r='" + (kurz ? 6 : 8) + "' fill='" + (blau ? "#16335c" : f) + "' stroke='#fff' stroke-width='1.4'/>"
         + text(X, Y + 3.5, z, " font-size='" + (kurz ? 8 : 10) + "' font-weight='700' fill='#fff' text-anchor='middle'")
-        + (kurz ? "" : text(X + 11, Y + 4, s.name, " font-size='10.5' font-weight='600' fill='" + (blau ? "#fff" : "#1f2430") + "'" + (blau ? "" : halo)));
-    }).join("");
+        + (kurz ? "" : text(X + (s.typ === "beitmidrasch" ? -11 : 11), Y + 4, s.name, " font-size='10.5' font-weight='600' fill='" + (blau ? "#fff" : "#1f2430") + "'"
+          + (s.typ === "beitmidrasch" ? " text-anchor='end'" : "") + (blau ? "" : halo)));
+    }
   }
   function eGitter(A, p, sicht, farbe) {
     const schritt = sicht.s > 3000 ? 1000 : 500, g = p.georef;
@@ -265,19 +276,20 @@
     function master(p) {
       const si = stadtSicht(p), A = abbildung(si), n = gebaut(p);
       const inh = eRelief(A, p, 0.55) + eGitter(A, p, si, "#4a4438") + eKonturen(A, p, "#8a7458", false) + eWadis(A, p, "#2b7fc2") + eBloecke(A, p, "nutzung", n) + eStrassen(A, p, "plan") + ePlatz(A, p)
-        + eGebaeude(A, p, "nutzung", n) + eSpirale(A, p, "#1d4e89") + eZufahrt(A, p, "#1f2430", 4) + eZufahrt(A, p, "#fbf8f0", 1.6) + eDenkmale(A, p) + eSchnittlinien(A, p, "#1f2430") + eSonder(A, p, ["zentral", "quartier", "hochbehaelter", "klaeranlage"]);
+        + eGebaeude(A, p, "nutzung", n) + eSpirale(A, p, "#1d4e89") + eZufahrt(A, p, "#1f2430", 4) + eZufahrt(A, p, "#fbf8f0", 1.6) + eDenkmale(A, p) + eSchnittlinien(A, p, "#1f2430") + eSonder(A, p, ["zentral", "quartier", "hochbehaelter", "klaeranlage", "beitmidrasch", "synagoge"], false, n);
       const k = p.kennzahlen;
-      return rahmen(p, 2, inh, { sicht: si, legende: zonenLegende(p).concat([["strich", "#1d4e89", "Spiralpromenade (stufenlos, " + zahl(k.spirale_km, 1) + " km)"], ["punkt", "#b8892b", "★  Zentrale Einrichtung am Platz"], ["punkt", "#a04a92", "Q  Quartierszentrum"]]),
+      return rahmen(p, 2, inh, { sicht: si, legende: zonenLegende(p).concat([["strich", "#1d4e89", "Spiralpromenade (stufenlos, " + zahl(k.spirale_km, 1) + " km)"], ["punkt", "#1d4e89", "✡  Synagoge (" + (k.synagogen_plan || 0) + " geplant, Bedarf " + k.synagogen_bedarf + ")"], ["punkt", "#8a5a17", "ת  Beit Midrasch (" + (k.batei_midrasch_plan || 0) + ")"], ["punkt", "#b8892b", "★  Zentrale Einrichtung am Platz"], ["punkt", "#a04a92", "Q  Quartierszentrum"]]),
         notiz: [zahl(k.einwohner) + " Einwohner in " + zahl(k.wohneinheiten) + " Wohnungen, " + zahl(k.arbeitsplaetze) + " Arbeitsplätze, " + k.ringe + " Ringe; Bruttodichte " + zahl(k.bruttodichte_ew_ha) + " EW/ha.",
           "Ringstraßen folgen dem Hang; Gebäude stehen traufständig an der Ringstraße, die Geschosszahl fällt nach außen von 5 auf 2.",
-          "Je Quartier ein Zentrum mit Grundschule, Kindergarten, Synagoge und Mikwe in höchstens 400 m Gehweg."] });
+          "Hauptsynagoge, Beit Midrasch und Mikwe stehen am Stadtplatz und gehören zum ersten Bauabschnitt – sie entstehen mit den ersten Häusern.",
+          "Je Quartier ein Zentrum mit Grundschule, Kindergarten, Synagoge, Beit Midrasch und Mikwe; dazu Nachbarschaftssynagogen, sodass auf rund 1.500 Einwohner eine Synagoge kommt."] });
     },
     function blau(p) {
       const si = stadtSicht(p), A = abbildung(si), n = gebaut(p);
       const inh = eGitter(A, p, si, "#fff") + eKonturen(A, p, "#fff", true) + eWadis(A, p, "#9fd0ff") + eStrassen(A, p, "blau") + ePlatz(A, p, true) + eGebaeude(A, p, "blau", n)
-        + eSpirale(A, p, "#ffd27a") + eZufahrt(A, p, "#fff", 2) + eDenkmale(A, p, true) + eSchnittlinien(A, p, "#ffd27a") + eSonder(A, p, ["zentral", "hochbehaelter", "klaeranlage"], true);
+        + eSpirale(A, p, "#ffd27a") + eZufahrt(A, p, "#fff", 2) + eDenkmale(A, p, true) + eSchnittlinien(A, p, "#ffd27a") + eSonder(A, p, ["zentral", "hochbehaelter", "klaeranlage", "beitmidrasch", "synagoge"], true, n);
       return rahmen(p, 3, inh, { blau: true, sicht: si, legende: [["flaeche", "#eaf2ff", "Gebäude (" + zahl(p.kennzahlen.gebaeude) + " Baukörper)"], ["linie", "#fff", "Ringstraßen und Achsen (Straßenachse)"], ["strich", "#fff", "Treppenwege zwischen den Ringen"],
-        ["strich", "#ffd27a", "Spiralpromenade"], ["strich", "#9fd0ff", "Wadi / Grünzug"], ["linie", "#fff", "Höhenlinien 10 m"]],
+        ["flaeche", "#ffd27a", "Synagoge"], ["flaeche", "#f3a35c", "Beit Midrasch"], ["strich", "#ffd27a", "Spiralpromenade"], ["strich", "#9fd0ff", "Wadi / Grünzug"], ["linie", "#fff", "Höhenlinien 10 m"]],
       notiz: ["Baustruktur als Schwarzplan in Blaupausen-Darstellung: Baukörper, Straßenachsen und Gelände.", "Gestrichelte Baukörper sind im gewählten Ausbaustand noch nicht errichtet.",
         "Ring 1 (Arkadenring) fasst den Platz; die sechs Hauptachsen gliedern die Stadt in sechs Quartiere."] });
     },
@@ -460,10 +472,11 @@
     $("#s-kenn").innerHTML = "<h3>Stand der Simulation</h3>" + (st.status === "gegruendet"
       ? z("Gegründet", "Jahr " + st.gruendung) + z("Einwohner heute", zahl(st.ew)) + z("Ausbau", zahl((b.ausbau || 0) * 100) + " %") + z("Lebensqualität", (b.lebensqualitaet || 0) + " / 100")
         + z("Wasser-Eigenanteil", zahl((b.wasser_eigenanteil || 0) * 100) + " %") + z("Schulen", (b.schulen || 0) + " von " + (b.schulen_soll || 0))
+        + z("Synagogen in Betrieb", (b.synagogen || 0) + " (Bedarf " + (b.synagogen_soll || 0) + ")") + z("Batei Midrasch in Betrieb", b.batei_midrasch || 0)
       : "<p class='small muted'>Noch nicht gegründet – Plan liegt vor.</p>")
       + "<h3>Plan (Endausbau)</h3>" + z("Einwohner", zahl(k.einwohner) + " (Ziel " + zahl(p.ziel_ew) + ")") + z("Wohneinheiten", zahl(k.wohneinheiten)) + z("Arbeitsplätze", zahl(k.arbeitsplaetze))
       + z("Stadtfläche", zahl(k.stadtflaeche_ha, 1) + " ha") + z("Bruttodichte", zahl(k.bruttodichte_ew_ha) + " EW/ha") + z("Gebäude", zahl(k.gebaeude)) + z("Freiraum", zahl(k.freiraum_m2_je_ew, 1) + " m²/EW")
-      + z("Grundschulen (Bedarf)", k.grundschulen_bedarf) + z("Kita-Gruppen (Bedarf)", k.kita_gruppen_bedarf) + z("Synagogen (Bedarf)", k.synagogen_bedarf)
+      + z("Grundschulen (Bedarf)", k.grundschulen_bedarf) + z("Kita-Gruppen (Bedarf)", k.kita_gruppen_bedarf) + z("Synagogen", (k.synagogen_plan || 0) + " geplant, Bedarf " + k.synagogen_bedarf) + z("Batei Midrasch", k.batei_midrasch_plan || 0)
       + z("Wasser-Eigenanteil", zahl(k.wasser_eigenanteil * 100) + " %") + z("Strom-Eigenanteil (PV)", zahl(k.strom_eigenanteil * 100) + " %") + z("Arbeitsplätze je Erwerbsperson", zahl(k.jobs_je_erwerbsperson, 2))
       + z("Ackerland-Verbrauch", zahl(k.ackerland_verbrauch_ha, 1) + " ha")
       + (k.zielerreichung < 0.9 ? "<p class='small warn'>Das Gelände trägt nur " + zahl(k.zielerreichung * 100) + " % des Bevölkerungsziels.</p>" : "")

@@ -404,24 +404,96 @@ def entwerfen(a, dem, wc, ort: dict, zentrum_px, denkmale=(), sperre=None, stras
             j = int(nah[0])
             sonder.append({"typ": "rueckhalt", "name": "Regenrückhalte- und Versickerungsbecken",
                            "x": float(wx[j]), "y": float(wy[j]), "info": f"Einzugsgebiet {wl['einzug_km2']} km²"})
-    # Zentrale Einrichtungen am Platz, zwischen den Hauptachsen
-    namen = ["Rathaus", "Hauptsynagoge", "Markthalle", "Beit Midrasch & Bibliothek", "Kulturhaus", "Gästehaus"]
-    for j, name in enumerate(namen[:C.HAUPTACHSEN]):
+    # --- Gemeinschaftsbauten ---------------------------------------------------
+    # Hauptsynagoge und Beit Midrasch stehen am Platz und haben Vorrang vor allen
+    # anderen Einrichtungen: sie werden in jedem Fall gesetzt (notfalls auf der
+    # nächstgelegenen bebaubaren Stelle) und gehören zum ersten Bauabschnitt.
+    def bau(x, y, t, laenge, tiefe, gesch, block, art):
+        x1, y1 = P.xy(float(P.d[P.zelle(float(x), float(y))]), t - 3)
+        x2, y2 = P.xy(float(P.d[P.zelle(float(x), float(y))]), t + 3)
+        gebaeude.append([round(float(x), 1), round(float(y), 1), laenge, tiefe,
+                         round(math.degrees(math.atan2(y2 - y1, x2 - x1)), 1), gesch, block, art])
+
+    plaetze = []
+    for j in range(C.HAUPTACHSEN):
         t = t0 + int(round((j + 0.5) * NT / C.HAUPTACHSEN))
-        r = float(P.rb[0, t % NT]) - C.STRASSE["ring"] / 2 - 13
-        x, y = P.xy(r, t)
-        x1, y1 = P.xy(r, t - 3)
-        x2, y2 = P.xy(r, t + 3)
-        if R["baubar"][P.zelle(float(x), float(y))]:
-            gebaeude.append([round(float(x), 1), round(float(y), 1), 34, 16,
-                             round(math.degrees(math.atan2(y2 - y1, x2 - x1)), 1), 3, -1])
-            sonder.append({"typ": "zentral", "name": name, "x": float(x), "y": float(y), "info": ""})
+        r0 = float(P.rb[0, t % NT])
+        for r in (r0 - C.STRASSE["ring"] / 2 - 13, r0 - C.STRASSE["ring"] / 2 - 30, r0 + C.STRASSE["hauptring"] / 2 + 14):
+            x, y = P.xy(r, t)
+            if r > 20 and R["baubar"][P.zelle(float(x), float(y))]:
+                plaetze.append((float(x), float(y), t))
+                break
+    if len(plaetze) < 2:        # Platzrand blockiert: nächstgelegene bebaubare Stellen suchen
+        zz, ss = np.nonzero(R["baubar"] & (P.d < 450))
+        for i in np.argsort(P.d[zz, ss]):
+            x, y = a.lokal(zz[i], ss[i])
+            if all(math.hypot(x - q[0], y - q[1]) > 55 for q in plaetze):
+                plaetze.append((float(x), float(y), int(P.ti[zz[i], ss[i]])))
+            if len(plaetze) >= 3:
+                break
+    if len(plaetze) < 2:        # letzter Ausweg: am Platz setzen, Bebaubarkeit im Detail zu klären
+        for j in (0, 3):
+            t = t0 + int(round((j + 0.5) * NT / C.HAUPTACHSEN))
+            x, y = P.xy(float(P.rb[0, t % NT]) - 19, t)
+            plaetze.append((float(x), float(y), t))
+    zentral = [("Hauptsynagoge", "synagoge", "s"), ("Beit Midrasch", "beitmidrasch", "m"),
+               ("Mikwe", "zentral", "z"), ("Rathaus", "zentral", "z"), ("Markthalle", "zentral", "z"),
+               ("Kulturhaus & Bibliothek", "zentral", "z")]
+    for (name, typ, art), (x, y, t) in zip(zentral, plaetze):
+        bau(x, y, t, 34, 16, 3, -1, art)
+        sonder.append({"typ": typ, "name": name, "x": x, "y": y, "rang": -1, "haupt": True,
+                       "info": "am Stadtplatz, erster Bauabschnitt"})
+    # Quartierszentren: je eine Synagoge und ein Beit Midrasch neben Schule und Mikwe
+    je_block = {}
+    for gi, g in enumerate(gebaeude):
+        je_block.setdefault(g[6], []).append(gi)
+    for i, k in enumerate(bloecke):
+        if k["zone"] != "gemeinbedarf":
+            continue
+        tm = sum(k["t"]) // 2
+        x, y = P.xy((P.rb[k["band"] - 1, tm % NT] + P.rb[k["band"], tm % NT]) / 2, tm)
+        sonder.append({"typ": "quartier", "name": f"Quartierszentrum {k['quartier'] + 1}", "rang": i,
+                       "x": float(x), "y": float(y), "info": "Grundschule, Kindergarten, Synagoge, Beit Midrasch, Mikwe"})
+        gs = je_block.get(i, [])
+        for gi, (typ, art, name) in zip(gs, (("synagoge", "s", "Synagoge"), ("beitmidrasch", "m", "Beit Midrasch"))):
+            gebaeude[gi].append(art)
+            sonder.append({"typ": typ, "name": f"{name} Quartier {k['quartier'] + 1}", "rang": i,
+                           "x": gebaeude[gi][0], "y": gebaeude[gi][1], "info": "im Quartierszentrum"})
+        if not gs:
+            sonder.append({"typ": "synagoge", "name": f"Synagoge Quartier {k['quartier'] + 1}", "rang": i,
+                           "x": float(x), "y": float(y), "info": "im Quartierszentrum"})
+    # Nachbarschaftssynagogen: je 1.500 Einwohner eine. Die j-te Synagoge liegt in
+    # einem Block, der gebaut wird, BEVOR die Stadt j * 1.500 Einwohner erreicht –
+    # die Versorgung läuft dem Zuzug also voraus. Innerhalb dieses Zeitfensters
+    # wird der Block gewählt, der am weitesten von der nächsten Synagoge liegt.
+    je_syn = A["ew_je_synagoge"]
+    bedarf = max(1, round(ew_ges / je_syn))
+    kum, vorher = 0, []
     for k in bloecke:
-        if k["zone"] == "gemeinbedarf":
-            tm = sum(k["t"]) // 2
-            x, y = P.xy((P.rb[k["band"] - 1, tm % NT] + P.rb[k["band"], tm % NT]) / 2, tm)
-            sonder.append({"typ": "quartier", "name": f"Quartierszentrum {k['quartier'] + 1}",
-                           "x": float(x), "y": float(y), "info": "Grundschule, Kindergarten, Synagoge, Mikwe"})
+        vorher.append(kum)
+        kum += k["ew"]
+    orte_syn = [(q["x"], q["y"]) for q in sonder if q["typ"] == "synagoge"]
+    belegt = {int(vorher[q["rang"]] // je_syn) for q in sonder if q["typ"] == "synagoge" and q["rang"] >= 0}
+    wohnen = ("misch", "wohnen_hoch", "wohnen_mittel", "wohnen_niedrig")
+    nr = 0
+    for j in range(1, bedarf):
+        if j in belegt:
+            continue            # in diesem Zeitfenster öffnet bereits ein Quartierszentrum
+        kand = [i for i, k in enumerate(bloecke) if k["zone"] in wohnen and len(je_block.get(i, [])) >= 2
+                and (j - 1) * je_syn <= vorher[i] < j * je_syn and len(gebaeude[je_block[i][len(je_block[i]) // 2]]) == 7]
+        if not kand:
+            continue
+
+        def abstand(i):
+            g = gebaeude[je_block[i][len(je_block[i]) // 2]]
+            return min(math.hypot(g[0] - q[0], g[1] - q[1]) for q in orte_syn)
+        i = max(kand, key=lambda i: (round(abstand(i) / 40), -i))
+        g = gebaeude[je_block[i][len(je_block[i]) // 2]]
+        g.append("s")
+        nr += 1
+        orte_syn.append((g[0], g[1]))
+        sonder.append({"typ": "synagoge", "name": f"Nachbarschaftssynagoge {nr}", "rang": i, "x": g[0], "y": g[1],
+                       "info": f"Ring {bloecke[i]['band']}, Quartier {bloecke[i]['quartier'] + 1}"})
     for s in sonder:
         s["x"], s["y"] = round(s["x"], 1), round(s["y"], 1)
 
@@ -478,6 +550,8 @@ def entwerfen(a, dem, wc, ort: dict, zentrum_px, denkmale=(), sperre=None, stras
         "grundschulen_bedarf": max(1, round(ew / A["ew_je_grundschule"])),
         "kita_gruppen_bedarf": round(ew / A["ew_je_kita_gruppe"]),
         "synagogen_bedarf": max(1, round(ew / A["ew_je_synagoge"])),
+        "synagogen_plan": sum(1 for q in sonder if q["typ"] == "synagoge"),
+        "batei_midrasch_plan": sum(1 for q in sonder if q["typ"] == "beitmidrasch"),
         "quartierszentren": sum(1 for k in bloecke if k["zone"] == "gemeinbedarf"),
         "jobs_je_erwerbsperson": round(ap / max(ew * A["erwerbsquote"], 1), 2),
         "wasserbedarf_m3": round(bedarf), "regenernte_m3": round(regen),
