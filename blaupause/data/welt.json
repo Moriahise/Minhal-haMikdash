@@ -1,6 +1,6 @@
 {
- "jahr": 9,
- "stand": "2026-11-16T12:04:13+00:00",
+ "jahr": 10,
+ "stand": "2026-11-16T14:10:19+00:00",
  "version": "1.0.0",
  "plan_version": "1.0.0",
  "folge": [
@@ -57,12 +57,12 @@
    "art": "davidisch",
    "antik": "Khirbet Qeiyafa",
    "lonlat": [
-    34.968612,
-    31.695189
+    34.971229,
+    31.694247
    ],
    "ziel_ew": 24000,
-   "plan_ew": 24994,
-   "osm": false,
+   "plan_ew": 26952,
+   "osm": true,
    "bezug": "1 Sam 17,52 – befestigte Stadt über dem Ela-Tal, um 1000 v. Chr. datiert; die Gleichsetzung mit Scha'arajim und die Zuweisung an Davids Königtum (Garfinkel) sind in der Forschung umstritten.",
    "hinweis": null
   },
@@ -72,12 +72,12 @@
    "art": "neu",
    "antik": null,
    "lonlat": [
-    34.969242,
-    31.283232
+    35.005112,
+    31.330394
    ],
    "ziel_ew": 30000,
-   "plan_ew": 31766,
-   "osm": false,
+   "plan_ew": 30379,
+   "osm": true,
    "bezug": "Neugründung im nördlichen Negev zwischen Beerscheba und Arad.",
    "hinweis": null
   },
@@ -87,12 +87,12 @@
    "art": "davidisch",
    "antik": "Khirbet esh-Sheikh Madhkur",
    "lonlat": [
-    35.016257,
-    31.659268
+    35.003044,
+    31.64306
    ],
    "ziel_ew": 16000,
-   "plan_ew": 16754,
-   "osm": false,
+   "plan_ew": 17793,
+   "osm": true,
    "bezug": "1 Sam 22,1 – Höhle Adullam, Zuflucht Davids; 2 Sam 23,13.",
    "hinweis": null
   },
@@ -107,7 +107,7 @@
    ],
    "ziel_ew": 15000,
    "plan_ew": 15392,
-   "osm": false,
+   "osm": true,
    "bezug": "1 Sam 23,1–13 – David befreit Keila von den Philistern.",
    "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
@@ -122,7 +122,7 @@
    ],
    "ziel_ew": 20000,
    "plan_ew": 21082,
-   "osm": false,
+   "osm": true,
    "bezug": "1 Sam 21,11; 27,2–4 – David bei Achisch, König von Gat.",
    "hinweis": null
   },
@@ -132,12 +132,12 @@
    "art": "neu",
    "antik": null,
    "lonlat": [
-    34.80431,
-    31.496196
+    34.848183,
+    31.548339
    ],
    "ziel_ew": 28000,
-   "plan_ew": 30836,
-   "osm": false,
+   "plan_ew": 33354,
+   "osm": true,
    "bezug": "Neugründung im Lachisch-Hügelland der südlichen Schefela.",
    "hinweis": null
   },
@@ -152,7 +152,7 @@
    ],
    "ziel_ew": 14000,
    "plan_ew": 16701,
-   "osm": false,
+   "osm": true,
    "bezug": "1 Sam 23,14–24; 26,1–2 – David in der Wüste Sif.",
    "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
@@ -167,7 +167,7 @@
    ],
    "ziel_ew": 18000,
    "plan_ew": 18843,
-   "osm": false,
+   "osm": true,
    "bezug": "1 Sam 27,6; 30 – von Achisch an David gegeben. Die Lage ist ungeklärt (Vorschläge u. a. Khirbet a-Ra'i, Tel Sera', Tel Halif); hier als Arbeitsannahme.",
    "hinweis": null
   },
@@ -177,12 +177,12 @@
    "art": "davidisch",
    "antik": "Khirbet Ma'in",
    "lonlat": [
-    35.147414,
-    31.405301
+    35.120118,
+    31.402688
    ],
    "ziel_ew": 12000,
-   "plan_ew": 16151,
-   "osm": false,
+   "plan_ew": 15255,
+   "osm": true,
    "bezug": "1 Sam 23,24–25; 25,2 – Wüste Maon; Nabal und Abigajil im benachbarten Karmel (Khirbet al-Karmil, 1,5 km nördlich).",
    "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
@@ -197,7 +197,7 @@
    ],
    "ziel_ew": 20000,
    "plan_ew": 23236,
-   "osm": false,
+   "osm": true,
    "bezug": "2 Sam 24,2.7 – Südgrenze der Volkszählung Davids („von Dan bis Beerscheba“).",
    "hinweis": null
   },
@@ -211,8 +211,8 @@
     31.62625
    ],
    "ziel_ew": 12000,
-   "plan_ew": 15040,
-   "osm": false,
+   "plan_ew": 15003,
+   "osm": true,
    "bezug": "2 Sam 14,2 – die kluge Frau aus Tekoa; 2 Sam 23,26 – Ira aus Tekoa, einer der Helden Davids.",
    "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
@@ -222,12 +222,12 @@
    "art": "neu",
    "antik": null,
    "lonlat": [
-    35.2224,
-    30.802666
+    35.112468,
+    30.850419
    ],
    "ziel_ew": 12000,
-   "plan_ew": 12820,
-   "osm": false,
+   "plan_ew": 15540,
+   "osm": true,
    "bezug": "Oasenstadt in der nördlichen Arava mit vollständigem Wasserkreislauf.",
    "hinweis": null
   },
@@ -242,7 +242,7 @@
    ],
    "ziel_ew": 10000,
    "plan_ew": 12105,
-   "osm": false,
+   "osm": true,
    "bezug": "2 Sam 13,23 – Schafschur Absaloms bei Baal-Hazor in Samaria; höchster Berg des samarischen Berglands (1.016 m).",
    "hinweis": "Der Standort liegt in Judäa und Samaria (Westjordanland). Der völker- und planungsrechtliche Status (Gebiete A/B/C), Eigentumsverhältnisse und bestehende Nutzungen sind nicht geprüft; bestehende Ortschaften bleiben im Entwurf unangetastet."
   },
@@ -257,7 +257,7 @@
    ],
    "ziel_ew": 6000,
    "plan_ew": 6569,
-   "osm": false,
+   "osm": true,
    "bezug": "1 Sam 24,1 – Bergfesten von En Gedi. Naturschutzgebiet und Steilstufe begrenzen die Bebaubarkeit stark.",
    "hinweis": null
   }
@@ -266,9 +266,9 @@
   "schaarajim": {
    "status": "gegruendet",
    "gruendung": 1,
-   "ew": 4240,
-   "we": 1379,
-   "bloecke_gebaut": 19,
+   "ew": 4887,
+   "we": 1582,
+   "bloecke_gebaut": 24,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
@@ -341,36 +341,44 @@
      1379,
      19,
      48
+    ],
+    [
+     10,
+     4887,
+     1582,
+     24,
+     41
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.23,
-    "wasserbedarf_m3": 381600,
-    "regenernte_m3": 40141,
-    "brauchwasser_m3": 248040,
-    "wasser_eigenanteil": 0.76,
-    "pv_gwh": 6.2,
-    "strombedarf_gwh": 19.1,
-    "arbeitsplaetze": 690,
-    "jobs_je_erwerbsperson": 0.39,
-    "freiraum_m2_je_ew": 2.7,
+    "regenfaktor": 0.62,
+    "wasserbedarf_m3": 439830,
+    "regenernte_m3": 22202,
+    "brauchwasser_m3": 285890,
+    "wasser_eigenanteil": 0.7,
+    "pv_gwh": 6.6,
+    "strombedarf_gwh": 22.0,
+    "arbeitsplaetze": 356,
+    "jobs_je_erwerbsperson": 0.17,
+    "freiraum_m2_je_ew": 3.7,
     "schulen": 0,
     "schulen_soll": 1,
-    "quartierszentren_plan": 6,
-    "ausbau": 0.187,
-    "lebensqualitaet": 48
+    "quartierszentren_plan": 5,
+    "ausbau": 0.199,
+    "lebensqualitaet": 41
    }
   },
   "neu_negev_nord": {
    "status": "gegruendet",
    "gruendung": 8,
-   "ew": 647,
-   "we": 247,
-   "bloecke_gebaut": 2,
+   "ew": 1067,
+   "we": 382,
+   "bloecke_gebaut": 6,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
-    "platz"
+    "platz",
+    "synagoge"
    ],
    "verlauf": [
     [
@@ -386,24 +394,31 @@
      247,
      2,
      27
+    ],
+    [
+     10,
+     1067,
+     382,
+     6,
+     26
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.23,
-    "wasserbedarf_m3": 58230,
-    "regenernte_m3": 3074,
+    "regenfaktor": 0.62,
+    "wasserbedarf_m3": 96030,
+    "regenernte_m3": 2525,
     "brauchwasser_m3": 0,
-    "wasser_eigenanteil": 0.05,
-    "pv_gwh": 1.1,
-    "strombedarf_gwh": 2.9,
-    "arbeitsplaetze": 395,
-    "jobs_je_erwerbsperson": 1.45,
+    "wasser_eigenanteil": 0.03,
+    "pv_gwh": 1.6,
+    "strombedarf_gwh": 4.8,
+    "arbeitsplaetze": 592,
+    "jobs_je_erwerbsperson": 1.32,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.026,
-    "lebensqualitaet": 27
+    "ausbau": 0.043,
+    "lebensqualitaet": 26
    }
   },
   "adullam": {
@@ -599,12 +614,30 @@
    "stadt": "schaarajim",
    "art": "ereignis",
    "text": "Der Ringbus verbindet die Quartiere mit dem Zentrum."
+  },
+  {
+   "jahr": 10,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Dürrejahr: nur 62% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
+  },
+  {
+   "jahr": 10,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Die Hauptsynagoge am Platz wird eröffnet."
+  },
+  {
+   "jahr": 10,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Dürrejahr: nur 62% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
   }
  ],
  "summe": {
   "staedte": 2,
-  "einwohner": 4887,
-  "wohneinheiten": 1626,
-  "lebensqualitaet": 38
+  "einwohner": 5954,
+  "wohneinheiten": 1964,
+  "lebensqualitaet": 34
  }
 }
