@@ -1,28 +1,28 @@
 {
- "stand": "2026-11-17T10:53:19+00:00",
+ "stand": "2026-11-17T18:37:51+00:00",
  "methoden_version": "1.0.0",
  "software_version": "1.0.0",
  "kacheln_gesamt": 777,
- "kacheln_ok": 80,
+ "kacheln_ok": 81,
  "kacheln_fehler": 0,
- "flaeche_km2": 895.0,
- "kandidaten": 827,
- "kandidaten_unregistriert": 801,
+ "flaeche_km2": 907.0,
+ "kandidaten": 839,
+ "kandidaten_unregistriert": 812,
  "kandidaten_bestaetigt": 0,
- "fundorte": 304,
+ "fundorte": 306,
  "fundorte_et": 28,
  "fundorte_zt": 24,
  "validierung": {
-  "n": 118,
-  "n_kacheln": 43,
-  "auc": 0.538,
+  "n": 119,
+  "n_kacheln": 44,
+  "auc": 0.536,
   "ki95": [
-   0.475,
-   0.603
+   0.473,
+   0.601
   ],
-  "p_einseitig": 0.131,
+  "p_einseitig": 0.14575,
   "verfahren": "Cluster-Bootstrap über Kacheln",
-  "anteil_top10": 0.119
+  "anteil_top10": 0.118
  },
  "regionen": {
   "schefela": {
@@ -277,19 +277,19 @@
     33.25
    ],
    "kacheln_gesamt": 20,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": {
-    "n": 5,
-    "n_kacheln": 2,
-    "auc": 0.537,
+    "n": 6,
+    "n_kacheln": 3,
+    "auc": 0.492,
     "ki95": [
-     0.335,
-     0.751
+     0.297,
+     0.698
     ],
-    "p_einseitig": 0.36575,
+    "p_einseitig": 0.5405,
     "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
-    "anteil_top10": 0.2
+    "anteil_top10": 0.167
    }
   },
   "kueste_mitte": {
@@ -645,6 +645,23 @@
    "entfallen": 0,
    "dauer_s": 226,
    "commit": "cc21a9e",
+   "methode": "1.0.0",
+   "osm_stand": "2026-11-16",
+   "umgebung": "Python 3.12.16, NumPy 2.5.5"
+  },
+  {
+   "id": "2026-11-17T1837Z",
+   "datum": "2026-11-17",
+   "kacheln": [
+    "T3555_3315"
+   ],
+   "ok": 1,
+   "fehler": 0,
+   "neu": 12,
+   "wiedererkannt": 0,
+   "entfallen": 0,
+   "dauer_s": 13,
+   "commit": "664ed24",
    "methode": "1.0.0",
    "osm_stand": "2026-11-16",
    "umgebung": "Python 3.12.16, NumPy 2.5.5"
