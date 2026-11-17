@@ -1,28 +1,28 @@
 {
- "stand": "2026-11-16T09:58:46+00:00",
+ "stand": "2026-11-17T10:53:19+00:00",
  "methoden_version": "1.0.0",
  "software_version": "1.0.0",
  "kacheln_gesamt": 777,
- "kacheln_ok": 60,
+ "kacheln_ok": 80,
  "kacheln_fehler": 0,
- "flaeche_km2": 658.0,
- "kandidaten": 630,
- "kandidaten_unregistriert": 608,
+ "flaeche_km2": 895.0,
+ "kandidaten": 827,
+ "kandidaten_unregistriert": 801,
  "kandidaten_bestaetigt": 0,
- "fundorte": 239,
- "fundorte_et": 23,
- "fundorte_zt": 20,
+ "fundorte": 304,
+ "fundorte_et": 28,
+ "fundorte_zt": 24,
  "validierung": {
-  "n": 88,
-  "n_kacheln": 35,
-  "auc": 0.519,
+  "n": 118,
+  "n_kacheln": 43,
+  "auc": 0.538,
   "ki95": [
-   0.459,
-   0.579
+   0.475,
+   0.603
   ],
-  "p_einseitig": 0.27975,
+  "p_einseitig": 0.131,
   "verfahren": "Cluster-Bootstrap über Kacheln",
-  "anteil_top10": 0.114
+  "anteil_top10": 0.119
  },
  "regionen": {
   "schefela": {
@@ -35,19 +35,19 @@
     31.8
    ],
    "kacheln_gesamt": 24,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": {
-    "n": 15,
-    "n_kacheln": 3,
-    "auc": 0.553,
+    "n": 26,
+    "n_kacheln": 4,
+    "auc": 0.645,
     "ki95": [
-     0.441,
-     0.669
+     0.548,
+     0.734
     ],
-    "p_einseitig": 0.174,
+    "p_einseitig": 0.0015,
     "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
-    "anteil_top10": 0.133
+    "anteil_top10": 0.231
    }
   },
   "jerusalem": {
@@ -60,17 +60,17 @@
     31.85
    ],
    "kacheln_gesamt": 12,
-   "kacheln_ok": 3,
-   "kandidaten": 20,
+   "kacheln_ok": 4,
+   "kandidaten": 32,
    "validierung": {
-    "n": 5,
-    "n_kacheln": 2,
-    "auc": 0.354,
+    "n": 14,
+    "n_kacheln": 3,
+    "auc": 0.384,
     "ki95": [
-     0.176,
-     0.63
+     0.276,
+     0.496
     ],
-    "p_einseitig": 0.8715,
+    "p_einseitig": 0.98,
     "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
     "anteil_top10": 0.0
    }
@@ -85,17 +85,17 @@
     32.0
    ],
    "kacheln_gesamt": 12,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": {
-    "n": 11,
-    "n_kacheln": 3,
-    "auc": 0.473,
+    "n": 12,
+    "n_kacheln": 4,
+    "auc": 0.464,
     "ki95": [
-     0.348,
-     0.595
+     0.346,
+     0.579
     ],
-    "p_einseitig": 0.6505,
+    "p_einseitig": 0.71925,
     "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
     "anteil_top10": 0.0
    }
@@ -110,8 +110,8 @@
     31.7
    ],
    "kacheln_gesamt": 28,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": null
   },
   "beerscheba": {
@@ -124,9 +124,20 @@
     31.35
    ],
    "kacheln_gesamt": 27,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
-   "validierung": null
+   "kacheln_ok": 4,
+   "kandidaten": 48,
+   "validierung": {
+    "n": 7,
+    "n_kacheln": 2,
+    "auc": 0.518,
+    "ki95": [
+     0.391,
+     0.644
+    ],
+    "p_einseitig": 0.40425,
+    "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
+    "anteil_top10": 0.0
+   }
   },
   "wueste": {
    "id": "wueste",
@@ -138,8 +149,8 @@
     31.75
    ],
    "kacheln_gesamt": 35,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": {
     "n": 6,
     "n_kacheln": 1,
@@ -163,8 +174,8 @@
     31.05
    ],
    "kacheln_gesamt": 42,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 44,
    "validierung": {
     "n": 11,
     "n_kacheln": 3,
@@ -188,8 +199,8 @@
     31.8
    ],
    "kacheln_gesamt": 20,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": null
   },
   "samaria": {
@@ -202,8 +213,8 @@
     32.35
    ],
    "kacheln_gesamt": 25,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": {
     "n": 7,
     "n_kacheln": 3,
@@ -227,8 +238,8 @@
     32.65
    ],
    "kacheln_gesamt": 24,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
+   "kacheln_ok": 4,
+   "kandidaten": 48,
    "validierung": null
   },
   "galilaea": {
@@ -241,9 +252,20 @@
     32.9
    ],
    "kacheln_gesamt": 24,
-   "kacheln_ok": 3,
-   "kandidaten": 36,
-   "validierung": null
+   "kacheln_ok": 4,
+   "kandidaten": 48,
+   "validierung": {
+    "n": 6,
+    "n_kacheln": 3,
+    "auc": 0.578,
+    "ki95": [
+     0.366,
+     0.773
+    ],
+    "p_einseitig": 0.2325,
+    "verfahren": "Bootstrap über Fundstellen (zu wenige Kacheln für Cluster-Bootstrap)",
+    "anteil_top10": 0.167
+   }
   },
   "hula": {
    "id": "hula",
@@ -308,7 +330,7 @@
     32.85
    ],
    "kacheln_gesamt": 12,
-   "kacheln_ok": 2,
+   "kacheln_ok": 3,
    "kandidaten": 14,
    "validierung": null
   },
@@ -322,8 +344,8 @@
     33.1
    ],
    "kacheln_gesamt": 15,
-   "kacheln_ok": 2,
-   "kandidaten": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 30,
    "validierung": null
   },
   "kinneret": {
@@ -336,8 +358,8 @@
     32.95
    ],
    "kacheln_gesamt": 20,
-   "kacheln_ok": 2,
-   "kandidaten": 5,
+   "kacheln_ok": 3,
+   "kandidaten": 8,
    "validierung": null
   },
   "jordantal": {
@@ -350,8 +372,8 @@
     32.5
    ],
    "kacheln_gesamt": 56,
-   "kacheln_ok": 2,
-   "kandidaten": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
    "validierung": null
   },
   "totes_meer": {
@@ -364,8 +386,8 @@
     31.75
    ],
    "kacheln_gesamt": 42,
-   "kacheln_ok": 2,
-   "kandidaten": 11,
+   "kacheln_ok": 3,
+   "kandidaten": 23,
    "validierung": null
   },
   "gilead": {
@@ -378,8 +400,8 @@
     32.6
    ],
    "kacheln_gesamt": 56,
-   "kacheln_ok": 2,
-   "kandidaten": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
    "validierung": null
   },
   "ammon": {
@@ -392,7 +414,7 @@
     32.1
    ],
    "kacheln_gesamt": 42,
-   "kacheln_ok": 2,
+   "kacheln_ok": 3,
    "kandidaten": 24,
    "validierung": null
   },
@@ -406,8 +428,8 @@
     31.75
    ],
    "kacheln_gesamt": 78,
-   "kacheln_ok": 2,
-   "kandidaten": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
    "validierung": null
   },
   "edom": {
@@ -420,8 +442,8 @@
     30.95
    ],
    "kacheln_gesamt": 78,
-   "kacheln_ok": 2,
-   "kandidaten": 24,
+   "kacheln_ok": 3,
+   "kandidaten": 36,
    "validierung": null
   }
  },
@@ -587,6 +609,42 @@
    "entfallen": 0,
    "dauer_s": 336,
    "commit": "be3ff46",
+   "methode": "1.0.0",
+   "osm_stand": "2026-11-16",
+   "umgebung": "Python 3.12.16, NumPy 2.5.5"
+  },
+  {
+   "id": "2026-11-17T1053Z",
+   "datum": "2026-11-17",
+   "kacheln": [
+    "T3490_3270",
+    "T3510_3300",
+    "T3560_3285",
+    "T3550_3215",
+    "T3555_3135",
+    "T3585_3240",
+    "T3585_3195",
+    "T3570_3145",
+    "T3550_3065",
+    "T3490_3160",
+    "T3520_3180",
+    "T3525_3195",
+    "T3515_3155",
+    "T3495_3130",
+    "T3535_3155",
+    "T3480_3090",
+    "T3460_3165",
+    "T3520_3215",
+    "T3525_3260",
+    "T3540_3280"
+   ],
+   "ok": 20,
+   "fehler": 0,
+   "neu": 197,
+   "wiedererkannt": 0,
+   "entfallen": 0,
+   "dauer_s": 226,
+   "commit": "cc21a9e",
    "methode": "1.0.0",
    "osm_stand": "2026-11-16",
    "umgebung": "Python 3.12.16, NumPy 2.5.5"
