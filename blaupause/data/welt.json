@@ -1,6 +1,6 @@
 {
- "jahr": 24,
- "stand": "2026-11-19T12:12:51+00:00",
+ "jahr": 25,
+ "stand": "2026-11-20T12:12:53+00:00",
  "version": "1.0.0",
  "plan_version": "1.1.0",
  "folge": [
@@ -266,10 +266,10 @@
   "schaarajim": {
    "status": "gegruendet",
    "gruendung": 1,
-   "ew": 19287,
-   "we": 6101,
-   "bloecke_gebaut": 176,
-   "schulen": 4,
+   "ew": 20836,
+   "we": 6587,
+   "bloecke_gebaut": 216,
+   "schulen": 5,
    "meilensteine": [
     "zufahrt",
     "platz",
@@ -450,26 +450,33 @@
      6101,
      176,
      82
+    ],
+    [
+     25,
+     20836,
+     6587,
+     216,
+     82
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.88,
-    "wasserbedarf_m3": 1735830,
-    "regenernte_m3": 121334,
-    "brauchwasser_m3": 1128290,
-    "wasser_eigenanteil": 0.72,
-    "pv_gwh": 25.6,
-    "strombedarf_gwh": 86.8,
+    "regenfaktor": 0.59,
+    "wasserbedarf_m3": 1875240,
+    "regenernte_m3": 87645,
+    "brauchwasser_m3": 1218906,
+    "wasser_eigenanteil": 0.7,
+    "pv_gwh": 27.6,
+    "strombedarf_gwh": 93.8,
     "arbeitsplaetze": 477,
-    "jobs_je_erwerbsperson": 0.06,
-    "freiraum_m2_je_ew": 15.2,
-    "schulen": 4,
+    "jobs_je_erwerbsperson": 0.05,
+    "freiraum_m2_je_ew": 22.0,
+    "schulen": 5,
     "synagogen": 18,
-    "synagogen_soll": 13,
+    "synagogen_soll": 14,
     "batei_midrasch": 4,
-    "schulen_soll": 4,
+    "schulen_soll": 5,
     "quartierszentren_plan": 5,
-    "ausbau": 0.768,
+    "ausbau": 0.829,
     "lebensqualitaet": 82
    },
    "synagogen": 18,
@@ -478,10 +485,10 @@
   "neu_negev_nord": {
    "status": "gegruendet",
    "gruendung": 8,
-   "ew": 10638,
-   "we": 3387,
-   "bloecke_gebaut": 46,
-   "schulen": 0,
+   "ew": 11668,
+   "we": 3710,
+   "bloecke_gebaut": 59,
+   "schulen": 2,
    "meilensteine": [
     "zufahrt",
     "platz",
@@ -612,37 +619,44 @@
      3387,
      46,
      44
+    ],
+    [
+     25,
+     11668,
+     3710,
+     59,
+     65
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.88,
-    "wasserbedarf_m3": 957420,
-    "regenernte_m3": 31725,
-    "brauchwasser_m3": 622323,
-    "wasser_eigenanteil": 0.68,
-    "pv_gwh": 14.6,
-    "strombedarf_gwh": 47.9,
-    "arbeitsplaetze": 592,
-    "jobs_je_erwerbsperson": 0.13,
-    "freiraum_m2_je_ew": 0.0,
-    "schulen": 0,
-    "synagogen": 8,
-    "synagogen_soll": 7,
-    "batei_midrasch": 1,
-    "schulen_soll": 2,
+    "regenfaktor": 0.59,
+    "wasserbedarf_m3": 1050120,
+    "regenernte_m3": 23250,
+    "brauchwasser_m3": 682578,
+    "wasser_eigenanteil": 0.67,
+    "pv_gwh": 16.0,
+    "strombedarf_gwh": 52.5,
+    "arbeitsplaetze": 724,
+    "jobs_je_erwerbsperson": 0.15,
+    "freiraum_m2_je_ew": 3.9,
+    "schulen": 2,
+    "synagogen": 10,
+    "synagogen_soll": 8,
+    "batei_midrasch": 3,
+    "schulen_soll": 3,
     "quartierszentren_plan": 6,
-    "ausbau": 0.378,
-    "lebensqualitaet": 44
+    "ausbau": 0.414,
+    "lebensqualitaet": 65
    },
-   "synagogen": 8,
-   "batei_midrasch": 1
+   "synagogen": 10,
+   "batei_midrasch": 3
   },
   "adullam": {
    "status": "gegruendet",
    "gruendung": 16,
-   "ew": 4240,
-   "we": 1379,
-   "bloecke_gebaut": 20,
+   "ew": 4887,
+   "we": 1582,
+   "bloecke_gebaut": 21,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
@@ -717,29 +731,36 @@
      1379,
      20,
      52
+    ],
+    [
+     25,
+     4887,
+     1582,
+     21,
+     50
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.88,
-    "wasserbedarf_m3": 381600,
-    "regenernte_m3": 30948,
-    "brauchwasser_m3": 248040,
-    "wasser_eigenanteil": 0.73,
-    "pv_gwh": 6.8,
-    "strombedarf_gwh": 19.1,
+    "regenfaktor": 0.59,
+    "wasserbedarf_m3": 439830,
+    "regenernte_m3": 23754,
+    "brauchwasser_m3": 285890,
+    "wasser_eigenanteil": 0.7,
+    "pv_gwh": 7.8,
+    "strombedarf_gwh": 22.0,
     "arbeitsplaetze": 472,
-    "jobs_je_erwerbsperson": 0.27,
-    "freiraum_m2_je_ew": 1.3,
+    "jobs_je_erwerbsperson": 0.23,
+    "freiraum_m2_je_ew": 1.2,
     "schulen": 0,
-    "synagogen": 3,
+    "synagogen": 4,
     "synagogen_soll": 3,
     "batei_midrasch": 1,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.263,
-    "lebensqualitaet": 52
+    "ausbau": 0.302,
+    "lebensqualitaet": 50
    },
-   "synagogen": 3,
+   "synagogen": 4,
    "batei_midrasch": 1
   },
   "gat": {
@@ -811,9 +832,9 @@
   "keila": {
    "status": "gegruendet",
    "gruendung": 21,
-   "ew": 1520,
-   "we": 525,
-   "bloecke_gebaut": 9,
+   "ew": 2003,
+   "we": 677,
+   "bloecke_gebaut": 11,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
@@ -851,18 +872,25 @@
      525,
      9,
      42
+    ],
+    [
+     25,
+     2003,
+     677,
+     11,
+     39
     ]
    ],
    "bilanz": {
-    "regenfaktor": 0.88,
-    "wasserbedarf_m3": 136800,
-    "regenernte_m3": 9968,
+    "regenfaktor": 0.59,
+    "wasserbedarf_m3": 180270,
+    "regenernte_m3": 8600,
     "brauchwasser_m3": 0,
-    "wasser_eigenanteil": 0.07,
-    "pv_gwh": 2.6,
-    "strombedarf_gwh": 6.8,
+    "wasser_eigenanteil": 0.05,
+    "pv_gwh": 3.4,
+    "strombedarf_gwh": 9.0,
     "arbeitsplaetze": 433,
-    "jobs_je_erwerbsperson": 0.68,
+    "jobs_je_erwerbsperson": 0.51,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
     "synagogen": 2,
@@ -870,8 +898,8 @@
     "batei_midrasch": 1,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.116,
-    "lebensqualitaet": 42
+    "ausbau": 0.149,
+    "lebensqualitaet": 39
    },
    "synagogen": 2,
    "batei_midrasch": 1
@@ -1203,12 +1231,66 @@
    "stadt": "keila",
    "art": "ereignis",
    "text": "Weitere Synagoge eröffnet – 2 von 15 in Betrieb."
+  },
+  {
+   "jahr": 25,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Quartierszentrum 5 mit Grundschule, Synagoge und Mikwe eröffnet."
+  },
+  {
+   "jahr": 25,
+   "stadt": "schaarajim",
+   "art": "ereignis",
+   "text": "Dürrejahr: nur 59% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
+  },
+  {
+   "jahr": 25,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Quartierszentrum 2 mit Grundschule, Synagoge und Mikwe eröffnet."
+  },
+  {
+   "jahr": 25,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Weitere Synagoge eröffnet – 10 von 25 in Betrieb."
+  },
+  {
+   "jahr": 25,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Weiterer Beit Midrasch im Quartier eröffnet – 3 in Betrieb."
+  },
+  {
+   "jahr": 25,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Dürrejahr: nur 59% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
+  },
+  {
+   "jahr": 25,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Weitere Synagoge eröffnet – 4 von 17 in Betrieb."
+  },
+  {
+   "jahr": 25,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Dürrejahr: nur 59% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
+  },
+  {
+   "jahr": 25,
+   "stadt": "keila",
+   "art": "ereignis",
+   "text": "Dürrejahr: nur 59% des mittleren Niederschlags – die Regenernte bricht ein, der Fernwasserbezug steigt entsprechend."
   }
  ],
  "summe": {
   "staedte": 4,
-  "einwohner": 35685,
-  "wohneinheiten": 11392,
-  "lebensqualitaet": 55
+  "einwohner": 39394,
+  "wohneinheiten": 12556,
+  "lebensqualitaet": 59
  }
 }
