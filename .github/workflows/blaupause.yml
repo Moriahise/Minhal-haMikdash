@@ -16,13 +16,13 @@ on:
         default: "nein"
   push:
     branches: [main]
-    paths: ["staedtebau/**", "blaupause/**", "tests/test_staedtebau.py", ".github/workflows/blaupause.yml"]
+    paths: ["staedtebau/**", "blaupause/**", "tests/test_staedtebau.py", ".github/workflows/blaupause.yml", ".github/scripts/verify-pages.sh"]
 
 permissions:
   contents: read
 
 concurrency:                         # nie gleichzeitig mit dem Seker-Lauf
-  group: seker-${{ github.ref }}
+  group: ${{ (github.event_name == 'push' || github.event_name == 'pull_request') && github.workflow || 'seker' }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -85,33 +85,22 @@ jobs:
           exit 1
 
   veroeffentlichen:
-    # Commits des Bots lösen keinen Pages-Build aus, daher hier ausdrücklich.
     needs: [tests, runde]
     if: >-
       always() && !cancelled() && github.ref == 'refs/heads/main' &&
       needs.tests.result == 'success' &&
       (github.event_name == 'push' || needs.runde.result == 'success')
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     permissions:
       contents: read
       pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: App, Seker und Blaupause gemeinsam bereitstellen
-        run: |
-          mkdir _site
-          cp index.html .nojekyll _site/
-          cp -a app docs seker blaupause _site/
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - name: GitHub Pages veröffentlichen
-        id: deployment
-        uses: actions/deploy-pages@v4
+          persist-credentials: false
+      - name: Veröffentlichten Datenstand prüfen und bei Bedarf Pages erneut anstoßen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/verify-pages.sh blaupause/data/welt.json

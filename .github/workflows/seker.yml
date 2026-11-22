@@ -16,7 +16,7 @@ on:
         default: ""
   push:
     branches: [main]
-    paths: ["prospektion/**", "tests/**", "requirements.txt", "seker/**", ".github/workflows/seker.yml"]
+    paths: ["prospektion/**", "tests/**", "requirements.txt", "seker/**", ".github/workflows/seker.yml", ".github/scripts/verify-pages.sh"]
   pull_request:
     paths: ["prospektion/**", "tests/**", "requirements.txt"]
 
@@ -24,7 +24,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: seker-${{ github.ref }}
+  group: ${{ (github.event_name == 'push' || github.event_name == 'pull_request') && github.workflow || 'seker' }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -85,36 +85,22 @@ jobs:
           exit 1
 
   veroeffentlichen:
-    # GITHUB_TOKEN-Commits lösen keinen weiteren Pages-Build aus.
-    # Deshalb nach dem Tageslauf explizit die gesamte bestehende Website
-    # mit dem neuen, getrennten Verzeichnis seker/ veröffentlichen.
     needs: [tests, lauf]
     if: >-
       always() && !cancelled() && github.ref == 'refs/heads/main' &&
       needs.tests.result == 'success' &&
       (github.event_name == 'push' || needs.lauf.result == 'success')
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     permissions:
       contents: read
       pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-      - name: Bestehende App und Seker gemeinsam bereitstellen
-        run: |
-          mkdir _site
-          cp index.html .nojekyll _site/
-          cp -a app docs seker _site/
-          if [ -d blaupause ]; then cp -a blaupause _site/; fi
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - name: GitHub Pages veröffentlichen
-        id: deployment
-        uses: actions/deploy-pages@v4
+          persist-credentials: false
+      - name: Veröffentlichten Datenstand prüfen und bei Bedarf Pages erneut anstoßen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/verify-pages.sh seker/data/uebersicht.json
