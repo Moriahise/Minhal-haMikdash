@@ -620,7 +620,14 @@
       $("#runde-meldung").textContent = ""; $("#runde-dialog").showModal(); rundeStatus();
     });
     $("#runde-start").addEventListener("click", rundeStarten);
-    lade("data/welt.json").then((w) => { WELT = w; welt(); const h = location.hash.slice(1); if (h && w.uebersicht[h]) { tab("stadt"); stadtWaehlen(h); } })
+    lade("data/welt.json").then((w) => {
+      const datenstand = $("#runde-datenstand");
+      if (datenstand && w.stand) {
+        datenstand.textContent = "Geladener Datenstand vom " + new Date(w.stand).toLocaleString("de-DE")
+          + " · Simulationsjahr " + w.jahr;
+        datenstand.hidden = false;
+      }
+      WELT = w; welt(); const h = location.hash.slice(1); if (h && w.uebersicht[h]) { tab("stadt"); stadtWaehlen(h); } })
       .catch((e) => { $("#hinweis").innerHTML = "<b>Noch keine Pläne vorhanden</b> – der erste Lauf steht aus. (" + esc(e.message) + ")"; });
   }
   start();

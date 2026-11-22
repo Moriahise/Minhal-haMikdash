@@ -325,6 +325,12 @@
 
     Promise.all(["data/uebersicht.json", "data/kandidaten.geojson", "data/fundorte.geojson", "data/kacheln.json"]
       .map((u) => lade(u).then((r) => r.json()))).then(([ueb, kand, orte, kacheln]) => {
+      const datenstand = $("#lauf-datenstand");
+      if (datenstand && ueb.stand) {
+        datenstand.textContent = "Geladener Datenstand vom " + new Date(ueb.stand).toLocaleString("de-DE")
+          + " · " + ueb.kacheln_ok + " von " + ueb.kacheln_gesamt + " Kacheln erfolgreich bearbeitet";
+        datenstand.hidden = false;
+      }
       D = { ueb, kand: kand.features, orte: orte.features, kacheln };
       Object.values(ueb.regionen).forEach((r) => {
         const o = document.createElement("option"); o.textContent = r.name; $("#f-region").appendChild(o);
