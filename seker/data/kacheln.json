@@ -14707,5 +14707,1644 @@
   "entfallen": 0,
   "laeufe": 1,
   "ohne_osm": 0
+ },
+ "T3575_3190": {
+  "id": "T3575_3190",
+  "region": "ammon",
+  "region_name": "Ammon (Rabbat-Ammon, Heschbon)",
+  "bbox": [
+   35.75,
+   31.9,
+   35.8,
+   31.95
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYA_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36SYA_20260824_1_L2A",
+     "datum": "2026-08-24",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20250819_1_L2A",
+     "datum": "2025-08-19",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 7.66,
+  "anteil_auswertbar": 0.565,
+  "n_objekte_roh": 72,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 4,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Tyre",
+    "p": 0.44
+   },
+   {
+    "name": "Al Bahhath",
+    "p": 0.363
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3565_3140": {
+  "id": "T3565_3140",
+  "region": "moab",
+  "region_name": "Moab (Madaba, Dibon, Kerak)",
+  "bbox": [
+   35.65,
+   31.4,
+   35.7,
+   31.45
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36RYV_20260218_0_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYV_20250315_1_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20240310_0_L2A",
+     "datum": "2024-03-10",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36RYV_20230311_0_L2A",
+     "datum": "2023-03-11",
+     "wolken": 0.3
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36RYV_20260901_0_L2A",
+     "datum": "2026-09-01",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36RYV_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20240718_0_L2A",
+     "datum": "2024-07-18",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.1
+    }
+   ]
+  },
+  "schwelle_rx": 29.35,
+  "anteil_auswertbar": 0.956,
+  "n_objekte_roh": 131,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 0,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3560_3060": {
+  "id": "T3560_3060",
+  "region": "edom",
+  "region_name": "Edom (Bozra, Feinan, Petra)",
+  "bbox": [
+   35.6,
+   30.6,
+   35.65,
+   30.65
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2C_36RYU_20260223_0_L2A",
+     "datum": "2026-02-23",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20250404_0_L2A",
+     "datum": "2025-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20240310_0_L2A",
+     "datum": "2024-03-10",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20230405_0_L2A",
+     "datum": "2023-04-05",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36RYU_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0
+    },
+    {
+     "id": "S2B_36RYU_20250822_0_L2A",
+     "datum": "2025-08-22",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYU_20240718_0_L2A",
+     "datum": "2024-07-18",
+     "wolken": 0
+    },
+    {
+     "id": "S2B_36RYU_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0
+    }
+   ]
+  },
+  "schwelle_rx": 9.03,
+  "anteil_auswertbar": 0.894,
+  "n_objekte_roh": 117,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 0,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3495_3160": {
+  "id": "T3495_3160",
+  "region": "schefela",
+  "region_name": "Schefela (Ela-Tal, Lachisch)",
+  "bbox": [
+   34.95,
+   31.6,
+   35.0,
+   31.65
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXA_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36SXA_20260802_0_L2A",
+     "datum": "2026-08-02",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250718_0_L2A",
+     "datum": "2025-07-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2A_36SXA_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 11.52,
+  "anteil_auswertbar": 0.536,
+  "n_objekte_roh": 65,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 16,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Hurvat Itri",
+    "p": 0.383
+   },
+   {
+    "name": "Khirbat Umm Burj",
+    "p": 0.177
+   },
+   {
+    "name": "Hurvat Levnin",
+    "p": 0.52
+   },
+   {
+    "name": "Horbat Qerumit",
+    "p": 0.36
+   },
+   {
+    "name": "Khirbat el Hammam",
+    "p": 0.307
+   },
+   {
+    "name": "Khirbat Umm el Qutn",
+    "p": 0.26
+   },
+   {
+    "name": "Horbat Kfar Bish",
+    "p": 0.04
+   },
+   {
+    "name": "Khirbat Tell el Beida",
+    "p": 0.12
+   },
+   {
+    "name": "חורבת פטום",
+    "p": 0.57
+   },
+   {
+    "name": "מערת הפעמון",
+    "p": 0.32
+   },
+   {
+    "name": "מערת העמוד",
+    "p": 0.253
+   },
+   {
+    "name": "Horbat Burgin",
+    "p": 0.64
+   },
+   {
+    "name": "חורבת א־רסם",
+    "p": 0.05
+   },
+   {
+    "name": "חורבת ח׳רוף",
+    "p": 0.57
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3525_3170": {
+  "id": "T3525_3170",
+  "region": "jerusalem",
+  "region_name": "Jerusalem und Umland",
+  "bbox": [
+   35.25,
+   31.7,
+   35.3,
+   31.75
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYA_20260317_2_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36SYA_20260824_1_L2A",
+     "datum": "2026-08-24",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20250819_1_L2A",
+     "datum": "2025-08-19",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 12.68,
+  "anteil_auswertbar": 0.51,
+  "n_objekte_roh": 72,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 1,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3530_3195": {
+  "id": "T3530_3195",
+  "region": "benjamin",
+  "region_name": "Benjamin-Plateau",
+  "bbox": [
+   35.3,
+   31.95,
+   35.35,
+   32.0
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYA_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36SYA_20260824_1_L2A",
+     "datum": "2026-08-24",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20250819_1_L2A",
+     "datum": "2025-08-19",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 14.12,
+  "anteil_auswertbar": 0.754,
+  "n_objekte_roh": 89,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 4,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Ein Samia",
+    "p": 0.847
+   },
+   {
+    "name": "(ohne Namen)",
+    "p": 0.82
+   },
+   {
+    "name": "ח'רבת מרג'מה",
+    "p": 0.847
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3515_3145": {
+  "id": "T3515_3145",
+  "region": "juda",
+  "region_name": "Judäisches Bergland (Bethlehem–Hebron)",
+  "bbox": [
+   35.15,
+   31.45,
+   35.2,
+   31.5
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36RXV_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36RXV_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20240305_0_L2A",
+     "datum": "2024-03-05",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36RXV_20260804_0_L2A",
+     "datum": "2026-08-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RXV_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20240911_1_L2A",
+     "datum": "2024-09-11",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 10.12,
+  "anteil_auswertbar": 0.873,
+  "n_objekte_roh": 93,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 3,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "נבי יקין",
+    "p": 0.73
+   },
+   {
+    "name": "חורבת אל קצר",
+    "p": 0.503
+   },
+   {
+    "name": "חורבת עין אבו חשבה",
+    "p": 0.733
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3490_3130": {
+  "id": "T3490_3130",
+  "region": "beerscheba",
+  "region_name": "Beerscheba–Arad-Becken",
+  "bbox": [
+   34.9,
+   31.3,
+   34.95,
+   31.35
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36RXV_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36RXV_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20240305_0_L2A",
+     "datum": "2024-03-05",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36RXV_20260804_0_L2A",
+     "datum": "2026-08-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RXV_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20240911_1_L2A",
+     "datum": "2024-09-11",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 13.19,
+  "anteil_auswertbar": 0.529,
+  "n_objekte_roh": 61,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 4,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Tel Shoket",
+    "p": 0.693
+   },
+   {
+    "name": "Tel Shoqet",
+    "p": 0.153
+   },
+   {
+    "name": "Hurvat Sansana",
+    "p": 0.297
+   },
+   {
+    "name": "פסיפס",
+    "p": 0.927
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3540_3145": {
+  "id": "T3540_3145",
+  "region": "wueste",
+  "region_name": "Judäische Wüste",
+  "bbox": [
+   35.4,
+   31.45,
+   35.45,
+   31.5
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36RYV_20260218_0_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RYV_20250315_1_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20240310_0_L2A",
+     "datum": "2024-03-10",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36RYV_20230311_0_L2A",
+     "datum": "2023-03-11",
+     "wolken": 0.3
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36RYV_20260901_0_L2A",
+     "datum": "2026-09-01",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36RYV_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20240718_0_L2A",
+     "datum": "2024-07-18",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2B_36RYV_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.1
+    }
+   ]
+  },
+  "schwelle_rx": 241.76,
+  "anteil_auswertbar": 0.007,
+  "n_objekte_roh": 3,
+  "n_kandidaten": 1,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 0,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 1,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3480_3080": {
+  "id": "T3480_3080",
+  "region": "negev",
+  "region_name": "Negev-Hochland",
+  "bbox": [
+   34.8,
+   30.8,
+   34.85,
+   30.85
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36RXV_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36RXV_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20240305_0_L2A",
+     "datum": "2024-03-05",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36RXV_20260804_0_L2A",
+     "datum": "2026-08-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36RXV_20250911_0_L2A",
+     "datum": "2025-09-11",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20240911_1_L2A",
+     "datum": "2024-09-11",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36RXV_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 24.17,
+  "anteil_auswertbar": 0.94,
+  "n_objekte_roh": 90,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 0,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3460_3175": {
+  "id": "T3460_3175",
+  "region": "kueste",
+  "region_name": "Südliche Küstenebene (Philistäa)",
+  "bbox": [
+   34.6,
+   31.75,
+   34.65,
+   31.8
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXA_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36SXA_20260802_0_L2A",
+     "datum": "2026-08-02",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250718_0_L2A",
+     "datum": "2025-07-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2A_36SXA_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 11.85,
+  "anteil_auswertbar": 0.291,
+  "n_objekte_roh": 18,
+  "n_kandidaten": 11,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 4,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Ashdod Yam Cemetery Remains",
+    "p": 0.51
+   },
+   {
+    "name": "(ohne Namen)",
+    "p": 0.963
+   }
+  ],
+  "neu": 11,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3515_3215": {
+  "id": "T3515_3215",
+  "region": "samaria",
+  "region_name": "Samarisches Bergland",
+  "bbox": [
+   35.15,
+   32.15,
+   35.2,
+   32.2
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYA_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2A_36SYA_20260824_1_L2A",
+     "datum": "2026-08-24",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20250819_1_L2A",
+     "datum": "2025-08-19",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYA_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 14.4,
+  "anteil_auswertbar": 0.8,
+  "n_objekte_roh": 88,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 3,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Kafrur",
+    "p": 0.433
+   },
+   {
+    "name": "Kh. Ifqas",
+    "p": 0.673
+   },
+   {
+    "name": "Tafsa",
+    "p": 0.55
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3530_3260": {
+  "id": "T3530_3260",
+  "region": "jesreel",
+  "region_name": "Jesreel-Ebene",
+  "bbox": [
+   35.3,
+   32.6,
+   35.35,
+   32.65
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYB_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36SYB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SYB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20250928_1_L2A",
+     "datum": "2025-09-28",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 13.88,
+  "anteil_auswertbar": 0.433,
+  "n_objekte_roh": 51,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Hurvat Tevet",
+    "p": 0.883
+   },
+   {
+    "name": "Hurvat Adashim",
+    "p": 0.257
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3540_3270": {
+  "id": "T3540_3270",
+  "region": "galilaea",
+  "region_name": "Untergaliläa",
+  "bbox": [
+   35.4,
+   32.7,
+   35.45,
+   32.75
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYB_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36SYB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SYB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20250928_1_L2A",
+     "datum": "2025-09-28",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 18.83,
+  "anteil_auswertbar": 0.641,
+  "n_objekte_roh": 66,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 3,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Khan al-Tujjar",
+    "p": 0.197
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3565_3315": {
+  "id": "T3565_3315",
+  "region": "hula",
+  "region_name": "Hula-Tal (Hazor, Dan)",
+  "bbox": [
+   35.65,
+   33.15,
+   35.7,
+   33.2
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYB_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36SYB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SYB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20250928_1_L2A",
+     "datum": "2025-09-28",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 10.7,
+  "anteil_auswertbar": 0.644,
+  "n_objekte_roh": 62,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 1,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3465_3190": {
+  "id": "T3465_3190",
+  "region": "kueste_mitte",
+  "region_name": "Mittlere Küstenebene (Jaffa, Javne-Jam)",
+  "bbox": [
+   34.65,
+   31.9,
+   34.7,
+   31.95
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXA_20260218_1_L2A",
+     "datum": "2026-02-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36SXA_20260802_0_L2A",
+     "datum": "2026-08-02",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250718_0_L2A",
+     "datum": "2025-07-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2A_36SXA_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 30.19,
+  "anteil_auswertbar": 0.01,
+  "n_objekte_roh": 1,
+  "n_kandidaten": 1,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 1,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3490_3230": {
+  "id": "T3490_3230",
+  "region": "scharon",
+  "region_name": "Scharon-Ebene (Dor, Caesarea)",
+  "bbox": [
+   34.9,
+   32.3,
+   34.95,
+   32.35
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SXA_20260317_0_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250218_0_L2A",
+     "datum": "2025-02-18",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2A_36SXA_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2C_36SXA_20260802_0_L2A",
+     "datum": "2026-08-02",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2C_36SXA_20250718_0_L2A",
+     "datum": "2025-07-18",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXA_20240723_0_L2A",
+     "datum": "2024-07-23",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2A_36SXA_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 9.36,
+  "anteil_auswertbar": 0.137,
+  "n_objekte_roh": 6,
+  "n_kandidaten": 5,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 3,
+  "n_kontrollen": 300,
+  "perzentile": [],
+  "neu": 5,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3490_3280": {
+  "id": "T3490_3280",
+  "region": "karmel",
+  "region_name": "Karmelküste (Atlit, Schiqmona)",
+  "bbox": [
+   34.9,
+   32.8,
+   34.95,
+   32.85
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXB_20260310_0_L2A",
+     "datum": "2026-03-10",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2B_36SXB_20240330_0_L2A",
+     "datum": "2024-03-30",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXB_20230219_0_L2A",
+     "datum": "2023-02-19",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SXB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20250921_1_L2A",
+     "datum": "2025-09-21",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2A_36SXB_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": null,
+  "anteil_auswertbar": 0.0,
+  "n_objekte_roh": 0,
+  "n_kandidaten": 0,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 0,
+  "n_kontrollen": 0,
+  "perzentile": [],
+  "neu": 0,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3505_3290": {
+  "id": "T3505_3290",
+  "region": "akko",
+  "region_name": "Ebene von Akko (Akko, Achsib)",
+  "bbox": [
+   35.05,
+   32.9,
+   35.1,
+   32.95
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2B_36SXB_20260310_0_L2A",
+     "datum": "2026-03-10",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.3
+    },
+    {
+     "id": "S2B_36SXB_20240330_0_L2A",
+     "datum": "2024-03-30",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SXB_20230219_0_L2A",
+     "datum": "2023-02-19",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SXB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20250921_1_L2A",
+     "datum": "2025-09-21",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SXB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.2
+    },
+    {
+     "id": "S2A_36SXB_20230907_0_L2A",
+     "datum": "2023-09-07",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 10.94,
+  "anteil_auswertbar": 0.048,
+  "n_objekte_roh": 5,
+  "n_kandidaten": 5,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 21,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "Tel Akko",
+    "p": 0.063
+   }
+  ],
+  "neu": 5,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
+ },
+ "T3565_3285": {
+  "id": "T3565_3285",
+  "region": "kinneret",
+  "region_name": "See Kinneret – Uferzone",
+  "bbox": [
+   35.65,
+   32.85,
+   35.7,
+   32.9
+  ],
+  "status": "ok",
+  "datum": "2026-11-23",
+  "epsg": 32636,
+  "szenen": {
+   "feucht": [
+    {
+     "id": "S2A_36SYB_20260317_1_L2A",
+     "datum": "2026-03-17",
+     "wolken": 0.1
+    },
+    {
+     "id": "S2B_36SYB_20250315_0_L2A",
+     "datum": "2025-03-15",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20240404_0_L2A",
+     "datum": "2024-04-04",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20230301_0_L2A",
+     "datum": "2023-03-01",
+     "wolken": 0.0
+    }
+   ],
+   "trocken": [
+    {
+     "id": "S2B_36SYB_20260916_0_L2A",
+     "datum": "2026-09-16",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2A_36SYB_20250928_1_L2A",
+     "datum": "2025-09-28",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20240926_0_L2A",
+     "datum": "2024-09-26",
+     "wolken": 0.0
+    },
+    {
+     "id": "S2B_36SYB_20230823_0_L2A",
+     "datum": "2023-08-23",
+     "wolken": 0.0
+    }
+   ]
+  },
+  "schwelle_rx": 10.14,
+  "anteil_auswertbar": 0.517,
+  "n_objekte_roh": 65,
+  "n_kandidaten": 12,
+  "osm_maske": true,
+  "wikidata": true,
+  "n_fundorte": 2,
+  "n_kontrollen": 300,
+  "perzentile": [
+   {
+    "name": "חורבת חוחה",
+    "p": 0.13
+   },
+   {
+    "name": "חורבת כנף",
+    "p": 0.367
+   }
+  ],
+  "neu": 12,
+  "wiedererkannt": 0,
+  "entfallen": 0,
+  "laeufe": 1,
+  "ohne_osm": 0
  }
 }
