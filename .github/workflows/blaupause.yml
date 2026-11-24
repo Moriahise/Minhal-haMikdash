@@ -27,7 +27,7 @@ permissions:
 
 concurrency:
   group: blaupause-${{ github.ref }}
-  cancel-in-progress: false
+  queue: max
 
 jobs:
   tests:
