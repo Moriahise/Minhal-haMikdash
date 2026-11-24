@@ -5,7 +5,11 @@ name: Blaupause – Städtebau
 # mit alter Planversion werden dabei neu berechnet. Ergebnis: blaupause/data.
 on:
   schedule:
-    - cron: "41 3 * * *"            # täglich 03:41 UTC (nach dem Seker-Lauf)
+    - cron: "41 3,9 * * *"          # Tageslauf und Nachholprüfung (UTC)
+  workflow_run:
+    workflows: ["Seker – Prospektion"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       runden:
@@ -21,12 +25,13 @@ on:
 permissions:
   contents: read
 
-concurrency:                         # nie gleichzeitig mit dem Seker-Lauf
-  group: ${{ (github.event_name == 'push' || github.event_name == 'pull_request') && github.workflow || 'seker' }}-${{ github.ref }}
+concurrency:
+  group: blaupause-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   tests:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.event == 'schedule' && github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,7 +44,7 @@ jobs:
 
   runde:
     needs: tests
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -47,6 +52,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -62,9 +68,14 @@ jobs:
           key: osm-v2-${{ steps.woche.outputs.kw }}
       - name: Pläne und Runde rechnen
         env:
+          EVENT: ${{ github.event_name }}
           RUNDEN: ${{ inputs.runden || '1' }}
           NEU: ${{ inputs.neu || 'nein' }}
         run: |
+          if [ "$EVENT" != "workflow_dispatch" ]; then
+            python -m staedtebau runde --taeglich
+            exit 0
+          fi
           case "$RUNDEN" in ''|*[!0-9]*) RUNDEN=1 ;; esac
           if [ "$NEU" = "ja" ]; then python -m staedtebau plaene --neu; fi
           python -m staedtebau runde -n "$RUNDEN"
@@ -89,7 +100,7 @@ jobs:
     if: >-
       always() && !cancelled() && github.ref == 'refs/heads/main' &&
       needs.tests.result == 'success' &&
-      (github.event_name == 'push' || needs.runde.result == 'success')
+      needs.runde.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 18
     permissions:

@@ -141,3 +141,16 @@ def test_simulation_waechst_monoton_und_gruendet_der_reihe_nach(plan):
         assert st["synagogen"] >= st["bilanz"]["synagogen_soll"] - 1
     json.dumps(welt, allow_nan=False)
     assert simulation.regenfaktor(7) == simulation.regenfaktor(7)
+
+
+def test_tagesrunden_nachholen_und_doppelte_starts():
+    import datetime as dt
+    from staedtebau.__main__ import tagesrunden
+
+    jetzt = dt.datetime(2026, 11, 24, 3, 41, tzinfo=dt.timezone.utc)
+    alt = {"stand": "2026-11-23T13:47:32+00:00"}
+    heute = jetzt.date()
+    assert tagesrunden(alt, jetzt - dt.timedelta(minutes=1)) == (0, heute - dt.timedelta(days=1))
+    assert tagesrunden(alt, jetzt) == (1, heute)
+    assert tagesrunden({**alt, "letzte_tagesrunde": "2026-11-24"}, jetzt) == (0, heute)
+    assert tagesrunden({**alt, "letzte_tagesrunde": "2026-11-21"}, jetzt) == (3, heute)

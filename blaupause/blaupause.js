@@ -557,10 +557,10 @@
   const speicher = { get: () => { try { return localStorage.getItem("seker-token") || ""; } catch (e) { return ""; } }, set: (v) => { try { v ? localStorage.setItem("seker-token", v) : localStorage.removeItem("seker-token"); } catch (e) { /* privat */ } } };
   function rundeStatus() {
     const el = $("#runde-status");
-    fetch(API + "/runs?per_page=5", { headers: { Accept: "application/vnd.github+json" } }).then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }).then((j) => {
-      const rs = (j.workflow_runs || []).filter((r) => r.event !== "push" && r.event !== "pull_request");
+    fetch(API + "/runs?branch=main&per_page=20", { headers: { Accept: "application/vnd.github+json" } }).then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }).then((j) => {
+      const rs = (j.workflow_runs || []).filter((r) => r.event !== "pull_request" && r.conclusion !== "skipped");
       el.innerHTML = rs.length ? rs.slice(0, 3).map((r) => "<div><span class='punkt " + (r.status !== "completed" ? "laeuft" : r.conclusion === "success" ? "gut" : "schlecht") + "'></span>" + esc(new Date(r.created_at).toLocaleString("de-DE")) + " · "
-        + (r.event === "schedule" ? "automatisch" : "von Hand") + " · " + (r.status !== "completed" ? "läuft gerade" : r.conclusion === "success" ? "abgeschlossen" : "fehlgeschlagen") + " · <a target=_blank rel=noopener href='" + esc(r.html_url) + "'>Protokoll</a></div>").join("") : "Bisher wurde noch keine Runde auf GitHub gerechnet.";
+        + (r.event === "workflow_dispatch" ? "von Hand" : "automatische Tagesprüfung") + " · " + (r.status !== "completed" ? "läuft gerade" : r.conclusion === "success" ? "abgeschlossen" : "fehlgeschlagen") + " · <a target=_blank rel=noopener href='" + esc(r.html_url) + "'>Protokoll</a></div>").join("") : "Bisher wurde noch keine Runde auf GitHub gerechnet.";
     }).catch((e) => { el.textContent = "Status nicht abrufbar (" + e.message + ")."; });
   }
   function rundeStarten() {

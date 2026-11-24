@@ -53,6 +53,17 @@ def welt_schreiben(w: Path, welt: dict, plaene: dict) -> None:
     _welt_pfad(w).write_text(json.dumps(welt, ensure_ascii=False, indent=1) + "\n", "utf-8")
 
 
+def tagesrunden(welt: dict, jetzt: dt.datetime) -> tuple[int, dt.date]:
+    """Fällige UTC-Tage seit der letzten gespeicherten Runde."""
+    heute = jetzt.date()
+    faellig_bis = heute if (jetzt.hour, jetzt.minute) >= (3, 41) else heute - dt.timedelta(days=1)
+    # Ältere Weltdateien enthalten nur den UTC-Zeitstempel "stand".
+    datum = welt.get("letzte_tagesrunde") or (welt.get("stand") or "")[:10]
+    zuletzt = dt.date.fromisoformat(datum) if datum else faellig_bis - dt.timedelta(days=1)
+    anzahl = min(50, max(0, (faellig_bis - zuletzt).days))
+    return anzahl, zuletzt + dt.timedelta(days=anzahl)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(prog="staedtebau", description=__doc__)
     ap.add_argument("--wurzel", type=Path, default=Path("."))
@@ -62,10 +73,20 @@ def main() -> int:
     a.add_argument("--id", choices=C.GRUENDUNGSFOLGE)
     b = sub.add_parser("runde")
     b.add_argument("-n", type=int, default=1)
+    b.add_argument("--taeglich", action="store_true", help="Fehlende Tagesrunden bis zum fälligen UTC-Tag nachholen")
     b.add_argument("--ohne-osm", action="store_true")
     args = ap.parse_args()
     w = args.wurzel
     welt = json.loads(_welt_pfad(w).read_text("utf-8")) if _welt_pfad(w).exists() else {"jahr": 0}
+    if args.cmd == "runde":
+        jetzt = dt.datetime.now(dt.timezone.utc)
+        if args.taeglich:
+            anzahl, rundentag = tagesrunden(welt, jetzt)
+            if not anzahl:
+                print(f"Tagesrunde bereits aktuell: Jahr {welt['jahr']} ({rundentag})")
+                return 0
+        else:
+            anzahl, rundentag = max(1, min(args.n, 50)), jetzt.date()
     osm_index = None
     if not getattr(args, "ohne_osm", False):
         from prospektion import osm
@@ -74,8 +95,9 @@ def main() -> int:
         plaene = plaene_sichern(w, args.neu, args.id, osm_index)
     else:
         plaene = plaene_sichern(w, False, None, osm_index)
-        for _ in range(max(1, min(args.n, 50))):
+        for _ in range(anzahl):
             simulation.runde(welt, plaene)
+        welt["letzte_tagesrunde"] = rundentag.isoformat()
         s = welt["summe"]
         print(f"Jahr {welt['jahr']}: {s['staedte']} Städte, {s['einwohner']} Einwohner, "
               f"Lebensqualität {s['lebensqualitaet']}")
