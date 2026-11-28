@@ -1,6 +1,6 @@
 {
- "jahr": 32,
- "stand": "2026-11-27T11:04:38+00:00",
+ "jahr": 33,
+ "stand": "2026-11-28T10:42:04+00:00",
  "version": "1.0.0",
  "plan_version": "1.1.0",
  "folge": [
@@ -266,7 +266,7 @@
   "schaarajim": {
    "status": "gegruendet",
    "gruendung": 1,
-   "ew": 25932,
+   "ew": 25935,
    "we": 7946,
    "bloecke_gebaut": 354,
    "schulen": 5,
@@ -508,14 +508,21 @@
      7946,
      354,
      81
+    ],
+    [
+     33,
+     25935,
+     7946,
+     354,
+     81
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.01,
-    "wasserbedarf_m3": 2333880,
-    "regenernte_m3": 180958,
-    "brauchwasser_m3": 1517022,
-    "wasser_eigenanteil": 0.73,
+    "regenfaktor": 1.41,
+    "wasserbedarf_m3": 2334150,
+    "regenernte_m3": 253363,
+    "brauchwasser_m3": 1517198,
+    "wasser_eigenanteil": 0.76,
     "pv_gwh": 33.3,
     "strombedarf_gwh": 116.7,
     "arbeitsplaetze": 1295,
@@ -536,9 +543,9 @@
   "neu_negev_nord": {
    "status": "gegruendet",
    "gruendung": 8,
-   "ew": 20836,
-   "we": 6587,
-   "bloecke_gebaut": 116,
+   "ew": 22477,
+   "we": 7102,
+   "bloecke_gebaut": 127,
    "schulen": 5,
    "meilensteine": [
     "zufahrt",
@@ -727,38 +734,45 @@
      6587,
      116,
      77
+    ],
+    [
+     33,
+     22477,
+     7102,
+     127,
+     77
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.01,
-    "wasserbedarf_m3": 1875240,
-    "regenernte_m3": 70652,
-    "brauchwasser_m3": 1218906,
-    "wasser_eigenanteil": 0.69,
-    "pv_gwh": 28.3,
-    "strombedarf_gwh": 93.8,
+    "regenfaktor": 1.41,
+    "wasserbedarf_m3": 2022930,
+    "regenernte_m3": 106656,
+    "brauchwasser_m3": 1314904,
+    "wasser_eigenanteil": 0.7,
+    "pv_gwh": 30.5,
+    "strombedarf_gwh": 101.1,
     "arbeitsplaetze": 1106,
-    "jobs_je_erwerbsperson": 0.13,
+    "jobs_je_erwerbsperson": 0.12,
     "freiraum_m2_je_ew": 6.5,
     "schulen": 5,
-    "synagogen": 21,
-    "synagogen_soll": 14,
+    "synagogen": 22,
+    "synagogen_soll": 15,
     "batei_midrasch": 7,
     "schulen_soll": 5,
     "quartierszentren_plan": 6,
-    "ausbau": 0.736,
+    "ausbau": 0.793,
     "lebensqualitaet": 77
    },
-   "synagogen": 21,
+   "synagogen": 22,
    "batei_midrasch": 7
   },
   "adullam": {
    "status": "gegruendet",
    "gruendung": 16,
-   "ew": 10638,
-   "we": 3387,
-   "bloecke_gebaut": 68,
-   "schulen": 2,
+   "ew": 11668,
+   "we": 3710,
+   "bloecke_gebaut": 75,
+   "schulen": 3,
    "meilensteine": [
     "zufahrt",
     "platz",
@@ -890,27 +904,34 @@
      3387,
      68,
      78
+    ],
+    [
+     33,
+     11668,
+     3710,
+     75,
+     76
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.01,
-    "wasserbedarf_m3": 957420,
-    "regenernte_m3": 87044,
-    "brauchwasser_m3": 622323,
-    "wasser_eigenanteil": 0.74,
-    "pv_gwh": 16.7,
-    "strombedarf_gwh": 47.9,
+    "regenfaktor": 1.41,
+    "wasserbedarf_m3": 1050120,
+    "regenernte_m3": 133494,
+    "brauchwasser_m3": 682578,
+    "wasser_eigenanteil": 0.78,
+    "pv_gwh": 18.2,
+    "strombedarf_gwh": 52.5,
     "arbeitsplaetze": 691,
-    "jobs_je_erwerbsperson": 0.15,
-    "freiraum_m2_je_ew": 6.4,
-    "schulen": 2,
+    "jobs_je_erwerbsperson": 0.14,
+    "freiraum_m2_je_ew": 5.9,
+    "schulen": 3,
     "synagogen": 14,
-    "synagogen_soll": 7,
+    "synagogen_soll": 8,
     "batei_midrasch": 6,
-    "schulen_soll": 2,
+    "schulen_soll": 3,
     "quartierszentren_plan": 6,
-    "ausbau": 0.646,
-    "lebensqualitaet": 78
+    "ausbau": 0.707,
+    "lebensqualitaet": 76
    },
    "synagogen": 14,
    "batei_midrasch": 6
@@ -918,8 +939,8 @@
   "gat": {
    "status": "gegruendet",
    "gruendung": 26,
-   "ew": 3058,
-   "we": 1008,
+   "ew": 3632,
+   "we": 1188,
    "bloecke_gebaut": 15,
    "schulen": 0,
    "meilensteine": [
@@ -980,18 +1001,25 @@
      1008,
      15,
      50
+    ],
+    [
+     33,
+     3632,
+     1188,
+     15,
+     49
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.01,
-    "wasserbedarf_m3": 275220,
-    "regenernte_m3": 21704,
-    "brauchwasser_m3": 178893,
-    "wasser_eigenanteil": 0.73,
-    "pv_gwh": 5.3,
-    "strombedarf_gwh": 13.8,
+    "regenfaktor": 1.41,
+    "wasserbedarf_m3": 326880,
+    "regenernte_m3": 35815,
+    "brauchwasser_m3": 212472,
+    "wasser_eigenanteil": 0.76,
+    "pv_gwh": 6.2,
+    "strombedarf_gwh": 16.3,
     "arbeitsplaetze": 399,
-    "jobs_je_erwerbsperson": 0.31,
+    "jobs_je_erwerbsperson": 0.26,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
     "synagogen": 3,
@@ -999,8 +1027,8 @@
     "batei_midrasch": 1,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.162,
-    "lebensqualitaet": 50
+    "ausbau": 0.191,
+    "lebensqualitaet": 49
    },
    "synagogen": 3,
    "batei_midrasch": 1
@@ -1008,9 +1036,9 @@
   "neu_lachisch": {
    "status": "gegruendet",
    "gruendung": 32,
-   "ew": 274,
-   "we": 120,
-   "bloecke_gebaut": 1,
+   "ew": 647,
+   "we": 247,
+   "bloecke_gebaut": 3,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
@@ -1026,29 +1054,36 @@
      120,
      1,
      42
+    ],
+    [
+     33,
+     647,
+     247,
+     3,
+     43
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.01,
-    "wasserbedarf_m3": 24660,
-    "regenernte_m3": 2087,
+    "regenfaktor": 1.41,
+    "wasserbedarf_m3": 58230,
+    "regenernte_m3": 6014,
     "brauchwasser_m3": 0,
-    "wasser_eigenanteil": 0.08,
-    "pv_gwh": 0.6,
-    "strombedarf_gwh": 1.2,
-    "arbeitsplaetze": 119,
-    "jobs_je_erwerbsperson": 1.03,
+    "wasser_eigenanteil": 0.1,
+    "pv_gwh": 1.2,
+    "strombedarf_gwh": 2.9,
+    "arbeitsplaetze": 359,
+    "jobs_je_erwerbsperson": 1.32,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
-    "synagogen": 1,
+    "synagogen": 2,
     "synagogen_soll": 1,
     "batei_midrasch": 1,
     "schulen_soll": 1,
     "quartierszentren_plan": 6,
-    "ausbau": 0.012,
-    "lebensqualitaet": 42
+    "ausbau": 0.025,
+    "lebensqualitaet": 43
    },
-   "synagogen": 1,
+   "synagogen": 2,
    "batei_midrasch": 1
   },
   "ziklag": {
@@ -1098,9 +1133,9 @@
   "keila": {
    "status": "gegruendet",
    "gruendung": 21,
-   "ew": 6298,
-   "we": 2025,
-   "bloecke_gebaut": 23,
+   "ew": 7069,
+   "we": 2267,
+   "bloecke_gebaut": 26,
    "schulen": 0,
    "meilensteine": [
     "zufahrt",
@@ -1197,26 +1232,33 @@
      2025,
      23,
      45
+    ],
+    [
+     33,
+     7069,
+     2267,
+     26,
+     45
     ]
    ],
    "bilanz": {
-    "regenfaktor": 1.01,
-    "wasserbedarf_m3": 566820,
-    "regenernte_m3": 44029,
-    "brauchwasser_m3": 368433,
-    "wasser_eigenanteil": 0.73,
-    "pv_gwh": 10.1,
-    "strombedarf_gwh": 28.3,
+    "regenfaktor": 1.41,
+    "wasserbedarf_m3": 636210,
+    "regenernte_m3": 69013,
+    "brauchwasser_m3": 413536,
+    "wasser_eigenanteil": 0.76,
+    "pv_gwh": 11.3,
+    "strombedarf_gwh": 31.8,
     "arbeitsplaetze": 433,
-    "jobs_je_erwerbsperson": 0.16,
+    "jobs_je_erwerbsperson": 0.15,
     "freiraum_m2_je_ew": 0.0,
     "schulen": 0,
     "synagogen": 5,
-    "synagogen_soll": 4,
+    "synagogen_soll": 5,
     "batei_midrasch": 1,
-    "schulen_soll": 1,
+    "schulen_soll": 2,
     "quartierszentren_plan": 6,
-    "ausbau": 0.446,
+    "ausbau": 0.5,
     "lebensqualitaet": 45
    },
    "synagogen": 5,
@@ -1921,13 +1963,31 @@
    "stadt": "neu_lachisch",
    "art": "ereignis",
    "text": "Der Stadtplatz mit dem Brunnen wird eingeweiht; die ersten Familien ziehen ein."
+  },
+  {
+   "jahr": 33,
+   "stadt": "neu_negev_nord",
+   "art": "ereignis",
+   "text": "Weitere Synagoge eröffnet – 22 von 25 in Betrieb."
+  },
+  {
+   "jahr": 33,
+   "stadt": "adullam",
+   "art": "ereignis",
+   "text": "Quartierszentrum 3 mit Grundschule, Synagoge und Mikwe eröffnet."
+  },
+  {
+   "jahr": 33,
+   "stadt": "neu_lachisch",
+   "art": "ereignis",
+   "text": "Weitere Synagoge eröffnet – 2 von 27 in Betrieb."
   }
  ],
  "summe": {
   "staedte": 6,
-  "einwohner": 67036,
-  "wohneinheiten": 21073,
+  "einwohner": 71428,
+  "wohneinheiten": 22460,
   "lebensqualitaet": 62
  },
- "letzte_tagesrunde": "2026-11-27"
+ "letzte_tagesrunde": "2026-11-28"
 }
